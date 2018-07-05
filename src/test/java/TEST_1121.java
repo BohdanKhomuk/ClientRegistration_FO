@@ -174,7 +174,7 @@ public class TEST_1121 {
         tabFrame( "Tab3" );
         eventDriver.findElement( By.id( "ddl_PASSP" ) ).click();
         eventDriver.findElement( By.xpath( "//select[@id = 'ddl_PASSP']/option[@value = '1']" )).click();
-        eventDriver.findElement( By.id( "ed_SER" ) ).sendKeys( random.generateRandomWords( 2 ) );
+        eventDriver.findElement( By.id( "ed_SER" ) ).sendKeys( RandomWords.generateRandomWords( 2 ) );
         eventDriver.findElement( By.id( "ed_NUMDOC" ) ).sendKeys( "432459" );
         eventDriver.findElement( By.id( "ed_ORGAN" )).sendKeys( "Овручським районним управлінням");
 //        eventDriver.findElement( By.id( "bt_help" ) ).click();
@@ -268,7 +268,7 @@ public class TEST_1121 {
         tabFrame( "Tab5" );
         eventDriver.findElement( By.xpath( "//a[contains(text(),'Фін.мон.')]" )).click();
         userDelay( 10000 );
-        eventDriver.findElement( By.id( "gvMain_ctl02_edEdVal" )).sendKeys( random.generateRandomWords( 3 ) );
+        eventDriver.findElement( By.id( "gvMain_ctl02_edEdVal" )).sendKeys( RandomWords.generateRandomWords( 3 ) );
         userDelay( 5000 );
         eventDriver.findElement( By.id( "gvMain_ctl03_edEdVal" )).sendKeys( "11111111" );
         userDelay( 5000 );
@@ -294,8 +294,8 @@ public class TEST_1121 {
         eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
         userDelay( 3000 );
         tabFrame( "Tab5" );
-        eventDriver.findElement( By.id( "gvMain_ctl09_edEdVal" )).sendKeys( random.generateRandomWords( 3 ));
-        eventDriver.findElement( By.id( "gvMain_ctl10_edEdVal" )).sendKeys( random.generateRandomWords( 3 ));
+        eventDriver.findElement( By.id( "gvMain_ctl09_edEdVal" )).sendKeys( RandomWords.generateRandomWords( 3 ));
+        eventDriver.findElement( By.id( "gvMain_ctl10_edEdVal" )).sendKeys( RandomWords.generateRandomWords( 3 ));
         //Other
         eventDriver.findElement( By.xpath( "//a[contains(text(),'Інші')]" )).click();
         userDelay( 3000 );
