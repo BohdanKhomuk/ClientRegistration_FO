@@ -8,6 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.io.File;
@@ -20,13 +23,10 @@ import java.util.concurrent.TimeUnit;
 public class TEST_1121 {
 
     //private static WebDriver driver;
-    private static EventFiringWebDriver eventDriver;
-    private static EventHandler handler;
+    public static EventFiringWebDriver eventDriver;
 
     RandomWords random = new RandomWords();
  //   Frame frame = new Frame();
-
-
 
     public void todefCont(){
         eventDriver.switchTo().defaultContent();
@@ -56,7 +56,15 @@ public class TEST_1121 {
         eventDriver.switchTo().frame( path );
     }
 
+    public void pressOnXpath(String attribute) {
+        (new WebDriverWait(eventDriver, 10000)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(attribute)));
+        eventDriver.findElement(By.xpath(attribute)).click();
+    }
 
+    public void pressOnId(String attribute) {
+        (new WebDriverWait(eventDriver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id(attribute)));
+        eventDriver.findElement(By.id(attribute)).click();
+    }
 
     @BeforeClass
     public static void main() {
@@ -68,12 +76,11 @@ public class TEST_1121 {
        /* String browser = new File(TEST_1121.class.getResource("/chromedriver.exe").getFile()).getPath();
         System.setProperty("webdriver.chrome.driver", browser);
         eventDriver = new EventFiringWebDriver(new ChromeDriver(  ));*/
-        handler = new EventHandler();
+        EventHandler handler = new EventHandler();
         eventDriver.manage().window().maximize();
         eventDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        eventDriver.register(handler);
+        eventDriver.register( handler );
         eventDriver.get("http://10.10.17.40:8080/barsroot/account/login/");
-        //eventDriver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
 
     }
     public void userDelay(int time) {
@@ -98,36 +105,25 @@ public class TEST_1121 {
         WebElement passwordField = eventDriver.findElement(By.id("txtPassword"));
         passwordField.clear();
         passwordField.sendKeys("qwerty");
-        userDelay(1000);
-        eventDriver.findElement(By.id("btLogIn")).click();
-        userDelay(2000);
-        eventDriver.findElement(By.id("btChangDate")).click();
-        userDelay(1000);
+        pressOnId(  "btLogIn" );
+        pressOnId( "btChangDate" );
         // Find element
-        WebElement search = eventDriver.findElement(By.id("findOpersText"));
-        search.sendKeys( "Реєстрація Клієнтів і Рахунків"  + "\n" );
-        userDelay(10000);
+        eventDriver.findElement(By.id("findOpersText")).sendKeys( "Реєстрація Клієнтів і Рахунків"  + "\n" );
         // Enter in function
-        eventDriver.findElement(By.xpath(".//div[@id='oper-3039']/div[2]/span")).click();
-        userDelay( 5000);
+        userDelay(6000);
+        pressOnXpath( ".//div[@id='oper-3039']/div[2]/span" );
         toMainFrame();
-        eventDriver.findElement(By.id("registerCustBtn")).click();
-        userDelay( 10000);
-        eventDriver.findElement( By.xpath( "//div[@class = 'k-window-content k-content']/div/div/div[2]/button" ) ).click();
-        userDelay(5000);
-        WebElement IPN = eventDriver.findElement( By.xpath( "//div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']" ) );
-        IPN.sendKeys( "111" );
-        userDelay( 5000);
-        eventDriver.findElement( By.xpath( "//div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']")).click();
-        userDelay( 5000);
-        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
-        userDelay( 5000 );
-        eventDriver.findElement( By.xpath( "//button[@class = 'k-button']" )).click();
+        pressOnId( "registerCustBtn" );
+        pressOnXpath( "//div[@class = 'k-window-content k-content']/div/div/div[2]/button" );
+        userDelay(3000);
+        eventDriver.findElement( By.xpath( "//div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']" ) ).sendKeys( RandomWords.randomNumber( 10, 99999 ) );
+        pressOnXpath( "//div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']" );
+        pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']"  );
+        pressOnXpath( "//button[@class = 'k-button']" );
 
 //      Basic details
-        userDelay( 3000);
         tabFrame( "Tab0" );
-        eventDriver.findElement(By.id("bt_FullDopRekv")).click();
+        pressOnId( "bt_FullDopRekv" );
         userDelay( 1000 );
         eventDriver.findElement( By.id( "ed_FIO_LN" ) ).sendKeys( random.Sourname() );
         eventDriver.findElement( By.id( "ed_FIO_FN" ) ).sendKeys( random.Name() );
@@ -140,19 +136,16 @@ public class TEST_1121 {
         //eventDriver.findElement( By.xpath( "//button/span" ) ).click();
 
         // Clien adress
-        userDelay( 1000 );
-        eventDriver.findElement( By.id( "btnOpenWindowAddress" ) ).click();
+        pressOnId( "btnOpenWindowAddress" );
         userDelay( 2000 );
         fullAddressFrame();
-        eventDriver.findElement(By.id( "legalIndex" ) ).sendKeys( "213428");
+        eventDriver.findElement(By.id( "legalIndex" ) ).sendKeys( RandomWords.randomNumber( 100000, 999999 ));
         eventDriver.findElement(By.id( "legalRegion" ) ).sendKeys( "Київська обл.");
         eventDriver.findElement(By.xpath( "//span[@role = 'presentation']/input[@ng-model = 'legalArea']" ) ).sendKeys( "Обухівський район");
-        userDelay( 5000 );
-        eventDriver.findElement(By.xpath( "//span[@class = 'k-input ng-scope']" ) ).click();
-        userDelay( 2000 );
-        eventDriver.findElement(By.xpath( "//ul[@id='legalSettlemetDropDown_listbox']/li[2]" ) ).click();
+        pressOnXpath("//span[@class = 'k-input ng-scope']"   );
+        pressOnXpath("//ul[@id='legalSettlemetDropDown_listbox']/li[2]"   );
         eventDriver.findElement(By.xpath( "//input[@ng-model = 'legalSettlement']" ) ).sendKeys( "Обухівв" );
-        userDelay( 10000 );
+       // userDelay( 10000 );
 //        eventDriver.findElement(By.xpath( "//span[@class = 'k-dropdown-wrap k-state-disabled']/span/span" ) ).click();
 //        userDelay( 3000 );
 //        eventDriver.findElement(By.xpath( "//ul[@id='legalStreetDropDown_listbox']/li[3]" ) ).click();
@@ -161,7 +154,8 @@ public class TEST_1121 {
 //        userDelay( 3000 );
 //        eventDriver.findElement(By.xpath( "//ul[@id='legalHouseDropDown_listbox']/li[2]" ) ).click();
         eventDriver.findElement(By.xpath( "//input[@ng-model = 'legalHouse']" ) ).sendKeys( "54" );
-        eventDriver.findElement(By.id( "btnSaveAddress" ) ).click();
+        //        eventDriver.findElement(By.id( "btnSaveAddress" ) ).click();
+        pressOnId(  "btnSaveAddress");
         // IPN
         tabFrame( "Tab0" );
         eventDriver.findElement(By.id("ed_OKPO")).sendKeys( "0000000000" );
@@ -169,13 +163,13 @@ public class TEST_1121 {
 //      Client details
         userDelay( 1000 );
         kContentFrame();
-        eventDriver.findElement( By.id("bTab3") ).click();
+        pressOnId( "bTab3" );
         userDelay( 1000 );
         tabFrame( "Tab3" );
-        eventDriver.findElement( By.id( "ddl_PASSP" ) ).click();
-        eventDriver.findElement( By.xpath( "//select[@id = 'ddl_PASSP']/option[@value = '1']" )).click();
-        eventDriver.findElement( By.id( "ed_SER" ) ).sendKeys( RandomWords.generateRandomWords( 2 ) );
-        eventDriver.findElement( By.id( "ed_NUMDOC" ) ).sendKeys( "432459" );
+        pressOnId( "ddl_PASSP" );
+        pressOnXpath( "//select[@id = 'ddl_PASSP']/option[@value = '1']" );
+        eventDriver.findElement( By.id( "ed_SER" ) ).sendKeys( random.randomStringBig( 2 ) );
+        eventDriver.findElement( By.id( "ed_NUMDOC" ) ).sendKeys( RandomWords.randomNumber( 100000, 999999 ) );
         eventDriver.findElement( By.id( "ed_ORGAN" )).sendKeys( "Овручським районним управлінням");
 //        eventDriver.findElement( By.id( "bt_help" ) ).click();
 //        kContentFrame();
@@ -184,48 +178,41 @@ public class TEST_1121 {
 //        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
 //        userDelay( 1000 );
 //        tabFrame( "Tab3" );
-        userDelay( 5000 );
+        userDelay( 3000 );
         WebElement PDATE = eventDriver.findElement( By.id( "ed_PDATE" ) );
         PDATE.click();
         PDATE.clear();
-        userDelay( 3000 );
+        userDelay( 2000 );
         PDATE.sendKeys( "10102010" );
-//        userDelay( 5000 );
-//        PDATE.sendKeys( "10102010");
         WebElement Photo = eventDriver.findElement( By.id( "ed_DATE_PHOTO" ) );
         Photo.click();
         Photo.clear();
         userDelay( 3000 );
         Photo.sendKeys( Keys.END + "05022018");
-//        userDelay( 5000 );
-//        Photo.sendKeys( "05022018");
         WebElement BDay = eventDriver.findElement( By.id( "ed_BDAY" ) );
         BDay.click();
         BDay.clear();
-        userDelay( 3000 );
+        userDelay( 2000 );
         BDay.sendKeys( Keys.END + "10101992");
-//        userDelay( 5000 );
-//        BDay.sendKeys( "10101992");
-        eventDriver.findElement( By.id( "ddl_SEX" ) ).click();
-        eventDriver.findElement( By.xpath( "//select[@id = 'ddl_SEX']/option[@value = '1']" )).click();
-        eventDriver.findElement( By.id( "ed_TELM_CODE" ) ).click();
+        pressOnId( "ddl_SEX" );
+        pressOnXpath("//select[@id = 'ddl_SEX']/option[@value = '1']"  );
+        pressOnId( "ed_TELM_CODE" );
         userDelay( 1000 );
         // Mobile phohe
         kContentFrame();
-        eventDriver.findElement( By.xpath( "//tr[@class = 'k-alt']//div[@title = '96']" ) ).click();
-        eventDriver.findElement( By.xpath( "//span[@disabled='disabled']" ) ).click();
+        pressOnXpath( "//tr[@class = 'k-alt']//div[@title = '96']" );
+        pressOnXpath( "//span[@disabled='disabled']" );
         userDelay( 1000 );
         tabFrame( "Tab3" );
-        eventDriver.findElement( By.id( "ed_TELM" ) ).sendKeys( "2313423" );
-        eventDriver.findElement( By.id( "ed_TELD_CODE" ) ).click();
-        userDelay( 10000 );
-        eventDriver.findElement( By.id( "ed_TELD_CODE" ) ).click();
-        userDelay( 10000 );
+        eventDriver.findElement( By.id( "ed_TELM" ) ).sendKeys( RandomWords.randomNumber( 1000000, 9999999 ) );
+        pressOnId( "ed_TELD_CODE" );
+        pressOnId( "ed_TELD_CODE" );
+        userDelay( 5000 );
         kContentFrame();
-        eventDriver.findElement( By.xpath( "//td[@role = 'gridcell']/div[@title = '692']" ) ).click();
-        eventDriver.findElement( By.xpath( "//span[@disabled='disabled']" ) ).click();
+        pressOnXpath( "//td[@role = 'gridcell']/div[@title = '692']" );
+        pressOnXpath( "//span[@disabled='disabled']" );
         tabFrame( "Tab3" );
-        eventDriver.findElement( By.id( "ed_TELD" ) ).sendKeys( "123213" );
+        eventDriver.findElement( By.id( "ed_TELD" ) ).sendKeys( RandomWords.randomNumber( 100000, 999999 ) );
 //        WebElement data = eventDriver.findElement( By.id( "ed_ORGAN" ) );
 //        data.click();
 //        data.sendKeys( Keys.END );
@@ -243,92 +230,71 @@ public class TEST_1121 {
 //        Additional information
         userDelay( 1000 );
         kContentFrame();
-        eventDriver.findElement( By.id("bTab4") ).click();
-        userDelay( 2000 );
+        pressOnId("bTab4" );
         tabFrame( "Tab4" );
-        eventDriver.findElement( By.id( "bt_help" ) ).click();
+        pressOnId("bt_help" );
         kContentFrame();
-        userDelay( 10000 );
-        eventDriver.findElement( By.xpath( "//div[@title = '11301']" )).click();
-        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
+        pressOnXpath("//div[@title = '11301']" );
+        pressOnXpath("//button[@class = 'delete-confirm k-button k-primary']"   );
 
 //         Additional details
-        userDelay( 3000 );
-        eventDriver.findElement( By.id("bTab5") ).click();
+        pressOnId( "bTab5" );
         // general
-        userDelay( 3000 );
+        userDelay( 2000 );
         tabFrame( "Tab5" );
-        eventDriver.findElement( By.id( "gvMain_ctl02_imgEdHelp" ) ).click();
+        pressOnId( "gvMain_ctl02_imgEdHelp"  );
         kContentFrame();
-        userDelay( 10000 );
-        eventDriver.findElement( By.xpath( "//div[@title = '2']" )).click();
-        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
+        pressOnXpath( "//div[@title = '2']" );
+        pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
         // Fin.mon.
         userDelay( 3000 );
         tabFrame( "Tab5" );
-        eventDriver.findElement( By.xpath( "//a[contains(text(),'Фін.мон.')]" )).click();
-        userDelay( 10000 );
-        eventDriver.findElement( By.id( "gvMain_ctl02_edEdVal" )).sendKeys( RandomWords.generateRandomWords( 3 ) );
+        pressOnXpath( "//a[contains(text(),'Фін.мон.')]" );
         userDelay( 5000 );
-        eventDriver.findElement( By.id( "gvMain_ctl03_edEdVal" )).sendKeys( "11111111" );
-        userDelay( 5000 );
-        eventDriver.findElement( By.id( "gvMain_ctl04_edEdVal" )).sendKeys( "11111111" );
-        eventDriver.findElement( By.id( "gvMain_ctl05_imgEdHelp" ) ).click();
+        eventDriver.findElement( By.id( "gvMain_ctl02_edEdVal" )).sendKeys( random.randomStringBig( 1 ) + random.randomStringLittle( 10 ) );
+        WebElement firstFilldData = eventDriver.findElement( By.id( "gvMain_ctl03_edEdVal" ) );
+        firstFilldData.click();
+        firstFilldData.clear();
+        userDelay( 3000 );
+        firstFilldData.sendKeys( Keys.END + "05022017");
+        WebElement dateOfIdentification = eventDriver.findElement( By.id( "gvMain_ctl04_edEdVal" ) );
+        dateOfIdentification.click();
+        dateOfIdentification.clear();
+        userDelay( 3000 );
+        dateOfIdentification.sendKeys( Keys.END + "05032017");
+        pressOnId( "gvMain_ctl05_imgEdHelp" );
         kContentFrame();
-        userDelay( 10000 );
-        eventDriver.findElement( By.xpath( "//div[@title = 'YES']" )).click();
-        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
+        pressOnXpath( "//div[@title = 'YES']" );
+        pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
         userDelay( 3000 );
         tabFrame( "Tab5" );
-        eventDriver.findElement( By.id( "gvMain_ctl07_imgEdHelp" ) ).click();
+        pressOnId( "gvMain_ctl07_imgEdHelp"  );
         kContentFrame();
-        userDelay( 10000 );
-        eventDriver.findElement( By.xpath( "//tr[@class = 'k-alt']/td" )).click();
-        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
-        userDelay( 3000 );
+        pressOnXpath( "//tr[@class = 'k-alt']/td" );
+        pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
+        userDelay( 2000 );
         tabFrame( "Tab5" );
-        eventDriver.findElement( By.id( "gvMain_ctl08_imgEdHelp" ) ).click();
+        pressOnId( "gvMain_ctl08_imgEdHelp" );
         kContentFrame();
-        userDelay( 10000 );
-        eventDriver.findElement( By.xpath( "//div[@title = 'Задовільний']" )).click();
-        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
-        userDelay( 3000 );
+        pressOnXpath( "//div[@title = 'Задовільний']"  );
+        pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
+        userDelay( 2000 );
         tabFrame( "Tab5" );
-        eventDriver.findElement( By.id( "gvMain_ctl09_edEdVal" )).sendKeys( RandomWords.generateRandomWords( 3 ));
-        eventDriver.findElement( By.id( "gvMain_ctl10_edEdVal" )).sendKeys( RandomWords.generateRandomWords( 3 ));
+        eventDriver.findElement( By.id( "gvMain_ctl09_edEdVal" )).sendKeys( random.randomStringBig( 1 ) + random.randomStringLittle( 10 ));
+        eventDriver.findElement( By.id( "gvMain_ctl10_edEdVal" )).sendKeys( random.randomStringBig( 1 ) + random.randomStringLittle( 10 ));
         //Other
-        eventDriver.findElement( By.xpath( "//a[contains(text(),'Інші')]" )).click();
-        userDelay( 3000 );
-        eventDriver.findElement( By.id( "gvMain_ctl03_imgEdHelp" )).click();
+        pressOnXpath("//a[contains(text(),'Інші')]"  );
+        pressOnId( "gvMain_ctl03_imgEdHelp");
         kContentFrame();
-        userDelay( 10000 );
-        eventDriver.findElement( By.xpath( "//div[@title = '1']" )).click();
-        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
+        pressOnXpath( "//div[@title = '1']" );
+        pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
 
-//        press the "Register" button
-        userDelay( 3000 );
-        eventDriver.findElement( By.id( "bt_reg" )).click();
-        userDelay( 10000 );
-        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" ) ).click();
-
-        //eventDriver.switchTo().defaultContent();
-        //eventDriver.switchTo().frame(eventDriver.findElement(By.id("mainFrame")));
-        //eventDriver.switchTo().frame( eventDriver.findElement( By.className( "k-content-frame" ) ) );
-        //userDelay( 1000 );
-        //Alert alert = eventDriver.switchTo().alert();
-        //eventDriver.findElement( By.xpath( "//input[@ng-change= 'changeLegalIndex()']" ) ).sendKeys( "12345" );
-
-
-
-        /*eventDriver.findElement(By.xpath(".//input[@name='name_1']")).sendKeys("0Cat2");
-        eventDriver.findElement(By.xpath(".//button[@name='submitAddcategoryAndBackToParent']")).click();
-        (new WebDriverWait(eventDriver, 5)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//div[@class='alert alert-success']/button")));
-        eventDriver.findElement(By.xpath(".//span[@class='title_box active']/a[1]/i")).click();
-        userDelay(5000);
-        (new WebDriverWait(eventDriver, 5)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//table/tbody/tr/td[3][contains(text(), '0Cat2')]")));
-        mousemove(".//table/tbody/tr/td[3][contains(text(), '0Cat2')]");
-        userDelay(5000);*/
+//      press the "Register" button
+        pressOnId( "bt_reg" );
+        pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
     }
+
+
     @AfterClass
     public static void tearDown() {
         //eventDriver.quit();
