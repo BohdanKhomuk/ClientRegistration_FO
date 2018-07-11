@@ -26,8 +26,8 @@ public class RandomWords {
         //System.out.println(str[n]);
     }
 
-    public String Sourname() throws FileNotFoundException {
-        Scanner sc = new Scanner (new File(RandomWords.class.getResource( "/Sourname.txt").getFile()), "cp1251");
+    public String Surname() throws FileNotFoundException {
+        Scanner sc = new Scanner (new File(RandomWords.class.getResource( "/Surname.txt").getFile()), "cp1251");
         StringBuilder sb = new StringBuilder();
         while(sc.hasNext()){
             sb.append(sc.nextLine());

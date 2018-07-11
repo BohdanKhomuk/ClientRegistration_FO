@@ -1,472 +1,72 @@
-2018-07-05 16:00:16.084 [main] DEBUG EventHandler - Should be By.id: txtUserName
-2018-07-05 16:00:16.238 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:17.134 [main] DEBUG EventHandler - Should be By.id: txtPassword
-2018-07-05 16:00:17.216 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:17.614 [main] DEBUG EventHandler - Should be By.id: btLogIn
-2018-07-05 16:00:17.701 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:17.702 [main] DEBUG EventHandler - Should be By.id: btLogIn
-2018-07-05 16:00:17.762 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:17.798 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:00:19.603 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:00:19.603 [main] DEBUG EventHandler - Should be By.id: btChangDate
-2018-07-05 16:00:19.664 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:19.665 [main] DEBUG EventHandler - Should be By.id: btChangDate
-2018-07-05 16:00:19.714 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:19.743 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:00:23.740 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:00:23.740 [main] DEBUG EventHandler - Should be By.id: findOpersText
-2018-07-05 16:00:23.813 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:30.735 [main] DEBUG EventHandler - Should be By.xpath: .//div[@id='oper-3039']/div[2]/span
-2018-07-05 16:00:30.910 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:30.910 [main] DEBUG EventHandler - Should be By.xpath: .//div[@id='oper-3039']/div[2]/span
-2018-07-05 16:00:31.000 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:31.040 [main] DEBUG EventHandler - Should click span
-2018-07-05 16:00:33.421 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:00:33.435 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:00:33.537 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:36.601 [main] DEBUG EventHandler - Should be By.id: registerCustBtn
-2018-07-05 16:00:36.705 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:36.706 [main] DEBUG EventHandler - Should be By.id: registerCustBtn
-2018-07-05 16:00:36.764 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:36.778 [main] DEBUG EventHandler - Should click a
-2018-07-05 16:00:37.347 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:00:37.347 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div/div/div[2]/button
-2018-07-05 16:00:39.381 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:39.884 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div/div/div[2]/button
-2018-07-05 16:00:41.294 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:41.295 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div/div/div[2]/button
-2018-07-05 16:00:41.342 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:41.369 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:00:43.458 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:00:46.459 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']
-2018-07-05 16:00:46.529 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:46.918 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']
-2018-07-05 16:00:46.976 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:46.977 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']
-2018-07-05 16:00:47.057 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:47.094 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:00:47.473 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:00:47.473 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:00:48.714 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:48.714 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:00:48.772 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:48.808 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:00:49.127 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:00:49.127 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'k-button']
-2018-07-05 16:00:49.186 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:49.186 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'k-button']
-2018-07-05 16:00:49.255 [main] DEBUG EventHandler - Element found
-2018-07-05 16:00:49.302 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:01:17.857 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:01:17.885 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:01:17.991 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:21.057 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:01:21.197 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:24.248 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:01:24.330 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:26.738 [main] DEBUG EventHandler - Should be By.id: bt_FullDopRekv
-2018-07-05 16:01:26.797 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:26.797 [main] DEBUG EventHandler - Should be By.id: bt_FullDopRekv
-2018-07-05 16:01:26.844 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:26.869 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:01:27.315 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:01:28.315 [main] DEBUG EventHandler - Should be By.id: ed_FIO_LN
-2018-07-05 16:01:28.396 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:29.041 [main] DEBUG EventHandler - Should be By.id: ed_FIO_FN
-2018-07-05 16:01:29.099 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:30.002 [main] DEBUG EventHandler - Should be By.id: ed_FIO_MN
-2018-07-05 16:01:30.071 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:32.013 [main] DEBUG EventHandler - Should be By.id: btnOpenWindowAddress
-2018-07-05 16:01:32.082 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:32.082 [main] DEBUG EventHandler - Should be By.id: btnOpenWindowAddress
-2018-07-05 16:01:32.129 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:32.156 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:01:36.146 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:01:38.175 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:01:38.242 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:41.290 [main] DEBUG EventHandler - Should be By.xpath: //iframe[@title = 'Повна адреса клієнта']
-2018-07-05 16:01:41.382 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:41.406 [main] DEBUG EventHandler - Should be By.id: legalIndex
-2018-07-05 16:01:41.452 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:41.892 [main] DEBUG EventHandler - Should be By.id: legalRegion
-2018-07-05 16:01:41.950 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:42.395 [main] DEBUG EventHandler - Should be By.xpath: //span[@role = 'presentation']/input[@ng-model = 'legalArea']
-2018-07-05 16:01:42.453 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:42.983 [main] DEBUG EventHandler - Should be By.xpath: //span[@class = 'k-input ng-scope']
-2018-07-05 16:01:43.065 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:43.066 [main] DEBUG EventHandler - Should be By.xpath: //span[@class = 'k-input ng-scope']
-2018-07-05 16:01:43.135 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:43.160 [main] DEBUG EventHandler - Should click span
-2018-07-05 16:01:43.733 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:01:43.733 [main] DEBUG EventHandler - Should be By.xpath: //ul[@id='legalSettlemetDropDown_listbox']/li[2]
-2018-07-05 16:01:43.818 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:43.818 [main] DEBUG EventHandler - Should be By.xpath: //ul[@id='legalSettlemetDropDown_listbox']/li[2]
-2018-07-05 16:01:43.865 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:43.889 [main] DEBUG EventHandler - Should click li
-2018-07-05 16:01:44.526 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:01:44.526 [main] DEBUG EventHandler - Should be By.xpath: //input[@ng-model = 'legalSettlement']
-2018-07-05 16:01:44.584 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:45.172 [main] DEBUG EventHandler - Should be By.xpath: //span[@role = 'presentation']/input[@ng-model = 'legalStreet']
-2018-07-05 16:01:45.230 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:45.705 [main] DEBUG EventHandler - Should be By.xpath: //input[@ng-model = 'legalHouse']
-2018-07-05 16:01:45.729 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:46.030 [main] DEBUG EventHandler - Should be By.id: btnSaveAddress
-2018-07-05 16:01:46.106 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:46.106 [main] DEBUG EventHandler - Should be By.id: btnSaveAddress
-2018-07-05 16:01:46.131 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:46.178 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:01:47.093 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:01:47.121 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:01:47.216 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:50.273 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:01:50.392 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:53.434 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:01:53.515 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:55.640 [main] DEBUG EventHandler - Should be By.id: ed_OKPO
-2018-07-05 16:01:55.719 [main] DEBUG EventHandler - Element found
-2018-07-05 16:01:57.334 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:01:57.433 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:00.472 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:02:00.542 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:00.557 [main] DEBUG EventHandler - Should be By.id: bTab3
-2018-07-05 16:02:00.615 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:00.615 [main] DEBUG EventHandler - Should be By.id: bTab3
-2018-07-05 16:02:00.673 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:00.723 [main] DEBUG EventHandler - Should click td
-2018-07-05 16:02:01.512 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:02.541 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:02:02.626 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:05.691 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:02:05.796 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:08.832 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:02:08.913 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:11.297 [main] DEBUG EventHandler - Should be By.id: ddl_PASSP
-2018-07-05 16:02:11.321 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:11.321 [main] DEBUG EventHandler - Should be By.id: ddl_PASSP
-2018-07-05 16:02:11.367 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:11.403 [main] DEBUG EventHandler - Should click select
-2018-07-05 16:02:12.012 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:12.012 [main] DEBUG EventHandler - Should be By.xpath: //select[@id = 'ddl_PASSP']/option[@value = '1']
-2018-07-05 16:02:12.092 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:12.092 [main] DEBUG EventHandler - Should be By.xpath: //select[@id = 'ddl_PASSP']/option[@value = '1']
-2018-07-05 16:02:12.138 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:12.157 [main] DEBUG EventHandler - Should click option
-2018-07-05 16:02:12.344 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:12.344 [main] DEBUG EventHandler - Should be By.id: ed_SER
-2018-07-05 16:02:12.402 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:12.999 [main] DEBUG EventHandler - Should be By.id: ed_NUMDOC
-2018-07-05 16:02:13.057 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:13.492 [main] DEBUG EventHandler - Should be By.id: ed_ORGAN
-2018-07-05 16:02:13.526 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:19.890 [main] DEBUG EventHandler - Should be By.id: ed_PDATE
-2018-07-05 16:02:19.983 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:19.996 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:02:20.362 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:22.870 [main] DEBUG EventHandler - Should be By.id: ed_DATE_PHOTO
-2018-07-05 16:02:22.906 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:22.943 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:02:23.380 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:27.160 [main] DEBUG EventHandler - Should be By.id: ed_BDAY
-2018-07-05 16:02:27.217 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:27.230 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:02:27.652 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:30.166 [main] DEBUG EventHandler - Should be By.id: ddl_SEX
-2018-07-05 16:02:30.224 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:30.224 [main] DEBUG EventHandler - Should be By.id: ddl_SEX
-2018-07-05 16:02:30.259 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:30.295 [main] DEBUG EventHandler - Should click select
-2018-07-05 16:02:30.748 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:30.748 [main] DEBUG EventHandler - Should be By.xpath: //select[@id = 'ddl_SEX']/option[@value = '1']
-2018-07-05 16:02:30.817 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:30.817 [main] DEBUG EventHandler - Should be By.xpath: //select[@id = 'ddl_SEX']/option[@value = '1']
-2018-07-05 16:02:30.875 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:30.902 [main] DEBUG EventHandler - Should click option
-2018-07-05 16:02:31.055 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:31.056 [main] DEBUG EventHandler - Should be By.id: ed_TELM_CODE
-2018-07-05 16:02:31.091 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:31.091 [main] DEBUG EventHandler - Should be By.id: ed_TELM_CODE
-2018-07-05 16:02:31.160 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:31.184 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:02:31.713 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:32.742 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:02:32.834 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:35.859 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:02:35.940 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:35.957 [main] DEBUG EventHandler - Should be By.xpath: //tr[@class = 'k-alt']//div[@title = '96']
-2018-07-05 16:02:36.030 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:36.030 [main] DEBUG EventHandler - Should be By.xpath: //tr[@class = 'k-alt']//div[@title = '96']
-2018-07-05 16:02:36.066 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:36.124 [main] DEBUG EventHandler - Should click div
-2018-07-05 16:02:36.559 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:36.560 [main] DEBUG EventHandler - Should be By.xpath: //span[@disabled='disabled']
-2018-07-05 16:02:36.617 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:36.617 [main] DEBUG EventHandler - Should be By.xpath: //span[@disabled='disabled']
-2018-07-05 16:02:36.675 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:36.688 [main] DEBUG EventHandler - Should click span
-2018-07-05 16:02:37.160 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:02:38.187 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:02:38.279 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:41.346 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:02:41.454 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:44.478 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:02:44.526 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:46.961 [main] DEBUG EventHandler - Should be By.id: ed_TELM
-2018-07-05 16:02:47.019 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:47.342 [main] DEBUG EventHandler - Should be By.id: ed_TELD_CODE
-2018-07-05 16:02:47.388 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:47.388 [main] DEBUG EventHandler - Should be By.id: ed_TELD_CODE
-2018-07-05 16:02:47.435 [main] DEBUG EventHandler - Element found
-2018-07-05 16:02:47.465 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:03:29.337 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:03:29.337 [main] DEBUG EventHandler - Should be By.id: ed_TELD_CODE
-2018-07-05 16:03:29.395 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:29.395 [main] DEBUG EventHandler - Should be By.id: ed_TELD_CODE
-2018-07-05 16:03:29.452 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:29.465 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:03:30.054 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:03:35.082 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:03:35.170 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:38.208 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:03:38.289 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:38.302 [main] DEBUG EventHandler - Should be By.xpath: //td[@role = 'gridcell']/div[@title = '692']
-2018-07-05 16:03:38.349 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:38.349 [main] DEBUG EventHandler - Should be By.xpath: //td[@role = 'gridcell']/div[@title = '692']
-2018-07-05 16:03:38.429 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:38.453 [main] DEBUG EventHandler - Should click div
-2018-07-05 16:03:38.896 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:03:38.896 [main] DEBUG EventHandler - Should be By.xpath: //span[@disabled='disabled']
-2018-07-05 16:03:38.953 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:38.953 [main] DEBUG EventHandler - Should be By.xpath: //span[@disabled='disabled']
-2018-07-05 16:03:39.011 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:39.051 [main] DEBUG EventHandler - Should click span
-2018-07-05 16:03:39.490 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:03:39.516 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:03:39.650 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:42.798 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:03:42.900 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:45.933 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:03:46.014 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:48.441 [main] DEBUG EventHandler - Should be By.id: ed_TELD
-2018-07-05 16:03:48.498 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:49.911 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:03:50.014 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:53.053 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:03:53.134 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:53.147 [main] DEBUG EventHandler - Should be By.id: bTab4
-2018-07-05 16:03:53.182 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:53.183 [main] DEBUG EventHandler - Should be By.id: bTab4
-2018-07-05 16:03:53.251 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:53.265 [main] DEBUG EventHandler - Should click td
-2018-07-05 16:03:53.774 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:03:53.800 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:03:53.893 [main] DEBUG EventHandler - Element found
-2018-07-05 16:03:56.961 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:03:57.064 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:00.101 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:04:00.137 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:02.559 [main] DEBUG EventHandler - Should be By.id: bt_help
-2018-07-05 16:04:02.617 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:02.617 [main] DEBUG EventHandler - Should be By.id: bt_help
-2018-07-05 16:04:02.664 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:02.687 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:04:03.164 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:03.235 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:04:03.318 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:06.363 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:04:06.421 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:06.469 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = '11301']
-2018-07-05 16:04:06.527 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:06.527 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = '11301']
-2018-07-05 16:04:06.563 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:06.611 [main] DEBUG EventHandler - Should click div
-2018-07-05 16:04:07.290 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:07.291 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:04:07.348 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:07.348 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:04:07.373 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:07.419 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:04:08.001 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:08.002 [main] DEBUG EventHandler - Should be By.id: bTab5
-2018-07-05 16:04:08.115 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:08.115 [main] DEBUG EventHandler - Should be By.id: bTab5
-2018-07-05 16:04:08.252 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:08.298 [main] DEBUG EventHandler - Should click td
-2018-07-05 16:04:08.756 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:10.786 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:04:10.905 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:13.970 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:04:14.070 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:17.096 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:04:17.155 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:19.607 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl02_imgEdHelp
-2018-07-05 16:04:19.665 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:19.665 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl02_imgEdHelp
-2018-07-05 16:04:19.689 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:19.735 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:04:20.292 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:20.319 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:04:20.427 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:23.472 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:04:23.530 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:23.588 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = '2']
-2018-07-05 16:04:23.656 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:23.656 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = '2']
-2018-07-05 16:04:23.728 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:23.752 [main] DEBUG EventHandler - Should click div
-2018-07-05 16:04:24.211 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:24.211 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:04:24.280 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:24.280 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:04:24.337 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:24.349 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:04:24.786 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:27.814 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:04:27.949 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:31.026 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:04:31.138 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:34.177 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:04:34.257 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:36.759 [main] DEBUG EventHandler - Should be By.xpath: //a[contains(text(),'Фін.мон.')]
-2018-07-05 16:04:36.828 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:36.828 [main] DEBUG EventHandler - Should be By.xpath: //a[contains(text(),'Фін.мон.')]
-2018-07-05 16:04:36.907 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:36.920 [main] DEBUG EventHandler - Should click a
-2018-07-05 16:04:38.176 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:43.176 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl02_edEdVal
-2018-07-05 16:04:43.267 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:43.870 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl03_edEdVal
-2018-07-05 16:04:43.953 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:43.976 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:04:44.562 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:48.203 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl04_edEdVal
-2018-07-05 16:04:48.284 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:48.297 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:04:48.818 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:52.480 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl05_imgEdHelp
-2018-07-05 16:04:52.549 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:52.549 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl05_imgEdHelp
-2018-07-05 16:04:52.572 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:52.637 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:04:53.188 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:53.215 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:04:53.340 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:56.382 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:04:56.475 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:56.487 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = 'YES']
-2018-07-05 16:04:56.615 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:56.615 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = 'YES']
-2018-07-05 16:04:56.691 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:56.715 [main] DEBUG EventHandler - Should click div
-2018-07-05 16:04:57.218 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:04:57.218 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:04:57.287 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:57.287 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:04:57.311 [main] DEBUG EventHandler - Element found
-2018-07-05 16:04:57.369 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:04:57.901 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:00.929 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:05:01.059 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:04.132 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:05:04.259 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:07.293 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:05:07.384 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:09.761 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl07_imgEdHelp
-2018-07-05 16:05:09.795 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:09.796 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl07_imgEdHelp
-2018-07-05 16:05:09.897 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:09.910 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:05:10.496 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:10.523 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:05:10.650 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:13.688 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:05:13.789 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:13.822 [main] DEBUG EventHandler - Should be By.xpath: //tr[@class = 'k-alt']/td
-2018-07-05 16:05:13.913 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:13.913 [main] DEBUG EventHandler - Should be By.xpath: //tr[@class = 'k-alt']/td
-2018-07-05 16:05:13.985 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:14.010 [main] DEBUG EventHandler - Should click td
-2018-07-05 16:05:14.527 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:14.527 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:05:14.606 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:14.606 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:05:14.663 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:14.687 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:05:15.212 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:17.240 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:05:17.374 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:20.427 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:05:20.553 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:23.579 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:05:23.659 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:25.939 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl08_imgEdHelp
-2018-07-05 16:05:26.000 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:26.000 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl08_imgEdHelp
-2018-07-05 16:05:26.069 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:26.081 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:05:26.610 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:26.626 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:05:26.742 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:29.785 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:05:29.843 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:29.900 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = 'Задовільний']
-2018-07-05 16:05:29.990 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:29.991 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = 'Задовільний']
-2018-07-05 16:05:30.047 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:30.103 [main] DEBUG EventHandler - Should click div
-2018-07-05 16:05:30.618 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:30.618 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:05:30.686 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:30.686 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:05:30.710 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:30.767 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:05:31.467 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:33.498 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:05:33.620 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:36.683 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:05:36.816 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:39.850 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:05:39.908 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:42.124 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl09_edEdVal
-2018-07-05 16:05:42.186 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:42.720 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl10_edEdVal
-2018-07-05 16:05:42.789 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:43.333 [main] DEBUG EventHandler - Should be By.xpath: //a[contains(text(),'Інші')]
-2018-07-05 16:05:43.368 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:43.368 [main] DEBUG EventHandler - Should be By.xpath: //a[contains(text(),'Інші')]
-2018-07-05 16:05:43.480 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:43.492 [main] DEBUG EventHandler - Should click a
-2018-07-05 16:05:45.957 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:45.957 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl03_imgEdHelp
-2018-07-05 16:05:46.026 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:46.026 [main] DEBUG EventHandler - Should be By.id: gvMain_ctl03_imgEdHelp
-2018-07-05 16:05:46.049 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:46.106 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:05:46.710 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:46.737 [main] DEBUG EventHandler - Should be By.id: mainFrame
-2018-07-05 16:05:46.839 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:49.880 [main] DEBUG EventHandler - Should be By.className: k-content-frame
-2018-07-05 16:05:49.971 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:49.983 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = '1']
-2018-07-05 16:05:50.063 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:50.063 [main] DEBUG EventHandler - Should be By.xpath: //div[@title = '1']
-2018-07-05 16:05:50.131 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:50.166 [main] DEBUG EventHandler - Should click div
-2018-07-05 16:05:50.693 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:50.694 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:05:50.762 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:50.762 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:05:50.796 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:50.851 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:05:51.505 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:51.506 [main] DEBUG EventHandler - Should be By.id: bt_reg
-2018-07-05 16:05:51.620 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:51.620 [main] DEBUG EventHandler - Should be By.id: bt_reg
-2018-07-05 16:05:51.774 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:51.786 [main] DEBUG EventHandler - Should click input
-2018-07-05 16:05:53.112 [main] DEBUG EventHandler - Clicked successfull
-2018-07-05 16:05:53.113 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:05:53.170 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:53.170 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
-2018-07-05 16:05:53.238 [main] DEBUG EventHandler - Element found
-2018-07-05 16:05:53.261 [main] DEBUG EventHandler - Should click button
-2018-07-05 16:05:56.005 [main] DEBUG EventHandler - Clicked successfull
+2018-07-11 15:26:11.700 [main] DEBUG EventHandler - Should be By.id: txtUserName
+2018-07-11 15:26:11.959 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:13.768 [main] DEBUG EventHandler - Should be By.id: txtPassword
+2018-07-11 15:26:13.982 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:14.704 [main] DEBUG EventHandler - Should be By.id: btLogIn
+2018-07-11 15:26:14.817 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:14.819 [main] DEBUG EventHandler - Should be By.id: btLogIn
+2018-07-11 15:26:14.872 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:14.905 [main] DEBUG EventHandler - Should click input
+2018-07-11 15:26:34.987 [main] DEBUG EventHandler - Clicked successfull
+2018-07-11 15:26:34.988 [main] DEBUG EventHandler - Should be By.xpath: //div[@id='messSumary']
+2018-07-11 15:26:35.061 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:35.309 [main] DEBUG EventHandler - Should be By.id: btChangDate
+2018-07-11 15:26:35.381 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:35.382 [main] DEBUG EventHandler - Should be By.id: btChangDate
+2018-07-11 15:26:35.452 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:35.488 [main] DEBUG EventHandler - Should click input
+2018-07-11 15:26:49.158 [main] DEBUG EventHandler - Clicked successfull
+2018-07-11 15:26:49.159 [main] DEBUG EventHandler - Should be By.id: findOpersText
+2018-07-11 15:26:49.228 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:58.095 [main] DEBUG EventHandler - Should be By.xpath: .//div[@id='oper-3039']/div[2]/span
+2018-07-11 15:26:58.231 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:58.231 [main] DEBUG EventHandler - Should be By.xpath: .//div[@id='oper-3039']/div[2]/span
+2018-07-11 15:26:58.333 [main] DEBUG EventHandler - Element found
+2018-07-11 15:26:58.367 [main] DEBUG EventHandler - Should click span
+2018-07-11 15:27:09.680 [main] DEBUG EventHandler - Clicked successfull
+2018-07-11 15:27:09.702 [main] DEBUG EventHandler - Should be By.id: mainFrame
+2018-07-11 15:27:09.798 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:09.869 [main] DEBUG EventHandler - Should be By.id: registerCustBtn
+2018-07-11 15:27:09.937 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:09.938 [main] DEBUG EventHandler - Should be By.id: registerCustBtn
+2018-07-11 15:27:09.978 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:09.992 [main] DEBUG EventHandler - Should click a
+2018-07-11 15:27:10.675 [main] DEBUG EventHandler - Clicked successfull
+2018-07-11 15:27:10.675 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div/div/div[2]/button
+2018-07-11 15:27:12.697 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:13.200 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div/div/div[2]/button
+2018-07-11 15:27:13.937 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:13.938 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div/div/div[2]/button
+2018-07-11 15:27:13.988 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:14.018 [main] DEBUG EventHandler - Should click button
+2018-07-11 15:27:15.634 [main] DEBUG EventHandler - Clicked successfull
+2018-07-11 15:27:18.635 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']
+2018-07-11 15:27:18.726 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:19.010 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']
+2018-07-11 15:27:19.057 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:19.058 [main] DEBUG EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']
+2018-07-11 15:27:19.105 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:19.130 [main] DEBUG EventHandler - Should click button
+2018-07-11 15:27:19.498 [main] DEBUG EventHandler - Clicked successfull
+2018-07-11 15:27:25.499 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'k-button']
+2018-07-11 15:27:25.581 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:25.582 [main] DEBUG EventHandler - Should be By.xpath: //button[@class = 'k-button']
+2018-07-11 15:27:25.628 [main] DEBUG EventHandler - Element found
+2018-07-11 15:27:25.675 [main] DEBUG EventHandler - Should click button
+2018-07-11 15:28:04.472 [main] DEBUG EventHandler - Clicked successfull
+2018-07-11 15:28:04.490 [main] DEBUG EventHandler - Should be By.id: mainFrame
+2018-07-11 15:28:04.776 [main] DEBUG EventHandler - Element found
+2018-07-11 15:28:04.860 [main] DEBUG EventHandler - Should be By.id: mainFrame
+2018-07-11 15:28:04.946 [main] DEBUG EventHandler - Element found
+2018-07-11 15:28:04.987 [main] DEBUG EventHandler - Should be By.className: k-content-frame
+2018-07-11 15:28:05.043 [main] DEBUG EventHandler - Element found
+2018-07-11 15:28:07.556 [main] DEBUG EventHandler - Should be By.id: bt_FullDopRekv
+2018-07-11 15:28:07.614 [main] DEBUG EventHandler - Element found
+2018-07-11 15:28:07.614 [main] DEBUG EventHandler - Should be By.id: bt_FullDopRekv
+2018-07-11 15:28:07.639 [main] DEBUG EventHandler - Element found
+2018-07-11 15:28:07.686 [main] DEBUG EventHandler - Should click input
+2018-07-11 15:28:08.169 [main] DEBUG EventHandler - Clicked successfull
+2018-07-11 15:28:09.170 [main] DEBUG EventHandler - Should be By.id: ed_FIO_LN
+2018-07-11 15:28:09.332 [main] DEBUG EventHandler - Element found
+2018-07-11 15:28:10.567 [main] DEBUG EventHandler - Should be By.id: ed_FIO_FN
+2018-07-11 15:28:10.693 [main] DEBUG EventHandler - Element found

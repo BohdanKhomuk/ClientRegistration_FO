@@ -6,10 +6,10 @@ import java.io.File;
 
 public class Frame {
 
-    private static EventFiringWebDriver eventDriver;
+    private EventFiringWebDriver eventDriver;
 
-    public static void testFrame() {
-        eventDriver = new EventFiringWebDriver( new InternetExplorerDriver(  ) );
+    Frame(EventFiringWebDriver eventFiringWebDriver){
+        this.eventDriver = eventFiringWebDriver;
     }
 
     public void todefCont(){
