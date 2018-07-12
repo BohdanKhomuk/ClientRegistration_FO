@@ -6,47 +6,40 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Random;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
-public class TEST_1121 {
+public class RegistrationCard_FO {
 
     private static FindElement findElement;
     private static Frame frame;
     public static EventFiringWebDriver eventDriver;
     private static final Logger LOG = LogManager.getLogger(EventHandler.class);
 
-    RandomWords random = new RandomWords();
-
+    RandomWordsAndNumber random = new RandomWordsAndNumber();
+    Sex sex = new Sex();
 
     @BeforeClass
     public static void main() {
         System.setProperty("java.net.preferIPv4Stack", "true");
-        String browser = new File(TEST_1121.class.getResource( "/IEDriverServer.exe" ).getFile()).getPath();
+        String browser = new File( RegistrationCard_FO.class.getResource( "/IEDriverServer.exe" ).getFile()).getPath();
         System.setProperty("webdriver.ie.driver", browser);
         eventDriver = new EventFiringWebDriver( new InternetExplorerDriver(  ) );
 
-       /* String browser = new File(TEST_1121.class.getResource("/chromedriver.exe").getFile()).getPath();
+       /* String browser = new File(RegistrationCard_FO.class.getResource("/chromedriver.exe").getFile()).getPath();
         System.setProperty("webdriver.chrome.driver", browser);
         eventDriver = new EventFiringWebDriver(new ChromeDriver(  ));*/
         EventHandler handler = new EventHandler();
         eventDriver.manage().window().maximize();
         eventDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         eventDriver.register( handler );
-        eventDriver.get("http://10.10.17.40:8080/barsroot/account/login/");
+        eventDriver.get("http://10.10.17.22:8080/barsroot/account/login/");
 
         findElement = new FindElement(eventDriver);
         frame = new Frame(eventDriver);
@@ -98,7 +91,7 @@ public class TEST_1121 {
         findElement.pressOnId( "registerCustBtn" );
         findElement.pressOnXpath( "//div[@class = 'k-window-content k-content']/div/div/div[2]/button" );
         userDelay(3000);
-        eventDriver.findElement( By.xpath( "//div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']" ) ).sendKeys( RandomWords.randomNumber( 10, 99999 ) );
+        eventDriver.findElement( By.xpath( "//div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 10, 99999 ) );
         findElement.pressOnXpath( "//div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']" );
        // pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']"  );
         userDelay( 6000 );
@@ -108,9 +101,9 @@ public class TEST_1121 {
         frame.tabFrame( "Tab0" );
         findElement.pressOnId( "bt_FullDopRekv" );
         userDelay( 1000 );
-        eventDriver.findElement( By.id( "ed_FIO_LN" ) ).sendKeys( random.Surname() );
-        eventDriver.findElement( By.id( "ed_FIO_FN" ) ).sendKeys( random.Name() );
-        eventDriver.findElement( By.id( "ed_FIO_MN" ) ).sendKeys( random.Patronymic() );
+        eventDriver.findElement( By.id( "ed_FIO_LN" ) ).sendKeys( sex.Surname() );
+        eventDriver.findElement( By.id( "ed_FIO_FN" ) ).sendKeys( sex.Name() );
+        eventDriver.findElement( By.id( "ed_FIO_MN" ) ).sendKeys( sex.Patronymic() );
 //        userDelay( 1000 );
 //        Actions action = new Actions( eventDriver );
 //        action.sendKeys( Keys.ESCAPE ).perform();
@@ -122,7 +115,7 @@ public class TEST_1121 {
         findElement.pressOnId( "btnOpenWindowAddress" );
         userDelay( 2000 );
         frame.fullAddressFrame();
-        eventDriver.findElement(By.id( "legalIndex" ) ).sendKeys( RandomWords.randomNumber( 100000, 999999 ));
+        eventDriver.findElement(By.id( "legalIndex" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 100000, 999999 ));
         eventDriver.findElement(By.id( "legalRegion" ) ).sendKeys( "Київська обл.");
         eventDriver.findElement(By.xpath( "//span[@role = 'presentation']/input[@ng-model = 'legalArea']" ) ).sendKeys( "Обухівський район");
         findElement.pressOnXpath("//span[@class = 'k-input ng-scope']"   );
@@ -153,7 +146,7 @@ public class TEST_1121 {
         findElement.pressOnXpath( "//select[@id = 'ddl_PASSP']/option[@value = '1']" );
         eventDriver.findElement( By.id( "ed_ORGAN" )).sendKeys( "Овручським районним управлінням");
         eventDriver.findElement( By.id( "ed_SER" ) ).sendKeys( random.randomStringBig( 2 ) );
-        eventDriver.findElement( By.id( "ed_NUMDOC" ) ).sendKeys( RandomWords.randomNumber( 100000, 999999 ) );
+        eventDriver.findElement( By.id( "ed_NUMDOC" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 100000, 999999 ) );
 
 //        eventDriver.findElement( By.id( "bt_help" ) ).click();
 //        kContentFrame();
@@ -179,7 +172,8 @@ public class TEST_1121 {
         userDelay( 2000 );
         BDay.sendKeys( Keys.END + "10101992");
         findElement.pressOnId( "ddl_SEX" );
-        findElement.pressOnXpath("//select[@id = 'ddl_SEX']/option[@value = '1']"  );
+        String fileName = String.format( "//select[@id = 'ddl_SEX']/option[@value = '%s']", sex.sex );
+        findElement.pressOnXpath(fileName  );
         findElement.pressOnId( "ed_TELM_CODE" );
         userDelay( 1000 );
         // Mobile phohe
@@ -188,7 +182,7 @@ public class TEST_1121 {
         findElement.pressOnXpath( "//span[@disabled='disabled']" );
         userDelay( 1000 );
         frame.tabFrame( "Tab3" );
-        eventDriver.findElement( By.id( "ed_TELM" ) ).sendKeys( RandomWords.randomNumber( 1000000, 9999999 ) );
+        eventDriver.findElement( By.id( "ed_TELM" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 1000000, 9999999 ) );
         findElement.pressOnId( "ed_TELD_CODE" );
         findElement.pressOnId( "ed_TELD_CODE" );
         userDelay( 5000 );
@@ -196,7 +190,7 @@ public class TEST_1121 {
         findElement.pressOnXpath( "//td[@role = 'gridcell']/div[@title = '692']" );
         findElement.pressOnXpath( "//span[@disabled='disabled']" );
         frame.tabFrame( "Tab3" );
-        eventDriver.findElement( By.id( "ed_TELD" ) ).sendKeys( RandomWords.randomNumber( 100000, 999999 ) );
+        eventDriver.findElement( By.id( "ed_TELD" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 100000, 999999 ) );
 //        WebElement data = eventDriver.findElement( By.id( "ed_ORGAN" ) );
 //        data.click();
 //        data.sendKeys( Keys.END );
