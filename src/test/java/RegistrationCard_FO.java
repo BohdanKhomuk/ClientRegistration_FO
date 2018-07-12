@@ -39,7 +39,7 @@ public class RegistrationCard_FO {
         eventDriver.manage().window().maximize();
         eventDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         eventDriver.register( handler );
-        eventDriver.get("http://10.10.17.22:8080/barsroot/account/login/");
+        eventDriver.get("http://10.10.17.40:8080/barsroot/account/login/");
 
         findElement = new FindElement(eventDriver);
         frame = new Frame(eventDriver);
