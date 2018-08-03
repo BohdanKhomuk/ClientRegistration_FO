@@ -24,9 +24,10 @@ public class RegistrationCard_FO {
 
     RandomWordsAndNumber random = new RandomWordsAndNumber();
     Sex sex = new Sex();
+    WritingtoFile writingtoFile = new WritingtoFile();
 
     @BeforeClass
-    public static void main() {
+    public static void firstClass() {
         System.setProperty("java.net.preferIPv4Stack", "true");
         String browser = new File( RegistrationCard_FO.class.getResource( "/IEDriverServer.exe" ).getFile()).getPath();
         System.setProperty("webdriver.ie.driver", browser);
@@ -39,7 +40,7 @@ public class RegistrationCard_FO {
         eventDriver.manage().window().maximize();
         eventDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         eventDriver.register( handler );
-        eventDriver.get("http://10.10.17.40:8080/barsroot/account/login/");
+        eventDriver.get("http://10.10.17.22:8080/barsroot/account/login/");
 
         findElement = new FindElement(eventDriver);
         frame = new Frame(eventDriver);
@@ -57,7 +58,7 @@ public class RegistrationCard_FO {
         userDelay(1000);
     }
     @Test
-    public void userLogin() throws Exception {
+    public void userLoginTest() throws Exception {
         userDelay(1000);
         // User_Name clear and add
         WebElement loginField = eventDriver.findElement(By.id("txtUserName"));
@@ -139,6 +140,8 @@ public class RegistrationCard_FO {
 //      Client details
         userDelay( 1000 );
         frame.kContentFrame();
+        WebElement element = eventDriver.findElement(By.id( "bTab3" ));
+            ((JavascriptExecutor)eventDriver).executeScript("arguments[0].scrollIntoView();", element);
         findElement.pressOnId( "bTab3" );
         userDelay( 1000 );
         frame.tabFrame( "Tab3" );
@@ -148,13 +151,7 @@ public class RegistrationCard_FO {
         eventDriver.findElement( By.id( "ed_SER" ) ).sendKeys( random.randomStringBig( 2 ) );
         eventDriver.findElement( By.id( "ed_NUMDOC" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 100000, 999999 ) );
 
-//        eventDriver.findElement( By.id( "bt_help" ) ).click();
-//        kContentFrame();
-//        userDelay( 10000 );
-//        eventDriver.findElement( By.xpath( "//div[@title = '313']" )).click();
-//        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
-//        userDelay( 1000 );
-//        tabFrame( "Tab3" );
+
         userDelay( 3000 );
         WebElement PDATE = eventDriver.findElement( By.id( "ed_PDATE" ) );
         PDATE.click();
@@ -178,7 +175,7 @@ public class RegistrationCard_FO {
         userDelay( 1000 );
         // Mobile phohe
         frame.kContentFrame();
-        findElement.pressOnXpath( "//tr[@class = 'k-alt']//div[@title = '96']" );
+        findElement.pressOnXpath( "//tr[@class = 'k-alt']//div[@title = '92']");
         findElement.pressOnXpath( "//span[@disabled='disabled']" );
         userDelay( 1000 );
         frame.tabFrame( "Tab3" );
@@ -191,6 +188,15 @@ public class RegistrationCard_FO {
         findElement.pressOnXpath( "//span[@disabled='disabled']" );
         frame.tabFrame( "Tab3" );
         eventDriver.findElement( By.id( "ed_TELD" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 100000, 999999 ) );
+
+        //passport
+//        eventDriver.findElement( By.id( "bt_help" ) ).click();
+//        frame.kContentFrame();
+//        userDelay( 10000 );
+//        eventDriver.findElement( By.xpath( "//div[@title = '313']" )).click();
+//        eventDriver.findElement( By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" )).click();
+//        userDelay( 1000 );
+//        frame.tabFrame( "Tab3" );
 //        WebElement data = eventDriver.findElement( By.id( "ed_ORGAN" ) );
 //        data.click();
 //        data.sendKeys( Keys.END );
@@ -217,50 +223,55 @@ public class RegistrationCard_FO {
 
 //         Additional details
         findElement.pressOnId( "bTab5" );
-        // general
+        // General
         userDelay( 2000 );
         frame.tabFrame( "Tab5" );
         findElement.pressOnId( "gvMain_ctl02_imgEdHelp"  );
         frame.kContentFrame();
         findElement.pressOnXpath( "//div[@title = '2']" );
         findElement.pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
-        // Fin.mon.
-        userDelay( 3000 );
+//        // Fin.mon.
+        userDelay( 2000 );
         frame.tabFrame( "Tab5" );
-        findElement.pressOnXpath( "//a[contains(text(),'Фін.мон.')]" );
-        userDelay( 5000 );
-        eventDriver.findElement( By.id( "gvMain_ctl02_edEdVal" )).sendKeys( random.randomStringBig( 1 ) + random.randomStringLittle( 10 ) );
-        WebElement firstFilldData = eventDriver.findElement( By.id( "gvMain_ctl03_edEdVal" ) );
+        findElement.pressOnXpath( "//a[contains(text(),'Фін.мон')]" );
+        findElement.pressOnId( "gvMain_ctl02_imgEdHelp"  );
+        frame.kContentFrame();
+        findElement.pressOnXpath( "//td[contains(text(),'Відсутні')]" );
+        findElement.pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
+        userDelay( 2000 );
+        frame.tabFrame( "Tab5" );
+        eventDriver.findElement( By.id( "gvMain_ctl03_edEdVal" )).sendKeys("Українець");
+        WebElement firstFilldData = eventDriver.findElement( By.id( "gvMain_ctl04_edEdVal" ) );
         firstFilldData.click();
         firstFilldData.clear();
         userDelay( 3000 );
         firstFilldData.sendKeys( Keys.END + "05022017");
-        WebElement dateOfIdentification = eventDriver.findElement( By.id( "gvMain_ctl04_edEdVal" ) );
+        WebElement dateOfIdentification = eventDriver.findElement( By.id( "gvMain_ctl05_edEdVal" ) );
         dateOfIdentification.click();
         dateOfIdentification.clear();
         userDelay( 3000 );
         dateOfIdentification.sendKeys( Keys.END + "05032017");
-        findElement.pressOnId( "gvMain_ctl05_imgEdHelp" );
+        eventDriver.findElement( By.id( "gvMain_ctl10_edEdVal" )).sendKeys( random.randomStringBig( 1 ) + random.randomStringLittle( 10 ) );
+        eventDriver.findElement( By.id( "gvMain_ctl11_edEdVal" )).sendKeys( random.randomStringBig( 1 ) + random.randomStringLittle( 10 ) );
+        findElement.pressOnId( "gvMain_ctl06_imgEdHelp" );
         frame.kContentFrame();
         findElement.pressOnXpath( "//div[@title = 'YES']" );
         findElement.pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
         userDelay( 3000 );
         frame.tabFrame( "Tab5" );
-        findElement.pressOnId( "gvMain_ctl07_imgEdHelp"  );
+        findElement.pressOnId( "gvMain_ctl08_imgEdHelp"  );
         frame.kContentFrame();
         findElement.pressOnXpath( "//tr[@class = 'k-alt']/td" );
         findElement.pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
         userDelay( 2000 );
         frame.tabFrame( "Tab5" );
-        findElement.pressOnId( "gvMain_ctl08_imgEdHelp" );
+        findElement.pressOnId( "gvMain_ctl09_imgEdHelp" );
         frame.kContentFrame();
         findElement.pressOnXpath( "//div[@title = 'Задовільний']"  );
         findElement.pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
+        //Other
         userDelay( 2000 );
         frame.tabFrame( "Tab5" );
-        eventDriver.findElement( By.id( "gvMain_ctl09_edEdVal" )).sendKeys( random.randomStringBig( 1 ) + random.randomStringLittle( 10 ));
-        eventDriver.findElement( By.id( "gvMain_ctl10_edEdVal" )).sendKeys( random.randomStringBig( 1 ) + random.randomStringLittle( 10 ));
-        //Other
         findElement.pressOnXpath( "//a[contains(text(),'Інші')]"  );
         findElement.pressOnId( "gvMain_ctl03_imgEdHelp");
         frame.kContentFrame();
@@ -270,6 +281,20 @@ public class RegistrationCard_FO {
 //      press the "Register" button
         findElement.pressOnId( "bt_reg" );
         findElement.pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
+
+        WebElement info = eventDriver.findElement(By.xpath("//div[@id='barsUiAlertDialog']/table/tbody/tr/td[2]"));
+        String t = info.getText();
+        if (info.getText().contains("Помилки")) {
+            System.out.println((char) 27 + "[34mНе можна створити клієнта під бранчем '/' - " + (char) 27 + "[0m" + t);
+        } else {}
+        String t1 = t.replace("Клієнта РНК=", "");
+        String t2 = t1.replace(" успішно збережено", "");
+        System.out.println((char) 27 + "[34mРНК Клієнта - " + (char) 27 + "[0m" + t2);
+        writingtoFile.Filewriting("text.txt", t2);
+        findElement.pressOnXpath( "//button[@class='delete-confirm k-button k-primary']" );
+
+        System.out.println((char) 27 + "[32m[Passed]----------Тест завершено успішно!----------[Passed]" + (char) 27 + "[0m");
+
     }
 
 

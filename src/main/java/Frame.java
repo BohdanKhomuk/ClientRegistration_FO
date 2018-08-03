@@ -21,6 +21,18 @@ public class Frame {
         eventDriver.switchTo().frame(eventDriver.findElement(By.id("mainFrame")));
     }
 
+    public void toTab0Frame(){
+        todefCont();
+        toMainFrame();
+        eventDriver.switchTo().frame(eventDriver.findElement(By.id("Tab0")));
+    }
+
+    public void toTab3Frame(){
+        todefCont();
+        toMainFrame();
+        eventDriver.switchTo().frame(eventDriver.findElement(By.id("Tab3")));
+    }
+
     public void kContentFrame(){
         todefCont();
         toMainFrame();
