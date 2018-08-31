@@ -3,6 +3,7 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.*;
@@ -16,6 +17,8 @@ import java.util.concurrent.TimeUnit;
 
 
 public class RegistrationCard_FO {
+
+    public static int polygon = 22; //22 - Test; 40 - RC; 50 - Master//
 
     private static FindElement findElement;
     private static Frame frame;
@@ -40,7 +43,9 @@ public class RegistrationCard_FO {
         eventDriver.manage().window().maximize();
         eventDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         eventDriver.register( handler );
-        eventDriver.get("http://10.10.17.22:8080/barsroot/account/login/");
+
+        String polygonAddress = String.format( "http://10.10.17.%s:8080/barsroot/account/login/", polygon );
+        eventDriver.get( polygonAddress );
 
         findElement = new FindElement(eventDriver);
         frame = new Frame(eventDriver);
@@ -60,6 +65,7 @@ public class RegistrationCard_FO {
     @Test
     public void userLoginTest() throws Exception {
         userDelay(1000);
+        System.out.println((char) 27 + "[33mБлок авторизації" + (char)27 + "[0m");
         // User_Name clear and add
         WebElement loginField = eventDriver.findElement(By.id("txtUserName"));
         loginField.clear();
@@ -70,42 +76,95 @@ public class RegistrationCard_FO {
         passwordField.sendKeys("qwerty");
         findElement.pressOnId(  "btLogIn" );
         WebElement error = eventDriver.findElement(By.xpath("//div[@id='messSumary']"));
-        if (error.getText().contains("Вхід"))
-        {userDelay(2000);
+        if (error.getText().contains("Вхід")) {
+            userDelay(2000);
             eventDriver.quit();
             LOG.error((char) 27 + "[31mНеверный Логин/пароль " + (char)27 + "[0m");
             //30 - черный. 31 - красный. 32 - зеленый. 33 - желтый. 34 - синий. 35 - пурпурный. 36 - голубой. 37 - белый.
         }
-        if (error.getText().contains("Користувач"))
-        {userDelay(2000);
+        if (error.getText().contains("Користувач")){
+            userDelay(2000);
             eventDriver.quit();
-            LOG.error((char) 27 + "[31mПользователь заблокирован " + (char)27 + "[0m");
-            //30 - черный. 31 - красный. 32 - зеленый. 33 - желтый. 34 - синий. 35 - пурпурный. 36 - голубой. 37 - белый.
+            LOG.error((char) 27 + "[31mКористувач заблокований " + (char)27 + "[0m");
         }
+        else {
+            userDelay(2000);
+            LOG.error((char) 27 + "[32mАвторизація успішна " + (char)27 + "[0m");
+        String getHeadingText = eventDriver.findElement( By.xpath( "//h1" ) ).getText();
+        Assert.assertEquals( "Банківська дата", getHeadingText );
         findElement.pressOnId( "btChangDate" );
+
+        System.out.println((char) 27 + "[33mБлок переходу у функцію створення клієнта(ФО)" + (char)27 + "[0m");
         // Find element
         eventDriver.findElement(By.id("findOpersText")).sendKeys( "Реєстрація Клієнтів і Рахунків"  + "\n" );
         // Enter in function
         userDelay(6000);
         findElement.pressOnXpath( ".//div[@id='oper-3039']/div[2]/span" );
+        System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО)" + (char)27 + "[0m");
         frame.toMainFrame();
         findElement.pressOnId( "registerCustBtn" );
         findElement.pressOnXpath( "//div[@class = 'k-window-content k-content']/div/div/div[2]/button" );
         userDelay(3000);
         eventDriver.findElement( By.xpath( "//div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 10, 99999 ) );
         findElement.pressOnXpath( "//div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']" );
-       // pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']"  );
+        if (polygon == 50){
+            findElement.pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']"  );
+        }
         userDelay( 6000 );
         findElement.pressOnXpath( "//button[@class = 'k-button']" );
 
 //      Basic details
+        System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО): Основні реквізити" + (char) 27 + "[0m");
         frame.tabFrame( "Tab0" );
         findElement.pressOnId( "bt_FullDopRekv" );
         userDelay( 1000 );
         eventDriver.findElement( By.id( "ed_FIO_LN" ) ).sendKeys( sex.Surname() );
         eventDriver.findElement( By.id( "ed_FIO_FN" ) ).sendKeys( sex.Name() );
         eventDriver.findElement( By.id( "ed_FIO_MN" ) ).sendKeys( sex.Patronymic() );
-//        userDelay( 1000 );
+        //frame.kContentFrame();
+          //  System.out.println( eventDriver.findElement( By.id( "barsUiConfirmDialog_wnd_title" ) ).getSize());
+        //if(eventDriver.findElement( By.id( "barsUiConfirmDialog_wnd_title" ) ).isDisplayed()) {
+            LOG.error((char) 27 + "[32mАвторизація успішна " + (char)27 + "[0m");
+
+//            WebElement errorRUName = eventDriver.findElement( By.id( "barsUiConfirmDialog_wnd_title" ) );
+//
+//            if (errorRUName.getText().contains( "Підтвердження!" )) {
+//                userDelay( 1000 );
+//                eventDriver.findElement( By.xpath( "//div[@class = 'k-content k-window-footer']/button[text() = 'ТАК']" ) ).click();
+//            }
+        //}
+         //   userDelay( 3000 );
+//        if(eventDriver.findElement( By.id( "barsUiConfirmDialog_wnd_title" ) ).) {
+//            WebElement errorRUName = eventDriver.findElement( By.id( "barsUiConfirmDialog_wnd_title" ) );
+//
+//            if (errorRUName.getText().contains( "Підтвердження!" )) {
+//                userDelay( 1000 );
+//                eventDriver.findElement( By.xpath( "//div[@class = 'k-content k-window-footer']/button[text() = 'ТАК']" ) ).click();
+//            }
+//        }
+//            userDelay( 3000 );
+//        if(eventDriver.findElement( By.id( "barsUiConfirmDialog_wnd_title" ) ).isDisplayed()) {
+//            WebElement errorRUName = eventDriver.findElement( By.id( "barsUiConfirmDialog_wnd_title" ) );
+//
+//            if (errorRUName.getText().contains( "Підтвердження!" )) {
+//                userDelay( 1000 );
+//                eventDriver.findElement( By.xpath( "//div[@class = 'k-content k-window-footer']/button[text() = 'ТАК']" ) ).click();
+//            }
+//        }
+
+//            if(errorRUName.getText().contains("Підтвердження!")){
+//                userDelay(1000);
+//                eventDriver.findElement( By.xpath( "//div[@class = 'k-content k-window-footer']/button[text() = 'ТАК']" ) ).click();
+//            }
+
+//            if(errorRUName.getText().contains("Підтвердження!")){
+//                userDelay(1000);
+//                eventDriver.findElement( By.xpath( "//div[@class = 'k-content k-window-footer']/button[text() = 'ТАК']" ) ).click();
+//             }
+//        }
+        //frame.tabFrame( "Tab0" );
+        //eventDriver.findElement( By.id( "ed_FIO_MN" ) ).sendKeys( sex.Patronymic() );
+        //        userDelay( 1000 );
 //        Actions action = new Actions( eventDriver );
 //        action.sendKeys( Keys.ESCAPE ).perform();
 //        action.sendKeys( Keys.ESCAPE ).perform();
@@ -138,6 +197,7 @@ public class RegistrationCard_FO {
         eventDriver.findElement(By.id("ed_OKPO")).sendKeys( "0000000000" );
 
 //      Client details
+        System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО): Реквізити клієнта" + (char) 27 + "[0m");
         userDelay( 1000 );
         frame.kContentFrame();
         WebElement element = eventDriver.findElement(By.id( "bTab3" ));
@@ -150,8 +210,6 @@ public class RegistrationCard_FO {
         eventDriver.findElement( By.id( "ed_ORGAN" )).sendKeys( "Овручським районним управлінням");
         eventDriver.findElement( By.id( "ed_SER" ) ).sendKeys( random.randomStringBig( 2 ) );
         eventDriver.findElement( By.id( "ed_NUMDOC" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 100000, 999999 ) );
-
-
         userDelay( 3000 );
         WebElement PDATE = eventDriver.findElement( By.id( "ed_PDATE" ) );
         PDATE.click();
@@ -175,8 +233,7 @@ public class RegistrationCard_FO {
         userDelay( 1000 );
         // Mobile phohe
         frame.kContentFrame();
-        findElement.pressOnXpath( "//tr[@class = 'k-alt']//div[@title = '92']");
-        findElement.pressOnXpath( "//span[@disabled='disabled']" );
+        findElement.doubleClick( "//tr[@class = 'k-alt']//div[@title = '92']" );
         userDelay( 1000 );
         frame.tabFrame( "Tab3" );
         eventDriver.findElement( By.id( "ed_TELM" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 1000000, 9999999 ) );
@@ -184,8 +241,7 @@ public class RegistrationCard_FO {
         findElement.pressOnId( "ed_TELD_CODE" );
         userDelay( 5000 );
         frame.kContentFrame();
-        findElement.pressOnXpath( "//td[@role = 'gridcell']/div[@title = '692']" );
-        findElement.pressOnXpath( "//span[@disabled='disabled']" );
+        findElement.doubleClick( "//td[@role = 'gridcell']/div[@title = '692']" );
         frame.tabFrame( "Tab3" );
         eventDriver.findElement( By.id( "ed_TELD" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 100000, 999999 ) );
 
@@ -212,6 +268,7 @@ public class RegistrationCard_FO {
 //        data.sendKeys( Keys.BACK_SPACE );
 
 //        Additional information
+        System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО): Дод. інформація" + (char) 27 + "[0m");
         userDelay( 1000 );
         frame.kContentFrame();
         findElement.pressOnId("bTab4" );
@@ -222,6 +279,7 @@ public class RegistrationCard_FO {
         findElement.pressOnXpath("//button[@class = 'delete-confirm k-button k-primary']"   );
 
 //         Additional details
+        System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО): Дод. реквізити" + (char) 27 + "[0m");
         findElement.pressOnId( "bTab5" );
         // General
         userDelay( 2000 );
@@ -295,7 +353,7 @@ public class RegistrationCard_FO {
 
         System.out.println((char) 27 + "[32m[Passed]----------Тест завершено успішно!----------[Passed]" + (char) 27 + "[0m");
 
-    }
+    }}
 
 
     @AfterClass

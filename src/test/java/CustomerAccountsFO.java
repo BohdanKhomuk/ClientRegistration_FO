@@ -4,6 +4,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -20,6 +21,7 @@ public class CustomerAccountsFO {
 
     RandomWordsAndNumber random = new RandomWordsAndNumber();
     Sex sex = new Sex();
+    private static RegistrationCard_FO registrationCard_fo = new RegistrationCard_FO();
     WritingtoFile writingtoFile = new WritingtoFile();
     ReadingFromFile readingFromFile = new ReadingFromFile();
 
@@ -30,14 +32,15 @@ public class CustomerAccountsFO {
         System.setProperty("webdriver.ie.driver", browser);
         eventDriver = new EventFiringWebDriver( new InternetExplorerDriver(  ) );
 
-       /* String browser = new File(RegistrationCard_FO.class.getResource("/chromedriver.exe").getFile()).getPath();
+         /* String browser = new File(RegistrationCard_FO.class.getResource("/chromedriver.exe").getFile()).getPath();
         System.setProperty("webdriver.chrome.driver", browser);
         eventDriver = new EventFiringWebDriver(new ChromeDriver(  ));*/
         EventHandler handler = new EventHandler();
         eventDriver.manage().window().maximize();
         eventDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         eventDriver.register( handler );
-        eventDriver.get("http://10.10.17.22:8080/barsroot/account/login/");
+        String polygonAddress = String.format( "http://10.10.17.%s:8080/barsroot/account/login/", registrationCard_fo.polygon );
+        eventDriver.get( polygonAddress );
 
         findElement = new FindElement(eventDriver);
         frame = new Frame(eventDriver);
