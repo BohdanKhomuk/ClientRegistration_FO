@@ -1,13 +1,13 @@
 package com.test;
 
+import com.test.Methods.Pause;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage {
 
     public WebDriver driver;
-
-    public Pause pause;
+    private Pause pause;
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -17,20 +17,19 @@ public class MainPage {
     private By findFunction = By.id("findOpersText");
     private By registerFOClientButton = By.xpath(".//div[@id='oper-3039']/div[2]/span");
 
-    public MainPage typeFunctionName(String name){
+    private void typeFunctionName(String name){
         driver.findElement(findFunction).sendKeys( name );
-        return this;
     }
 
-    public LoginPage clickRegisterFOClientButton(){
+    private void clickRegisterFOClientButton(){
         driver.findElement( registerFOClientButton).click();
-        return new LoginPage( driver );
+        new LoginPage( driver );
     }
 
-    public MainPage enterFunction(String name){
+    public void enterFunction(String name){
         pause.userDelay( 2000 );
         this.typeFunctionName( name );
         this.clickRegisterFOClientButton();
-        return new MainPage( driver );
+        new MainPage( driver );
     }
 }

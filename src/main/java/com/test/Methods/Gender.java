@@ -1,4 +1,4 @@
-package com.test;
+package com.test.Methods;
 
 import java.io.File;
 import java.io.FileNotFoundException;

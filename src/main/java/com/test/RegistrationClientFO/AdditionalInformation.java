@@ -1,6 +1,6 @@
 package com.test.RegistrationClientFO;
 
-import com.test.Frame;
+import com.test.Methods.Frame;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -19,27 +19,27 @@ public class AdditionalInformation {
     private By groupBtn = By.xpath( "//div[@title = '11301']" );
     private By chooseBtn = By.xpath( "//button[@class = 'delete-confirm k-button k-primary']"  );
 
-    public AdditionalInformation clickBt_help(){
+    private void pressBt_help(){
         driver.findElement(bt_help).click();
-        return new AdditionalInformation( driver );
+        new AdditionalInformation( driver );
     }
 
-    public AdditionalInformation clickGroupBtn(){
+    private void pressGroupBtn(){
         driver.findElement(groupBtn).click();
-        return new AdditionalInformation( driver );
+        new AdditionalInformation( driver );
     }
 
-    public AdditionalInformation clickChooseBtn(){
+    private void pressChooseBtn(){
         driver.findElement(chooseBtn).click();
-        return new AdditionalInformation( driver );
+        new AdditionalInformation( driver );
     }
 
-    public AdditionalInformation fillingISP(){
+    public void fillingISP(){
         frame.tabFrame( "Tab4" );
-        this.clickBt_help();
+        this.pressBt_help();
         frame.kContentFrame();
-        this.clickGroupBtn();
-        this.clickChooseBtn();
-        return new AdditionalInformation( driver );
+        this.pressGroupBtn();
+        this.pressChooseBtn();
+        new AdditionalInformation( driver );
     }
 }

@@ -1,7 +1,7 @@
 package com.test.RegistrationClientFO;
 
-import com.test.Frame;
-import com.test.Pause;
+import com.test.Methods.Frame;
+import com.test.Methods.Pause;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,155 +40,150 @@ public class AdditionalDetails {
     private By gridcellLeadership = By.xpath( "//div[@title = '1']" );
 
 
-    public AdditionalDetails clickCt102Help(){
+    private void pressCt102Help(){
         driver.findElement(ctl02Help).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickBusinessEntities(){
+    private void pressBusinessEntities(){
         driver.findElement(businessEntities).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickChooseBtn(){
+    private void pressChooseBtn(){
         driver.findElement(chooseBtn).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickBtnFinMon(){
+    private void pressBtnFinMon(){
         driver.findElement(btnFinMon).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickGridcellMissing(){
+    private void pressGridcellMissing(){
         driver.findElement(gridcellMissing).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickCt106Help(){
+    private void pressCt106Help(){
         driver.findElement(ctl06Help).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickGridcellYes(){
+    private void pressGridcellYes(){
         driver.findElement(gridcellYes).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickCt108Help(){
+    private void pressCt108Help(){
         driver.findElement(ctl08Help).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickGridcellUnsatisfactory(){
+    private void pressGridcellUnsatisfactory(){
         driver.findElement(gridcellUnsatisfactory).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickCt109Help(){
+    private void pressCt109Help(){
         driver.findElement(ctl09Help).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickGridcellSatisfactory(){
+    private void pressGridcellSatisfactory(){
         driver.findElement(gridcellSatisfactory).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickBtnOther(){
+    private void pressBtnOther(){
         driver.findElement(btnOther).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickCt103Help(){
+    private void pressCt103Help(){
         driver.findElement(ctl03Help).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails clickGridcellLeadership(){
+    private void pressGridcellLeadership(){
         driver.findElement(gridcellLeadership).click();
-        return new AdditionalDetails( driver );
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails enterCt103Val(String citizenship){
+    private void enterCt103Val(String citizenship){
         driver.findElement(ctl03Val).sendKeys( citizenship );
-        return this;
     }
 
-    public AdditionalDetails enterCt104Val(String firstFilldData){
+    private void enterCt104Val(String firstFilldData){
         WebElement firstData = driver.findElement(ctl04Val);
         firstData.click();
         firstData.clear();
         firstData.sendKeys( firstFilldData );
-        return this;
     }
 
-    public AdditionalDetails enterCt105Val(String dateOfIdentification){
+    private void enterCt105Val(String dateOfIdentification){
         WebElement idetification = driver.findElement(ctl05Val);
         idetification.click();
         idetification.clear();
         idetification.sendKeys( dateOfIdentification );
-        return this;
     }
 
-    public AdditionalDetails enterCt110Val(String position){
+    private void enterCt110Val(String position){
         driver.findElement(ctl10Val).sendKeys( position );
-        return this;
     }
 
-    public AdditionalDetails enterCt111Val(String sourcesFunds){
+    private void enterCt111Val(String sourcesFunds){
         driver.findElement(ctl11Val).sendKeys( sourcesFunds );
-        return this;
     }
 
-    public AdditionalDetails enterGeneral(){
+    public void enterGeneral(){
         frame.tabFrame( "Tab5" );
-        this.clickCt102Help();
+        this.pressCt102Help();
         frame.kContentFrame();
-        this.clickBusinessEntities();
-        this.clickChooseBtn();
-        return new AdditionalDetails( driver );
+        this.pressBusinessEntities();
+        this.pressChooseBtn();
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails enterFinMon(String citizenship, String firstFilldData, String dateOfIdentification, String position, String sourcesFunds){
+    public void enterFinMon(String citizenship, String firstFilldData, String dateOfIdentification, String position, String sourcesFunds){
         frame.tabFrame( "Tab5" );
-        this.clickBtnFinMon();
+        this.pressBtnFinMon();
         pause.userDelay( 2000 );
-        this.clickCt102Help();
+        this.pressCt102Help();
         frame.kContentFrame();
-        this.clickGridcellMissing();
-        this.clickChooseBtn();
+        this.pressGridcellMissing();
+        this.pressChooseBtn();
         frame.tabFrame( "Tab5" );
         this.enterCt103Val( citizenship );
         this.enterCt104Val( firstFilldData );
         this.enterCt105Val( dateOfIdentification );
         this.enterCt110Val( position );
         this.enterCt111Val( sourcesFunds );
-        this.clickCt106Help();
+        this.pressCt106Help();
         frame.kContentFrame();
-        this.clickGridcellYes();
-        this.clickChooseBtn();
+        this.pressGridcellYes();
+        this.pressChooseBtn();
         frame.tabFrame( "Tab5" );
-        this.clickCt108Help();
+        this.pressCt108Help();
         frame.kContentFrame();
-        this.clickGridcellUnsatisfactory();
-        this.clickChooseBtn();
+        this.pressGridcellUnsatisfactory();
+        this.pressChooseBtn();
         frame.tabFrame( "Tab5" );
-        this.clickCt109Help();
+        this.pressCt109Help();
         frame.kContentFrame();
-        this.clickGridcellSatisfactory();
-        this.clickChooseBtn();
-        return new AdditionalDetails( driver );
+        this.pressGridcellSatisfactory();
+        this.pressChooseBtn();
+        new AdditionalDetails( driver );
     }
 
-    public AdditionalDetails enterOther(){
+    public void enterOther(){
         frame.tabFrame( "Tab5" );
-        this.clickBtnOther();
+        this.pressBtnOther();
         pause.userDelay( 2000 );
-        this.clickCt103Help();
+        this.pressCt103Help();
         frame.kContentFrame();
-        this.clickGridcellLeadership();
-        this.clickChooseBtn();
-        return new AdditionalDetails( driver );
+        this.pressGridcellLeadership();
+        this.pressChooseBtn();
+        new AdditionalDetails( driver );
     }
 }

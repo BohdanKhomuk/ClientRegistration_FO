@@ -1,4 +1,4 @@
-package com.test;
+package com.test.Methods;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -10,7 +10,7 @@ public class Frame {
         this.eventDriver = eventFiringWebDriver;
     }
 
-    public void todefCont(){
+    private void todefCont(){
         eventDriver.switchTo().defaultContent();
     }
 

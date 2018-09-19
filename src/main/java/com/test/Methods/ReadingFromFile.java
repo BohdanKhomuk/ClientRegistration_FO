@@ -1,4 +1,4 @@
-package com.test;
+package com.test.Methods;
 
 import java.io.*;
 
@@ -6,7 +6,7 @@ import static org.apache.logging.log4j.MarkerManager.exists;
 
 public class ReadingFromFile {
 
-    public static String read(String fileName) throws FileNotFoundException {
+    public static String read(String fileName) {
         //Этот спец. объект для построения строки
         StringBuilder sb = new StringBuilder();
 

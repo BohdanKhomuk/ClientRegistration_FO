@@ -1,7 +1,7 @@
 package com.test.RegistrationClientFO;
 
-import com.test.Frame;
-import com.test.Gender;
+import com.test.Methods.Frame;
+import com.test.Methods.Gender;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +14,7 @@ public class ClientDetails {
     private WebDriver driver;
     private Frame frame;
 
-    Gender gender = new Gender();
+    private Gender gender = new Gender();
 
     public ClientDetails (WebDriver driver) {
         this.driver = driver;
@@ -30,7 +30,7 @@ public class ClientDetails {
     private By ed_DATE_PHOTO = By.id( "ed_DATE_PHOTO" );
     private By ed_BDAY = By.id( "ed_BDAY" );
     private By ddl_SEX = By.id( "ddl_SEX" );
-    String fileName = String.format( "//select[@id = 'ddl_SEX']/option[@value = '%s']", gender.gender );
+    private String fileName = String.format( "//select[@id = 'ddl_SEX']/option[@value = '%s']", gender.gender );
     private By clientSex = By.xpath( fileName );
     //Phone
     private By ed_TELM_CODE = By.id( "ed_TELM_CODE" );
@@ -41,125 +41,117 @@ public class ClientDetails {
     private By ed_TELD = By.id( "ed_TELD" );
 
 
-    public ClientDetails сlickDdl_PASSP(){
+    private void pressDdl_PASSP(){
         driver.findElement(ddl_PASSP).click();
-        return new ClientDetails( driver );
+        new ClientDetails( driver );
     }
 
-    public ClientDetails сlickPasspCitizenUA(){
+    private void pressPasspCitizenUA(){
         driver.findElement(passpCitizenUA).click();
-        return new ClientDetails( driver );
+        new ClientDetails( driver );
     }
 
-    public ClientDetails сlickDddSex(){
+    private void pressDddSex(){
         driver.findElement(ddl_SEX).click();
-        return new ClientDetails( driver );
+        new ClientDetails( driver );
     }
 
-    public ClientDetails сlickClientSex(){
+    private void pressClientSex(){
         driver.findElement(clientSex).click();
-        return new ClientDetails( driver );
+        new ClientDetails( driver );
     }
 
-    public ClientDetails сlickTelMCode(){
+    private void pressTelMCode(){
         driver.findElement(ed_TELM_CODE).click();
-        return new ClientDetails( driver );
+        new ClientDetails( driver );
     }
 
-    public ClientDetails сlicTElMOperator(){
+    private void pressTElMOperator(){
         Actions actname = new Actions(driver);
         actname.moveToElement(driver.findElement(TELM_Operator)).doubleClick().build().perform();
-        return new ClientDetails( driver );
+        new ClientDetails( driver );
     }
 
-    public ClientDetails сlickTelDCode(){
+    private void pressTelDCode(){
         driver.findElement(ed_TELD_CODE).click();
-        return new ClientDetails( driver );
+        new ClientDetails( driver );
     }
 
-    public ClientDetails сlicTElDOperator(){
+    private void pressTElDOperator(){
         Actions actname = new Actions(driver);
         actname.moveToElement(driver.findElement(TELD_Operator)).doubleClick().build().perform();
-        return new ClientDetails( driver );
+        new ClientDetails( driver );
     }
 
-    public ClientDetails enterOrgan(String organ){
+    private void enterOrgan(String organ){
         driver.findElement(ed_ORGAN).sendKeys( organ );
-        return this;
     }
 
-    public ClientDetails enterSer(String ser){
+    private void enterSer(String ser){
         driver.findElement(ed_SER).sendKeys( ser );
-        return this;
     }
 
-    public ClientDetails enterNumdoc(String numdoc){
+    private void enterNumdoc(String numdoc){
         driver.findElement(ed_NUMDOC).sendKeys( numdoc );
-        return this;
     }
 
-    public ClientDetails enterPdate(String pdate){
+    private void enterPdate(String pdate){
         WebElement date = driver.findElement(ed_PDATE);
         date.click();
         date.clear();
         date.sendKeys( pdate );
-        return this;
     }
 
-    public ClientDetails enterDATE_PHOTO(String datePhoto){
+    private void enterDATE_PHOTO(String datePhoto){
         WebElement elDatePhoto = driver.findElement(ed_DATE_PHOTO);
         elDatePhoto.click();
         elDatePhoto.clear();
         elDatePhoto.sendKeys( datePhoto );
-        return this;
     }
 
-    public ClientDetails enterBDay(String bDay){
+    private void enterBDay(String bDay){
         WebElement elBDAY = driver.findElement(ed_BDAY);
         elBDAY.click();
         elBDAY.clear();
         elBDAY.sendKeys( bDay );
-        return this;
     }
 
-    public ClientDetails enterTelM(String telm){
+    private void enterTelM(String telm){
         driver.findElement(ed_TELM).sendKeys( telm );
-        return this;
     }
 
-    public ClientDetails enterTelD(String teld){
+    private void enterTelD(String teld){
         driver.findElement(ed_TELD).sendKeys( teld );
-        return this;
     }
 
-    public ClientDetails enterDocumentDetails(String organ, String ser, String numDoc, String passpDate, String datePhoto, String birthday){
+    public void enterDocumentDetails(String organ, String ser, String numDoc, String passpDate, String datePhoto, String birthday){
         frame.tabFrame( "Tab3" );
-        this.сlickDdl_PASSP();
-        this.сlickPasspCitizenUA();
+        this.pressDdl_PASSP();
+        this.pressPasspCitizenUA();
         this.enterOrgan( organ );
         this.enterSer( ser );
         this.enterNumdoc( numDoc );
         this.enterPdate( passpDate );
         this.enterDATE_PHOTO( datePhoto );
         this.enterBDay( birthday );
-        this.сlickDddSex();
-        this.сlickClientSex();
-        return new ClientDetails( driver );
+        this.pressDddSex();
+        this.pressClientSex();
+        new ClientDetails( driver );
     }
 
-    public ClientDetails enterNumberPhone(String tel){
-        this.сlickTelMCode();
+    public void enterNumberPhone(String tel){
+        this.pressTelMCode();
         frame.kContentFrame();
-        this.сlicTElMOperator();
+        this.pressTElMOperator();
         frame.tabFrame( "Tab3" );
         this.enterTelM( tel );
-        this.сlickTelDCode();
-        this.сlickTelDCode();
+        this.pressTelDCode();
+        this.pressTelDCode();
         frame.kContentFrame();
-        this.сlicTElDOperator();
+        this.pressTElDOperator();
         frame.tabFrame( "Tab3" );
         this.enterTelD( tel );
-        return new ClientDetails( driver );
+        new ClientDetails( driver );
     }
 
 }

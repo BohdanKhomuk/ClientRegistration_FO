@@ -1,4 +1,4 @@
-package com.test;
+package com.test.Methods;
 
 import org.apache.logging.log4j.LogManager;
     import org.apache.logging.log4j.Logger;

@@ -1,7 +1,7 @@
 package com.test.RegistrationClientFO;
 
-import com.test.Frame;
-import com.test.Pause;
+import com.test.Methods.Frame;
+import com.test.Methods.Pause;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -9,9 +9,8 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 public class BasicDetails {
 
     public WebDriver driver;
-    public Pause pause;
-
-    public Frame frame;
+    private Pause pause;
+    private Frame frame;
 
     public BasicDetails(WebDriver driver) {
         this.driver = driver;
@@ -36,105 +35,95 @@ public class BasicDetails {
     private By ed_OKPO = By.id( "ed_OKPO" );
 
 
-    public BasicDetails сlickFullDopRekv() {
+    private void pressFullDopRekv() {
         driver.findElement( fullDopRekv ).click();
-        return new BasicDetails( driver );
+        new BasicDetails( driver );
     }
 
-    public BasicDetails сlickBtnOpenWindowAddress() {
+    private void pressBtnOpenWindowAddress() {
         driver.findElement( btnOpenWindowAddress ).click();
-        return new BasicDetails( driver );
+        new BasicDetails( driver );
     }
 
-    public BasicDetails сlickSettlement() {
+    private void pressSettlement() {
         driver.findElement( settlement ).click();
-        return new BasicDetails( driver );
+        new BasicDetails( driver );
     }
 
-    public BasicDetails сlickCity() {
+    private void pressCity() {
         driver.findElement( legalCity ).click();
-        return new BasicDetails( driver );
+        new BasicDetails( driver );
     }
 
-    public BasicDetails сlickBtnSaveAddress() {
+    private void pressBtnSaveAddress() {
         driver.findElement( btnSaveAddress ).click();
-        return new BasicDetails( driver );
+        new BasicDetails( driver );
     }
 
-    public BasicDetails enterFIO_LN(String name) {
+    private void enterFIO_LN(String name) {
         driver.findElement( FIO_LN ).sendKeys( name );
-        return this;
     }
 
-    public BasicDetails enterFIO_FN(String name) {
+    private void enterFIO_FN(String name) {
         driver.findElement( FIO_FN ).sendKeys( name );
-        return this;
     }
 
-    public BasicDetails enterFIO_MN(String name) {
+    private void enterFIO_MN(String name) {
         driver.findElement( FIO_MN ).sendKeys( name );
-        return this;
     }
 
-    public BasicDetails enterLegalIndex(String index) {
+    private void enterLegalIndex(String index) {
         driver.findElement( legalIndex ).sendKeys( index );
-        return this;
     }
 
-    public BasicDetails enterLegalRegion(String region) {
+    private void enterLegalRegion(String region) {
         driver.findElement( legalRegion ).sendKeys( region );
-        return this;
     }
 
-    public BasicDetails enterLegalArea(String area) {
+    private void enterLegalArea(String area) {
         driver.findElement( legalArea ).sendKeys( area );
-        return this;
     }
 
-    public BasicDetails enterLegalSettlement(String settlement) {
+    private void enterLegalSettlement(String settlement) {
         driver.findElement( legalSettlement ).sendKeys( settlement );
-        return this;
     }
 
-    public BasicDetails enterLegalStreet(String street) {
+    private void enterLegalStreet(String street) {
         driver.findElement( legalStreet ).sendKeys( street );
-        return this;
     }
 
-    public BasicDetails enterLegalHouse(String house) {
+    private void enterLegalHouse(String house) {
         driver.findElement( legalHouse ).sendKeys( house );
-        return this;
     }
 
-    public BasicDetails enterOKPO(String okpo) {
+    public void enterOKPO(String okpo) {
         frame.tabFrame( "Tab0" );
         driver.findElement( ed_OKPO ).sendKeys( okpo );
-        return this;
     }
 
 
-    public BasicDetails enterFIO(String surname, String name, String patronymic) {
+    public void enterFIO(String surname, String name, String patronymic) {
         frame.tabFrame( "Tab0" );
-        this.сlickFullDopRekv();
+        this.pressFullDopRekv();
         this.enterFIO_LN( surname );
         this.enterFIO_FN( name );
         this.enterFIO_MN( patronymic );
-        return new BasicDetails( driver );
+        new BasicDetails( driver );
     }
 
-    public BasicDetails enterAddress(String index, String region, String area, String settlement, String street, String house) {
-        this.сlickBtnOpenWindowAddress();
+    public void enterAddress(String index, String region, String area, String settlement, String street, String house) {
+        this.pressBtnOpenWindowAddress();
         pause.userDelay( 2000 );
         frame.fullAddressFrame();
         this.enterLegalIndex( index );
         this.enterLegalRegion( region );
         this.enterLegalArea( area );
-        this.сlickSettlement();
-        this.сlickCity();
+        this.pressSettlement();
+        this.pressCity();
         this.enterLegalSettlement( settlement );
         this.enterLegalStreet( street );
         this.enterLegalHouse( house );
-        this.сlickBtnSaveAddress();
-        return new BasicDetails( driver );
+        this.pressBtnSaveAddress();
+        new BasicDetails( driver );
     }
 }

@@ -1,13 +1,14 @@
-package com.test;
+package com.test.Methods;
 
 import java.security.SecureRandom;
+import java.util.Arrays;
 
 
 public class RandomWordsAndNumber {
 
-    static final String AB = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
-    static final String ab = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя";
-    static SecureRandom rnd = new SecureRandom();
+    private static final String AB = "АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ";
+    private static final String ab = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя";
+    private static SecureRandom rnd = new SecureRandom();
 
     public static String intRandomNumber(int maxValue) {
         int random_number = (int)(Math.random()*(maxValue - 1) + 1);
@@ -17,7 +18,7 @@ public class RandomWordsAndNumber {
     public static String randomNumber(int min, int max) {
         int random_number = min + (int) (Math.random() * max);
         String b = String.valueOf(random_number);
-        return String.valueOf( new String[]{b} );
+        return Arrays.toString( new String[]{b} );
     }
 
     public String randomStringBig(int len) {

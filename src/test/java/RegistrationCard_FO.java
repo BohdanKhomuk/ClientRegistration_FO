@@ -1,47 +1,34 @@
-
-
 import com.test.*;
-import com.test.RegistrationClientFO.AdditionalDetails;
-import com.test.RegistrationClientFO.AdditionalInformation;
-import com.test.RegistrationClientFO.BasicDetails;
-import com.test.RegistrationClientFO.ClientDetails;
+import com.test.Methods.*;
+import com.test.RegistrationClientFO.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.openqa.selenium.*;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+import static com.test.LoginPage.getPolygon;
+
 
 public class RegistrationCard_FO {
 
-    private static FindElement findElement;
-    private static Frame frame;
-    public static EventFiringWebDriver eventDriver;
-    public static LoginPage loginPage;
-    public static MainPage mainPage;
-    public static TransitionToRegistration transitionToReg;
-    public static BasicDetails basicDetails;
-    public static ClientDetails clientDetails;
-    public static AdditionalInformation addInformation;
-    public static AdditionalDetails addDetails;
+    private static EventFiringWebDriver eventDriver;
+    private static TransitionToRegistration transitionToReg;
+    private static BasicDetails basicDetails;
+    private static ClientDetails clientDetails;
+    private static AdditionalInformation addInformation;
+    private static AdditionalDetails addDetails;
     private static final Logger LOG = LogManager.getLogger(EventHandler.class);
 
-    RandomWordsAndNumber random = new RandomWordsAndNumber();
-    Gender gender = new Gender();
-    WritingtoFile writingtoFile = new WritingtoFile();
-    ReadingFromFile readingFromFile = new ReadingFromFile();
-    RandomWordsAndNumber randomGeneration = new RandomWordsAndNumber();
+    private RandomWordsAndNumber random = new RandomWordsAndNumber();
+    private Gender gender = new Gender();
 
-    @BeforeClass
+    @BeforeMethod
     public static void firstClass() {
         System.setProperty("java.net.preferIPv4Stack", "true");
         String browser = new File( RegistrationCard_FO.class.getResource( "/IEDriverServer.exe" ).getFile()).getPath();
@@ -55,32 +42,29 @@ public class RegistrationCard_FO {
         eventDriver.manage().window().maximize();
         eventDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         eventDriver.register( handler );
-        String polygonAddress = String.format( "http://10.10.17.%s:8080/barsroot/account/login/", loginPage.polygon );
-        eventDriver.get( polygonAddress );
+        eventDriver.get( "http://10.10.17." + getPolygon() + ":8080/barsroot/account/login/" );
 
         //eventDriver.get( "http://10.10.10.198:11111/barsroot/" );
 
-        findElement = new FindElement(eventDriver);
-        frame = new Frame(eventDriver);
-        loginPage = new LoginPage( eventDriver );
-        mainPage = new MainPage( eventDriver );
+        LoginPage loginPage = new LoginPage( eventDriver );
+        MainPage mainPage = new MainPage( eventDriver );
         transitionToReg = new TransitionToRegistration( eventDriver );
         basicDetails = new BasicDetails( eventDriver );
         clientDetails = new ClientDetails( eventDriver );
         addInformation = new AdditionalInformation( eventDriver );
         addDetails = new AdditionalDetails( eventDriver );
-    }
 
-    @Test
-    public void userLoginTest() throws Exception {
 
         System.out.println((char) 27 + "[33mБлок авторизації" + (char)27 + "[0m");
         loginPage.enterInMainPage( "absadm01", "qwerty" );
         System.out.println((char) 27 + "[33mБлок переходу у функцію створення клієнта(ФО)" + (char)27 + "[0m");
-
-
         mainPage.enterFunction( "Реєстрація Клієнтів і Рахунків" + "\n" );
         System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО)" + (char)27 + "[0m");
+    }
+
+    @Test//(enabled = false)
+    public void createClient() throws Exception {
+
         transitionToReg.goingToRegister( RandomWordsAndNumber.randomNumber( 10, 99999 ) );
 
 //      Basic details
@@ -110,88 +94,20 @@ public class RegistrationCard_FO {
         addDetails.enterFinMon( "Українець", "05022017", "05032017", random.randomStringBig( 1 ) + random.randomStringLittle( 10 ), random.randomStringBig( 1 ) + random.randomStringLittle( 10 ) );
         addDetails.enterOther();
 
-
 //      press the "Register" button
-        findElement.pressOnId( "bt_reg" );
-        findElement.pressOnXpath( "//button[@class = 'delete-confirm k-button k-primary']" );
+        transitionToReg.confirmationReg();
+        System.out.println((char) 27 + "[32m[Passed]----------Тест завершено успішно!----------[Passed]" + (char) 27 + "[0m");
+    }
 
-        WebElement info = eventDriver.findElement(By.xpath("//div[@id='barsUiAlertDialog']/table/tbody/tr/td[2]"));
-        String t = info.getText();
-        if (info.getText().contains("Помилки")) {
-            System.out.println((char) 27 + "[34mНе можна створити клієнта під бранчем '/' - " + (char) 27 + "[0m" + t);
-        } else {}
-        String t1 = t.replace("Клієнта РНК=", "");
-        String t2 = t1.replace(" успішно збережено", "");
-        System.out.println((char) 27 + "[34mРНК Клієнта - " + (char) 27 + "[0m" + t2);
-        writingtoFile.Filewriting("text.txt", t2);
-        findElement.pressOnXpath( "//button[@class='delete-confirm k-button k-primary']" );
-
-
+    @Test
+    public void editingClientCard() {
         System.out.println((char) 27 + "[33mРедагування карточки клієнта(ФО)" + (char) 27 + "[0m");
-
-        //open client for registration
-        frame.toMainFrame();
-        findElement.pressOnXpath( "//*[@id = 'ng-app']/body/div[9]/div[1]/div/a/span" );
-        findElement.pressOnXpath( "//*[@id = 'ng-app']/body/div[5]/div[1]/div/a/span" );
-        findElement.pressOnXpath( "//th[@data-field='Id']/a[1]/span" );
-        eventDriver.findElement( By.xpath( "//input[@class='k-formatted-value k-input']") ).sendKeys( readingFromFile.read( "text.txt" ) );
-        //userDelay(2000);
-        findElement.pressOnXpath( "//button[text() = 'фільтрувати']" );
-       // userDelay(2000);
-        String searchRow = String.format( "//*[text() = '%s']", readingFromFile.read( "text.txt"  ));
-        findElement.pressOnXpath( searchRow );
-        findElement.pressOnXpath( "//*[text() = '']" );
-       // userDelay(2000);
-        findElement.pressOnId( "openCustAccsBtn" );
-
-        //correct client
-        //Basic details
-        frame.tabFrame( "Tab0" );
-        eventDriver.findElement( By.id( "ed_SAB" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 1000, 9999 ) );
-
-        //taxpayer details
-        //userDelay( 1000 );
-        frame.kContentFrame();
-        findElement.pressOnId( "bTab1" );
-        WebElement text1 = eventDriver.findElement( By.linkText( "Заповнити реквізити платника податків" ) );
-        Assert.assertEquals( "Заповнити реквізити платника податків", text1 );
-
-        //economic standards
-        //userDelay( 1000 );
-        frame.kContentFrame();
-        findElement.pressOnId( "bTab2" );
-        WebElement text2 = eventDriver.findElement( By.linkText( "Заповнити реквізити платника податків" ) );
-        Assert.assertEquals( "Заповнити реквізити платника податків", text2 );
-
-        //client details
-       // userDelay( 1000 );
-        frame.kContentFrame();
-        findElement.pressOnId( "bTab3" );
-       // userDelay( 1000 );
-        frame.tabFrame( "Tab3");
-        eventDriver.findElement( By.id( "ed_BPLACE" ) ).sendKeys("м.Київ" );
-        eventDriver.findElement( By.id( "ed_TELW" ) ).sendKeys( RandomWordsAndNumber.randomNumber( 1000, 9999 ) );
-        WebElement text3 = eventDriver.findElement( By.linkText( "Заповнити Персональні реквізити" ) );
-        Assert.assertEquals( "Заповнити Персональні реквізити", text3 );
-
-        //Additional information
-         //userDelay( 1000 );
-         frame.kContentFrame();
-         findElement.pressOnId("bTab4" );
-         frame.tabFrame( "Tab4" );
-         findElement.pressOnId( "ed_NOMPDV" );
-         WebElement text4 = eventDriver.findElement( By.linkText( "Менеджер клієнту (код)" ) );
-         Assert.assertEquals( "Менеджер клієнту (код)", text4 );
-
-
-
-                    System.out.println((char) 27 + "[32m[Passed]----------Тест завершено успішно!----------[Passed]" + (char) 27 + "[0m");
+        transitionToReg.openClient( ReadingFromFile.read( "text.txt" ) );
 
     }
 
-
-    @AfterClass
+    @AfterMethod
     public static void tearDown() {
-        //eventDriver.quit();
+        eventDriver.quit();
     }
 }

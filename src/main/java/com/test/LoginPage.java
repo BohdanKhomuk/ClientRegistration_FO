@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
-    public static int polygon = 50; //22 - Test; 40 - RC; 50 - Master//
+    private static int polygon = 50; //22 - Test; 40 - RC; 50 - Master//
 
     public WebDriver driver;
 
@@ -17,34 +17,40 @@ public class LoginPage {
     private By buttonLogin = By.id( "btLogIn" );
     private By buttonChangDate = By.id( "btChangDate" );
 
+    public static int getPolygon() {
+        return polygon;
+    }
 
-    public LoginPage typeUserName(String name){
+    public static void setPolygon(int polygon) {
+        LoginPage.polygon = polygon;
+    }
+
+
+    private void typeUserName(String name){
         driver.findElement( userName ).clear();
         driver.findElement( userName).sendKeys( name );
-        return this;
     }
 
-    public LoginPage typePassword(String password){
+    private void typePassword(String password){
         driver.findElement( passwordField ).clear();
         driver.findElement( passwordField).sendKeys( password );
-        return this;
     }
 
-    public LoginPage clickButtonLogin(){
+    private void clickButtonLogin(){
         driver.findElement( buttonLogin).click();
-        return new LoginPage( driver );
+        new LoginPage( driver );
     }
 
-    public LoginPage clickButtonChangDate(){
+    private void clickButtonChangDate(){
         driver.findElement( buttonChangDate).click();
-        return new LoginPage( driver );
+        new LoginPage( driver );
     }
 
-    public LoginPage enterInMainPage(String name, String password){
+    public void enterInMainPage(String name, String password){
         this.typeUserName( name );
         this.typePassword( password );
         this.clickButtonLogin();
         this.clickButtonChangDate();
-        return new LoginPage( driver );
+        new LoginPage( driver );
     }
 }
