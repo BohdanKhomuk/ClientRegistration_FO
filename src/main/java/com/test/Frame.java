@@ -1,14 +1,12 @@
+package com.test;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
-import java.io.File;
-
 public class Frame {
-
     private EventFiringWebDriver eventDriver;
 
-    Frame(EventFiringWebDriver eventFiringWebDriver){
+    public Frame(EventFiringWebDriver eventFiringWebDriver){
         this.eventDriver = eventFiringWebDriver;
     }
 

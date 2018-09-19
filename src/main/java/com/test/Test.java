@@ -1,18 +1,16 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+package com.test;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 
 public class Test {
 
-    public static EventFiringWebDriver eventDriver;
+ /*   public static EventFiringWebDriver eventDriver;*/
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        RandomWordsAndNumber randomWords = new RandomWordsAndNumber();
-        Sex sex = new Sex();
+       /* RandomWordsAndNumber randomWords = new RandomWordsAndNumber();
+        Gender gender = new Gender();*/
 
 
           //АЛЕРТЫ
@@ -51,21 +49,26 @@ public class Test {
 
         //ПРОВЕРКА НА НАЛИЧИЕ ЭЛЕМЕНТА
         //Наличие элементов с данным икспасом
+/*
         System.out.println( eventDriver.findElement( By.xpath( "Locator" ) ).getSize());
+*/
 
 
 
 
 
-        int min = 91;
-        int max = 9;
-        int random_number = min + (int) (Math.random() * max);
-        String b = String.valueOf(random_number);
+       /* float min = 0.1;
+        int max = 9.99;*/
+/*        int random_number = min + (int) (Math.random() * max);
+        String b = String.valueOf(random_number);*/
 
-        System.out.println( Arrays.toString( RandomWordsAndNumber.randomNumber( 90, 90 ) ) );
-        System.out.println( b );
-        System.out.println( sex.Name() );
-        System.out.println( sex.Patronymic() );
-    }
+        double random_number = (Math.random()*(2)) + 0.1;
+        int random_number1 = (int)(Math.random()*(3) + 1);
+       // System.out.println( Arrays.toString( RandomWordsAndNumber.randomNumber( 90, 90 ) ) );
+        System.out.println( "random " + random_number );
+        System.out.println( "random1 " + random_number1 );
+/*        System.out.println( gender.Name() );
+        System.out.println( gender.Patronymic() );*/
+}
 
 }

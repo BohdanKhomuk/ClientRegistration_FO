@@ -1,10 +1,10 @@
+import com.test.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -20,8 +20,8 @@ public class CustomerAccountsFO {
     private static final Logger LOG = LogManager.getLogger(EventHandler.class);
 
     RandomWordsAndNumber random = new RandomWordsAndNumber();
-    Sex sex = new Sex();
-    private static RegistrationCard_FO registrationCard_fo = new RegistrationCard_FO();
+    Gender gender = new Gender();
+    public static LoginPage loginPage;
     WritingtoFile writingtoFile = new WritingtoFile();
     ReadingFromFile readingFromFile = new ReadingFromFile();
 
@@ -39,8 +39,9 @@ public class CustomerAccountsFO {
         eventDriver.manage().window().maximize();
         eventDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         eventDriver.register( handler );
-        String polygonAddress = String.format( "http://10.10.17.%s:8080/barsroot/account/login/", registrationCard_fo.polygon );
+        String polygonAddress = String.format( "http://10.10.17.%s:8080/barsroot/account/login/", loginPage.polygon );
         eventDriver.get( polygonAddress );
+        //eventDriver.get( "http://10.10.10.198:11111/barsroot/" );
 
         findElement = new FindElement(eventDriver);
         frame = new Frame(eventDriver);

@@ -1,3 +1,5 @@
+package com.test;
+
 import java.io.*;
 
 import static org.apache.logging.log4j.MarkerManager.exists;

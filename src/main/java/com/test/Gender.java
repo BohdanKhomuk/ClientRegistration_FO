@@ -1,13 +1,15 @@
+package com.test;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Sex {
+public class Gender {
 
-    int sex = 2; // 1-men, 2-women
+    public int gender = 2; // 1-men, 2-women
 
     public String Name() throws FileNotFoundException {
-        String fileName = String.format( "/Name%s.txt", sex );
+        String fileName = String.format( "/Name%s.txt", gender );
         Scanner sc = new Scanner(new File( RandomWordsAndNumber.class.getResource(fileName).getFile()), "cp1251");
 
         StringBuilder sb = new StringBuilder();
@@ -42,7 +44,7 @@ public class Sex {
     }
 
     public String Patronymic() throws FileNotFoundException {
-        String fileName = String.format( "/Patronymic%s.txt", sex );
+        String fileName = String.format( "/Patronymic%s.txt", gender );
         Scanner sc = new Scanner(new File( RandomWordsAndNumber.class.getResource(fileName).getFile()), "cp1251");
 
         StringBuilder sb = new StringBuilder();

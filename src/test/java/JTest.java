@@ -1,4 +1,4 @@
-import com.sun.org.apache.xerces.internal.impl.xs.identity.Selector;
+import com.test.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
@@ -9,12 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class JTest {
@@ -25,7 +23,7 @@ public class JTest {
     private static final Logger LOG = LogManager.getLogger(EventHandler.class);
 
     RandomWordsAndNumber random = new RandomWordsAndNumber();
-    Sex sex = new Sex();
+    Gender gender = new Gender();
     WritingtoFile writingtoFile = new WritingtoFile();
 
     @BeforeClass
