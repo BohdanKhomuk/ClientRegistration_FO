@@ -29,6 +29,7 @@ public class MainPage {
     public void enterFunction(String name){
         pause.userDelay( 2000 );
         this.typeFunctionName( name );
+        pause.userDelay( 3000 );
         this.clickRegisterFOClientButton();
         new MainPage( driver );
     }

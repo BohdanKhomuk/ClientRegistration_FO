@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
 
@@ -23,6 +24,11 @@ public class RegistrationCard_FO {
     private static ClientDetails clientDetails;
     private static AdditionalInformation addInformation;
     private static AdditionalDetails addDetails;
+    private static TaxpayerDetails taxpayerDetails;
+    private static EconomicNorms economicNorms;
+    private static ConnectedPeople connectedPeople;
+    private static ClientSegments clientSegments;
+    private static CDO cdo;
     private static final Logger LOG = LogManager.getLogger(EventHandler.class);
 
     private RandomWordsAndNumber random = new RandomWordsAndNumber();
@@ -53,6 +59,11 @@ public class RegistrationCard_FO {
         clientDetails = new ClientDetails( eventDriver );
         addInformation = new AdditionalInformation( eventDriver );
         addDetails = new AdditionalDetails( eventDriver );
+        taxpayerDetails = new TaxpayerDetails( eventDriver );
+        economicNorms = new EconomicNorms( eventDriver );
+        connectedPeople = new ConnectedPeople(eventDriver);
+        clientSegments = new ClientSegments(eventDriver);
+        cdo = new CDO( eventDriver );
 
 
         System.out.println((char) 27 + "[33mБлок авторизації" + (char)27 + "[0m");
@@ -60,9 +71,9 @@ public class RegistrationCard_FO {
         System.out.println((char) 27 + "[33mБлок переходу у функцію створення клієнта(ФО)" + (char)27 + "[0m");
         mainPage.enterFunction( "Реєстрація Клієнтів і Рахунків" + "\n" );
         System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО)" + (char)27 + "[0m");
-    }
+}
 
-    @Test//(enabled = false)
+    @Test(enabled = false)
     public void createClient() throws Exception {
 
         transitionToReg.goingToRegister( RandomWordsAndNumber.randomNumber( 10, 99999 ) );
@@ -91,7 +102,8 @@ public class RegistrationCard_FO {
         System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО): Дод. реквізити" + (char) 27 + "[0m");
         transitionToReg.clickAdditionalDetailsBtn();
         addDetails.enterGeneral();
-        addDetails.enterFinMon( "Українець", "05022017", "05032017", random.randomStringBig( 1 ) + random.randomStringLittle( 10 ), random.randomStringBig( 1 ) + random.randomStringLittle( 10 ) );
+        addDetails.enterFinMon( "Українець", "05022017", "05032017", random.randomStringBig( 1 ) + random.randomStringLittle( 10 ),
+                random.randomStringBig( 1 ) + random.randomStringLittle( 10 ) );
         addDetails.enterOther();
 
 //      press the "Register" button
@@ -99,11 +111,52 @@ public class RegistrationCard_FO {
         System.out.println((char) 27 + "[32m[Passed]----------Тест завершено успішно!----------[Passed]" + (char) 27 + "[0m");
     }
 
-    @Test
+    @Test(enabled = false)
     public void editingClientCard() {
         System.out.println((char) 27 + "[33mРедагування карточки клієнта(ФО)" + (char) 27 + "[0m");
         transitionToReg.openClient( ReadingFromFile.read( "text.txt" ) );
 
+        basicDetails.enterSAB( RandomWordsAndNumber.intRandomNumber( 9999 ) );
+
+        transitionToReg.clickTaxpayerDetalisBtn();
+        Assert.assertEquals( "Заповнити реквізити платника податків", taxpayerDetails.getHeadingText() );
+
+        transitionToReg.clickEconomicNormsBtn();
+        economicNorms.correctDetails();
+
+        transitionToReg.clickClientDetailBtn();
+        Assert.assertEquals( "Заповнити Персональні реквізити",  clientDetails.getHeadingText() );
+        clientDetails.correctClientDetail( random.randomStringBig( 12 ), RandomWordsAndNumber.intRandomNumber( 999999 ));
+
+        transitionToReg.clickAdditionalInformationBtn();
+        addInformation.correctDetail( random.randomStringLittle( 12 ), random.randomStringLittle( 12 ), RandomWordsAndNumber.intRandomNumber( 100 ), RandomWordsAndNumber.intRandomNumber( 100 ),
+                RandomWordsAndNumber.intRandomNumber( 100 ), RandomWordsAndNumber.intRandomNumber( 100 ), RandomWordsAndNumber.intRandomNumber( 100 ), random.randomStringLittle( 23 ));
+
+        transitionToReg.clickAdditionalDetailsBtn();
+        Assert.assertEquals( "Загальні", addDetails.getGeneralText() );
+        Assert.assertEquals( "Фін.мон.", addDetails.getFinMonText() );
+        Assert.assertEquals( "БПК", addDetails.getBPKText() );
+        Assert.assertEquals( "Санкції", addDetails.getSanctionsText() );
+        Assert.assertEquals( "Для Кредитного реєстру", addDetails.getCreditRegisterText() );
+        Assert.assertEquals( "Інші", addDetails.getOtherText() );
+        Assert.assertEquals( "Критерії ризику", addDetails.getRiskCriteriaText() );
+
+        transitionToReg.clickConnectedPeopleBtn();
+        Assert.assertEquals( "Пов`язані особи", connectedPeople.getHeadingText() );
+
+        transitionToReg.clickClientSegmentsBtn();
+        Assert.assertEquals( "Загальна інформація", clientSegments.getHeadingText() );
+
+        transitionToReg.clickCDOBtn();
+        Assert.assertEquals( "Підключення користувачів до Систем Дистанційного Обслуговування (СДО)", cdo.getHeadingText() );
+
+        transitionToReg.confirmationReg();
+    }
+
+    @Test(enabled = false)
+    public void closeClientCard(){
+        System.out.println((char) 27 + "[33mЗакриття карточки клієнта(ФО)" + (char) 27 + "[0m");
+        transitionToReg.closeClient(ReadingFromFile.read( "text.txt" ));
     }
 
     @AfterMethod

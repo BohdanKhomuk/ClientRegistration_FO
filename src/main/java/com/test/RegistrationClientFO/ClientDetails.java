@@ -32,6 +32,7 @@ public class ClientDetails {
     private By ddl_SEX = By.id( "ddl_SEX" );
     private String fileName = String.format( "//select[@id = 'ddl_SEX']/option[@value = '%s']", gender.gender );
     private By clientSex = By.xpath( fileName );
+    private By ed_BPLACE = By.id( "ed_BPLACE" );
     //Phone
     private By ed_TELM_CODE = By.id( "ed_TELM_CODE" );
     private By TELM_Operator = By.xpath( "//tr[@class = 'k-alt']//div[@title = '92']" );
@@ -39,6 +40,9 @@ public class ClientDetails {
     private By ed_TELD_CODE = By.id( "ed_TELD_CODE" );
     private By TELD_Operator = By.xpath( "//td[@role = 'gridcell']/div[@title = '692']" );
     private By ed_TELD = By.id( "ed_TELD" );
+    private By ed_TELW = By.id( "ed_TELW" );
+    //Text
+    private By headText = By.xpath( "//*[@id = 'tblMain']/tbody/tr[1]/td/label" );
 
 
     private void pressDdl_PASSP(){
@@ -122,6 +126,26 @@ public class ClientDetails {
 
     private void enterTelD(String teld){
         driver.findElement(ed_TELD).sendKeys( teld );
+    }
+
+    private void enterBPLACE(String bPlace){
+        driver.findElement(ed_BPLACE).sendKeys( bPlace );
+    }
+
+    private void enterTELW(String telW){
+        driver.findElement(ed_TELW).sendKeys( telW );
+    }
+
+    public String getHeadingText(){
+        frame.tabFrame( "Tab3" );
+        return  driver.findElement( headText).getText();
+    }
+
+    public void correctClientDetail(String bPlace, String telW){
+        frame.tabFrame( "Tab3" );
+        this.enterBPLACE( bPlace );
+        this.enterTELW( telW );
+        new ClientDetails( driver );
     }
 
     public void enterDocumentDetails(String organ, String ser, String numDoc, String passpDate, String datePhoto, String birthday){

@@ -1,8 +1,6 @@
 package com.test.Methods;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,8 +25,8 @@ public class FindElement {
     }
 
     public void doubleClick(String path) {
-        Actions actname = new Actions(eventDriver);
-        actname.moveToElement(eventDriver.findElement(By.xpath(path))).doubleClick().build().perform();
+        Actions actName = new Actions(eventDriver);
+        actName.moveToElement(eventDriver.findElement(By.xpath(path))).doubleClick().build().perform();
     }
 
 }

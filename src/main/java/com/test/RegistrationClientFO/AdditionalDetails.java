@@ -38,6 +38,13 @@ public class AdditionalDetails {
     private By btnOther = By.xpath( "//a[contains(text(),'Інші')]" );
     private By ctl03Help = By.id( "gvMain_ctl03_imgEdHelp" );
     private By gridcellLeadership = By.xpath( "//div[@title = '1']" );
+    private By generalText = By.linkText( "Загальні" );
+    private By finMonText = By.linkText( "Фін.мон." );
+    private By bpkText = By.linkText( "БПК" );
+    private By sanctionsText = By.linkText( "Санкції" );
+    private By creditRegisterText = By.linkText( "Для Кредитного реєстру" );
+    private By otherText = By.linkText( "Інші" );
+    private By riskCriteriaText = By.linkText( "Критерії ризику" );
 
 
     private void pressCt102Help(){
@@ -134,6 +141,41 @@ public class AdditionalDetails {
 
     private void enterCt111Val(String sourcesFunds){
         driver.findElement(ctl11Val).sendKeys( sourcesFunds );
+    }
+
+    public String getGeneralText(){
+        frame.tabFrame( "Tab5" );
+        return  driver.findElement( generalText ).getText();
+    }
+
+    public String getFinMonText(){
+        frame.tabFrame( "Tab5" );
+        return  driver.findElement( finMonText ).getText();
+    }
+
+    public String getBPKText(){
+        frame.tabFrame( "Tab5" );
+        return  driver.findElement( bpkText ).getText();
+    }
+
+    public String getSanctionsText(){
+        frame.tabFrame( "Tab5" );
+        return  driver.findElement( sanctionsText ).getText();
+    }
+
+    public String getCreditRegisterText(){
+        frame.tabFrame( "Tab5" );
+        return  driver.findElement( creditRegisterText ).getText();
+    }
+
+    public String getOtherText(){
+        frame.tabFrame( "Tab5" );
+        return  driver.findElement( otherText ).getText();
+    }
+
+    public String getRiskCriteriaText(){
+        frame.tabFrame( "Tab5" );
+        return  driver.findElement( riskCriteriaText ).getText();
     }
 
     public void enterGeneral(){

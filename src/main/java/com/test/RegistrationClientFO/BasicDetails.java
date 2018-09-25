@@ -33,6 +33,7 @@ public class BasicDetails {
     private By legalHouse = By.xpath( "//input[@ng-model = 'legalHouse']" );
     private By btnSaveAddress = By.id( "btnSaveAddress" );
     private By ed_OKPO = By.id( "ed_OKPO" );
+    private By ed_SAB = By.id( "ed_SAB" );
 
 
     private void pressFullDopRekv() {
@@ -101,6 +102,11 @@ public class BasicDetails {
         driver.findElement( ed_OKPO ).sendKeys( okpo );
     }
 
+    public void enterSAB(String sab) {
+        frame.tabFrame( "Tab0" );
+        driver.findElement( ed_SAB ).sendKeys( sab );
+    }
+
 
     public void enterFIO(String surname, String name, String patronymic) {
         frame.tabFrame( "Tab0" );
@@ -108,6 +114,7 @@ public class BasicDetails {
         this.enterFIO_LN( surname );
         this.enterFIO_FN( name );
         this.enterFIO_MN( patronymic );
+        new BasicDetails( driver );
         new BasicDetails( driver );
     }
 
