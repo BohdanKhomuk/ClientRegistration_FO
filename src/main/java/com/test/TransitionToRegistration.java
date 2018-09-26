@@ -1,6 +1,5 @@
-package com.test.RegistrationClientFO;
+package com.test;
 
-import com.test.LoginPage;
 import com.test.Methods.Frame;
 import com.test.Methods.Pause;
 import com.test.Methods.ReadingFromFile;
@@ -43,7 +42,6 @@ public class TransitionToRegistration {
     private By btnFiltrate = By.xpath( "//button[text() = 'фільтрувати']" );
     private String searchRow = String.format( "//*[text() = '%s']", ReadingFromFile.read( "text.txt" ));
     private By searchRowNum = By.xpath( searchRow );
-    private By chooseRowNum = By.xpath( "//*[text() = '']" );
     private By openCustAccsBtn = By.id( "openCustAccsBtn" );
     private By bt_reg = By.id( "bt_reg" );
     private By btnOK = By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" );
@@ -143,11 +141,6 @@ public class TransitionToRegistration {
         new TransitionToRegistration( driver );
     }
 
-    private void clickChooseRowNum(){
-        driver.findElement(chooseRowNum).click();
-        new TransitionToRegistration( driver );
-    }
-
     private void clickOpenCustAccsBtn(){
         driver.findElement(openCustAccsBtn).click();
         new TransitionToRegistration( driver );
@@ -202,19 +195,6 @@ public class TransitionToRegistration {
         new TransitionToRegistration( driver );
     }
 
-    public void openClient(String rnk){
-        pause.userDelay( 3000 );
-        frame.toMainFrame();
-        this.clickBtnFilter();
-        this.enterFieldFilter( rnk );
-        this.clickBtnFiltrate();
-        this.clickSearchRowNum();
-        this.clickChooseRowNum();
-        pause.userDelay( 3000 );
-        this.clickOpenCustAccsBtn();
-        new TransitionToRegistration( driver );
-    }
-
     public void confirmationReg(){
         frame.kContentFrame();
         this.clickBt_reg();
@@ -231,17 +211,38 @@ public class TransitionToRegistration {
 
     }
 
-    public void closeClient(String rnk){
+    private void findCard(String rnk){
         pause.userDelay( 3000 );
         frame.toMainFrame();
         this.clickBtnFilter();
         this.enterFieldFilter( rnk );
         this.clickBtnFiltrate();
-        pause.userDelay( 2000 );
+    }
+
+    public void openClient(String rnk){
+        this.findCard( rnk );
+        pause.userDelay( 3000 );
+        this.clickSearchRowNum();
+        new TransitionToRegistration( driver );
+    }
+
+    public void closeClient(String rnk){
+        this.findCard( rnk );
+        pause.userDelay( 3000 );
         this.clickClientBtn();
         this.clickCloseClientBtn();
         this.clickBtnOK();
         pause.userDelay( 4000 );
         this.clickBtnOK();
+        new TransitionToRegistration( driver );
+    }
+
+    public void openCustomerAccounts(String rnk){
+        this.findCard( rnk );
+        pause.userDelay( 3000 );
+        this.clickClientBtn();
+        pause.userDelay( 3000 );
+        this.clickOpenCustAccsBtn();
+        new TransitionToRegistration( driver );
     }
 }

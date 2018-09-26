@@ -74,7 +74,7 @@ public class RegistrationCard_FO {
 }
 
     @Test(enabled = false)
-    public void createClient() throws Exception {
+    public void createClientCard() throws Exception {
 
         transitionToReg.goingToRegister( RandomWordsAndNumber.randomNumber( 10, 99999 ) );
 
@@ -111,7 +111,7 @@ public class RegistrationCard_FO {
         System.out.println((char) 27 + "[32m[Passed]----------Тест завершено успішно!----------[Passed]" + (char) 27 + "[0m");
     }
 
-    @Test(enabled = false)
+    @Test//(enabled = false)
     public void editingClientCard() {
         System.out.println((char) 27 + "[33mРедагування карточки клієнта(ФО)" + (char) 27 + "[0m");
         transitionToReg.openClient( ReadingFromFile.read( "text.txt" ) );

@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 
 public class JTest {
 
-    private static FindElement findElement;
     private static Frame frame;
     public static EventFiringWebDriver eventDriver;
     private static final Logger LOG = LogManager.getLogger(EventHandler.class);
@@ -42,7 +41,6 @@ public class JTest {
         eventDriver.register( handler );
         eventDriver.get("http://10.10.17.22:8080/barsroot/account/login/");
 
-        findElement = new FindElement(eventDriver);
         frame = new Frame(eventDriver);
 
     }
@@ -82,6 +80,6 @@ public class JTest {
         WebElement passwordField = eventDriver.findElement( By.id( "txtPassword" ) );
         passwordField.clear();
         passwordField.sendKeys( "qwerty" );
-        findElement.pressOnId( "btLogIn" );
+        //findElement.pressOnId( "btLogIn" );
     }
 }

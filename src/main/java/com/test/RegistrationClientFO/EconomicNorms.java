@@ -83,10 +83,10 @@ public class EconomicNorms {
         this.pressVED_com();
         frame.kContentFrame();
         this.pressDirVED_com();
-        frame.tabFrame( "Tab2" );
+/*        frame.tabFrame( "Tab2" );
         this.pressK050_com();
         frame.kContentFrame();
-        this.pressDirK050_com();
+        this.pressDirK050_com();*/
 
     }
 }
