@@ -71,10 +71,10 @@ public class EconomicNorms {
     }
 
     public void correctDetails(){
-        frame.tabFrame( "Tab2" );
+        /*frame.tabFrame( "Tab2" );
         this.pressISE_com();
         frame.kContentFrame();
-        this.pressDirISE_com();
+        this.pressDirISE_com();*/
         frame.tabFrame( "Tab2" );
         this.pressFS_com();
         frame.kContentFrame();

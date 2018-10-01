@@ -137,7 +137,9 @@ public class RegistrationCard_FO {
         Assert.assertEquals( "Фін.мон.", addDetails.getFinMonText() );
         Assert.assertEquals( "БПК", addDetails.getBPKText() );
         Assert.assertEquals( "Санкції", addDetails.getSanctionsText() );
-        Assert.assertEquals( "Для Кредитного реєстру", addDetails.getCreditRegisterText() );
+        if (getPolygon() == 22){
+            Assert.assertEquals( "Для Кредитного реєстру", addDetails.getCreditRegisterText() );
+        }
         Assert.assertEquals( "Інші", addDetails.getOtherText() );
         Assert.assertEquals( "Критерії ризику", addDetails.getRiskCriteriaText() );
 

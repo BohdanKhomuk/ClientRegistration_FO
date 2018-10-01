@@ -4,10 +4,10 @@ import com.test.Methods.EventHandler;
 import com.test.Methods.ReadingFromFile;
 import com.test.RegistrationCardFO.CustomerAccounts;
 import com.test.TransitionToRegistration;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -16,9 +16,10 @@ import java.util.concurrent.TimeUnit;
 
 public class CustomerAccountsFO {
 
+    private static EventFiringWebDriver eventDriver;
     private static TransitionToRegistration transitionToReg;
     private static CustomerAccounts customerAccounts;
-    private static final Logger LOG = LogManager.getLogger(EventHandler.class);
+    //private static final Logger LOG = LogManager.getLogger(EventHandler.class);
 
     @BeforeMethod
     public static void firstClass() {
@@ -60,6 +61,28 @@ public class CustomerAccountsFO {
         transitionToReg.openCustomerAccounts( ReadingFromFile.read( "text.txt" ) );
         //Open customer accounts
         customerAccounts.createCustAcc( "2620", "1" );
-        System.out.println((char) 27 + "[32m[Passed]----------Тест завершено успішно!----------[Passed]" + (char) 27 + "[0m");
+        System.out.println((char) 27 + "[32m[Passed]----------Тест створення рахунку клієнта(ФО) завершено успішно!----------[Passed]" + (char) 27 + "[0m");
+
+        System.out.println((char) 27 + "[33mРеєстрація рахунку клієнта(ФО)" + (char) 27 + "[0m");
+        customerAccounts.editCustAcc( "213" );
+        Assert.assertEquals("  НБУ   ", customerAccounts.getTextBtnSPECPARAM());
+        Assert.assertEquals("  Ощадбанк   ", customerAccounts.getTextBtnSPECPARAM_INT());
+        Assert.assertEquals("  Депозити   ", customerAccounts.getTextBtnDPT());
+        Assert.assertEquals("  БПК   ", customerAccounts.getTextBtnBPK());
+        Assert.assertEquals(" ЦВК  ", customerAccounts.getTextBtnCVK());
+        Assert.assertEquals("  Інші   ", customerAccounts.getTextBtnOTHERS());
+        customerAccounts.saveOptions();
+        System.out.println((char) 27 + "[32m[Passed]----------Тест редагування рахунку клієнта(ФО) завершено успішно!----------[Passed]" + (char) 27 + "[0m");
+
+        System.out.println((char) 27 + "[33mВидалення рахунку клієнта(ФО)" + (char) 27 + "[0m");
+        Assert.assertEquals( "213", customerAccounts.getTextNLSALT_1() );
+        customerAccounts.closeCustAcc();
+        System.out.println((char) 27 + "[32m[Passed]----------Тест видалення рахунку клієнта(ФО) завершено успішно!----------[Passed]" + (char) 27 + "[0m");
+
+    }
+
+    @AfterMethod
+    public static void tearDown() {
+        eventDriver.quit();
     }
 }
