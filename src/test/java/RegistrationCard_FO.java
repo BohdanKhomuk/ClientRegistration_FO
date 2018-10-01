@@ -114,7 +114,7 @@ public class RegistrationCard_FO {
     @Test//(enabled = false)
     public void editingClientCard() {
         System.out.println((char) 27 + "[33mРедагування карточки клієнта(ФО)" + (char) 27 + "[0m");
-        transitionToReg.openClient( ReadingFromFile.read( "text.txt" ) );
+        transitionToReg.openClient( ReadingFromFile.read( "ClientRNK.txt" ) );
 
         basicDetails.enterSAB( RandomWordsAndNumber.intRandomNumber( 9999 ) );
 
@@ -158,7 +158,7 @@ public class RegistrationCard_FO {
     @Test(enabled = false)
     public void closeClientCard(){
         System.out.println((char) 27 + "[33mЗакриття карточки клієнта(ФО)" + (char) 27 + "[0m");
-        transitionToReg.closeClient(ReadingFromFile.read( "text.txt" ));
+        transitionToReg.closeClient(ReadingFromFile.read( "ClientRNK.txt" ));
     }
 
     @AfterMethod

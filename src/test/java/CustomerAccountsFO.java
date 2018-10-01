@@ -58,7 +58,7 @@ public class CustomerAccountsFO {
     public void customerAccountTest() {
         System.out.println((char) 27 + "[33mСтворення рахунку клієнта(ФО)" + (char) 27 + "[0m");
         //Find client
-        transitionToReg.openCustomerAccounts( ReadingFromFile.read( "text.txt" ) );
+        transitionToReg.openCustomerAccounts( ReadingFromFile.read( "ClientRNK.txt" ) );
         //Open customer accounts
         customerAccounts.createCustAcc( "2620", "1" );
         System.out.println((char) 27 + "[32m[Passed]----------Тест створення рахунку клієнта(ФО) завершено успішно!----------[Passed]" + (char) 27 + "[0m");

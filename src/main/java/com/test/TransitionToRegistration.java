@@ -40,7 +40,7 @@ public class TransitionToRegistration {
     private By btnFilter = By.xpath( "//th[@data-field='Id']/a[1]/span" );
     private By fieldFilter = By.xpath( "//input[@class='k-formatted-value k-input']" );
     private By btnFiltrate = By.xpath( "//button[text() = 'фільтрувати']" );
-    private String searchRow = String.format( "//*[text() = '%s']", ReadingFromFile.read( "text.txt" ));
+    private String searchRow = String.format( "//*[text() = '%s']", ReadingFromFile.read( "ClientRNK.txt" ));
     private By searchRowNum = By.xpath( searchRow );
     private By openCustAccsBtn = By.id( "openCustAccsBtn" );
     private By bt_reg = By.id( "bt_reg" );
@@ -205,7 +205,7 @@ public class TransitionToRegistration {
         String t1 = getInfoText().replace("Клієнта РНК=", "");
         String t2 = t1.replace(" успішно збережено", "");
         System.out.println((char) 27 + "[34mРНК Клієнта - " + (char) 27 + "[0m" + t2);
-        WritingtoFile.Filewriting("text.txt", t2);
+        WritingtoFile.Filewriting( "ClientRNK.txt", t2);
         pause.userDelay( 6000 );
         this.clickBtnOK();
 
