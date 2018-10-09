@@ -3,9 +3,12 @@ package com.test.RegistrationCardFO;
 import com.test.Methods.Frame;
 import com.test.Methods.Pause;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import static com.test.LoginPage.getPolygon;
 
 public class CustomerAccounts {
 
@@ -235,23 +238,38 @@ public class CustomerAccounts {
         frame.toTab3Frame();
         //Confirmation window 1
         String mainWindows1 = driver.getWindowHandle();
+        pause.userDelay( 1000 );
         for(String windowsHandls : driver.getWindowHandles()){
-            driver.switchTo().window(windowsHandls); }
+            if(!windowsHandls.equals(mainWindows1)){
+                driver.switchTo().window(windowsHandls);
+            }
+        }
         this.clickBtOk();
         driver.switchTo().window(mainWindows1);
-        pause.userDelay(2000);
-        /*//Confirmation window 2
-        frame.toMainFrame();
-        this.clickBTab3();
-        frame.toTab3Frame();
-        String mainWindows2 = driver.getWindowHandle();
-        for(String windowsHandls : driver.getWindowHandles()){
-            driver.switchTo().window(windowsHandls);            }
-        this.clickConfChangesBt();
-        driver.switchTo().window(mainWindows2);*/
+        pause.userDelay(4000);
+        //Confirmation window 2
+        if (getPolygon() == 22 || getPolygon() == 40){
+           /* Actions action = new Actions(driver);
+            action.sendKeys(Keys.ESCAPE).build().perform();*/
+            frame.toMainFrame();
+            this.clickBTab3();
+            frame.toTab3Frame();
+            String mainWindows2 = driver.getWindowHandle();
+            pause.userDelay( 1000 );
+            for(String windowsHandls : driver.getWindowHandles()){
+                if(!windowsHandls.equals(mainWindows2)){
+                driver.switchTo().window(windowsHandls);
+                }
+            }
+            this.clickButtonOK();
+            driver.switchTo().window(mainWindows2);
+        }
         // Return to page with accounts
         driver.switchTo().defaultContent();
-        driver.navigate().back();
+        if (getPolygon() == 50 ){
+            driver.navigate().back();
+        }
+        pause.userDelay( 2000 );
         driver.navigate().back();
         frame.toMainFrame();
         new CustomerAccounts( driver );
@@ -260,15 +278,17 @@ public class CustomerAccounts {
     public void createCustAcc(String nsb, String value){
         this.clickBtOpen();
         //Basic details
-        pause.userDelay( 2000 );
+        pause.userDelay( 3000 );
         frame.toTab0Frame();
         this.enterTbNbs( nsb );
         this.clickBAccountMask();
         this.clickDdOb22();
         String mainWindows = driver.getWindowHandle(); //запоминаем первое окно
-        //Переход на второе окно
+        pause.userDelay( 1000 );
         for(String windowsHandls : driver.getWindowHandles()){
-            driver.switchTo().window(windowsHandls);
+            if(!windowsHandls.equals(mainWindows)){
+                driver.switchTo().window(windowsHandls);
+            }
         }
         this.clickTd_21();
         driver.switchTo().window(mainWindows);
@@ -293,6 +313,7 @@ public class CustomerAccounts {
     }
 
     public void editCustAcc(String nlsAlt){
+        pause.userDelay( 2000 );
         this.clickScore();
         this.clickBtEdit();
         pause.userDelay( 2000 );
@@ -304,18 +325,22 @@ public class CustomerAccounts {
         frame.toTab1Frame();
         this.clickDdVidBlkD();
         String mainWindows3 = driver.getWindowHandle(); //запоминаем первое окно
-        //Переход на второе окно
+        pause.userDelay( 1000 );
         for(String windowsHandls : driver.getWindowHandles()){
-            driver.switchTo().window(windowsHandls);
+            if(!windowsHandls.equals(mainWindows3)){
+                driver.switchTo().window(windowsHandls);
+            }
         }
         this.clickScoreDBA();
         driver.switchTo().window(mainWindows3);
         frame.toTab1Frame();
         this.clickDdVidBlkK();
         String mainWindows4 = driver.getWindowHandle(); //запоминаем первое окно
-        //Переход на второе окно
+        pause.userDelay( 1000 );
         for(String windowsHandls : driver.getWindowHandles()){
-            driver.switchTo().window(windowsHandls);
+            if(!windowsHandls.equals(mainWindows4)){
+                driver.switchTo().window(windowsHandls);
+            }
         }
         this.clickScoreDBA();
         driver.switchTo().window(mainWindows4);
@@ -325,9 +350,11 @@ public class CustomerAccounts {
         frame.toTab2Frame();
         this.clickBtAdd();
         String mainWindows5 = driver.getWindowHandle(); //запоминаем первое окно
-        //Переход на второе окно
+        pause.userDelay( 1000 );
         for(String windowsHandls : driver.getWindowHandles()){
-            driver.switchTo().window(windowsHandls);
+            if(!windowsHandls.equals(mainWindows5)){
+                driver.switchTo().window(windowsHandls);
+            }
         }
         this.clickScoreDBA();
         driver.switchTo().window(mainWindows5);
@@ -343,10 +370,18 @@ public class CustomerAccounts {
         this.clickBtClose();
         this.clickClosureReason5();
         this.clickAlertifyOk();
+        pause.userDelay( 500 );
         String mainWindows6 = driver.getWindowHandle();
+        pause.userDelay( 1000 );
         for(String windowsHandls : driver.getWindowHandles()){
-            driver.switchTo().window(windowsHandls); }
-        this.clickButtonOK();
+            if(!windowsHandls.equals(mainWindows6)){
+                driver.switchTo().window(windowsHandls);
+            }
+        }
+        Actions action = new Actions(driver);
+        action.sendKeys(Keys.ENTER).build().perform();
+        //this.clickButtonOK();
         driver.switchTo().window(mainWindows6);
+        new CustomerAccounts( driver );
     }
 }

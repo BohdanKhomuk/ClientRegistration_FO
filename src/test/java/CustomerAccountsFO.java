@@ -50,7 +50,6 @@ public class CustomerAccountsFO {
         loginPage.enterInMainPage( "absadm01", "qwerty" );
         System.out.println((char) 27 + "[33mБлок переходу у функцію створення клієнта(ФО)" + (char)27 + "[0m");
         mainPage.enterFunction( "Реєстрація Клієнтів і Рахунків" + "\n" );
-        System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО)" + (char)27 + "[0m");
 
     }
 
@@ -81,8 +80,8 @@ public class CustomerAccountsFO {
 
     }
 
-    @AfterMethod
+/*    @AfterMethod
     public static void tearDown() {
         eventDriver.quit();
-    }
+    }*/
 }
