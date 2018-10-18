@@ -10,7 +10,7 @@ public class Frame {
         this.eventDriver = eventFiringWebDriver;
     }
 
-    private void todefCont(){
+    public void todefCont(){
         eventDriver.switchTo().defaultContent();
     }
 

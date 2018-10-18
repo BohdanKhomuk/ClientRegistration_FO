@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
-    private static int polygon = 50; //22 - Test; 40 - RC; 50 - Master//
+    private static int polygon = 40; //22 - Test; 40 - RC; 50 - Master//
 
     public WebDriver driver;
 
@@ -24,7 +24,6 @@ public class LoginPage {
     public static void setPolygon(int polygon) {
         LoginPage.polygon = polygon;
     }
-
 
     private void typeUserName(String name){
         driver.findElement( userName ).clear();

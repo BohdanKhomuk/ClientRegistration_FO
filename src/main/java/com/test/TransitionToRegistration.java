@@ -4,11 +4,11 @@ import com.test.Methods.Frame;
 import com.test.Methods.Pause;
 import com.test.Methods.ReadingFromFile;
 import com.test.Methods.WritingtoFile;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import javax.swing.*;
 
 
 public class TransitionToRegistration {
@@ -40,14 +40,16 @@ public class TransitionToRegistration {
     private By btnFilter = By.xpath( "//th[@data-field='Id']/a[1]/span" );
     private By fieldFilter = By.xpath( "//input[@class='k-formatted-value k-input']" );
     private By btnFiltrate = By.xpath( "//button[text() = 'фільтрувати']" );
-    private String searchRow = String.format( "//*[text() = '%s']", ReadingFromFile.read( "ClientRNK.txt" ));
-    private By searchRowNum = By.xpath( searchRow );
+   // private String searchRow = String.format( "//*[contains(text(),'%s')]", ReadingFromFile.read( "ClientRNK.txt" ));
+    //private By searchRowNum = By.xpath( searchRow );
     private By openCustAccsBtn = By.id( "openCustAccsBtn" );
     private By bt_reg = By.id( "bt_reg" );
     private By btnOK = By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" );
     private By infoText = By.xpath( "//div[@id='barsUiAlertDialog']/table/tbody/tr/td[2]" );
     private By clientBtn = By.xpath( "//span[@class = 'ng-binding']" );
     private By closeClientBtn = By.id( "closeCustBtn" );
+    private By closeRegCart = By.xpath ( "//div[6]//a[2]/span" );
+    private By closeSearchWindow = By.xpath ( "//div[5]/div[1]//a/span" );
 
 
     private void clickRegisterCustBtn(){
@@ -137,6 +139,8 @@ public class TransitionToRegistration {
     }
 
     private void clickSearchRowNum(){
+        String searchRow = String.format( "//*[contains(text(),'%s')]", ReadingFromFile.read( "ClientRNK.txt" ));
+        By searchRowNum = By.xpath( searchRow );
         driver.findElement(searchRowNum).click();
         new TransitionToRegistration( driver );
     }
@@ -168,6 +172,20 @@ public class TransitionToRegistration {
         new TransitionToRegistration( driver );
     }
 
+    public void clickCloseRegCart(){
+        frame.toMainFrame ();
+        pause.userDelay ( 10000 );
+        Actions action = new Actions(driver);
+        action.sendKeys(Keys.ESCAPE).build().perform();
+        //driver.findElement(closeRegCart).click();
+        new TransitionToRegistration( driver );
+    }
+
+    private void clickCloseSearchWindow(){
+        driver.findElement(closeSearchWindow).click();
+        new TransitionToRegistration( driver );
+    }
+
     private void enterRNK(String newrnk){
         driver.findElement(textBoxRNK).sendKeys( newrnk );
     }
@@ -190,7 +208,7 @@ public class TransitionToRegistration {
         if ((LoginPage.getPolygon() == 50)||(LoginPage.getPolygon() == 22)){
              this.clickClosePopupWindow();
         }
-        pause.userDelay( 7000 );
+        pause.userDelay( 5000 );
         this.clickRegistrationBtn();
         new TransitionToRegistration( driver );
     }
@@ -206,9 +224,8 @@ public class TransitionToRegistration {
         String t2 = t1.replace(" успішно збережено", "");
         System.out.println((char) 27 + "[34mРНК Клієнта - " + (char) 27 + "[0m" + t2);
         WritingtoFile.Filewriting( "ClientRNK.txt", t2);
-        pause.userDelay( 6000 );
+        pause.userDelay( 5000 );
         this.clickBtnOK();
-
     }
 
     private void findCard(String rnk){
@@ -238,11 +255,21 @@ public class TransitionToRegistration {
     }
 
     public void openCustomerAccounts(String rnk){
+        pause.userDelay( 2000 );
         this.findCard( rnk );
         pause.userDelay( 3000 );
         this.clickClientBtn();
         pause.userDelay( 3000 );
         this.clickOpenCustAccsBtn();
         new TransitionToRegistration( driver );
+    }
+
+    public void closeWindowReg (){
+        this.clickCloseRegCart ();
+        pause.userDelay ( 1000 );
+        Actions action = new Actions(driver);
+        action.sendKeys(Keys.ESCAPE).build().perform();
+        //this.clickCloseSearchWindow ();
+        new TransitionToRegistration ( driver );
     }
 }
