@@ -10,6 +10,7 @@ import com.test.TransitionToRegistration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -25,19 +26,8 @@ import static com.test.LoginPage.getPolygon;
 public class RegistrationCard_FO {
 
     private static EventFiringWebDriver eventDriver;
-    private static TransitionToRegistration transitionToReg;
-    private static BasicDetails basicDetails;
-    private static ClientDetails clientDetails;
-    private static AdditionalInformation addInformation;
-    private static AdditionalDetails addDetails;
-    private static TaxpayerDetails taxpayerDetails;
-    private static EconomicNorms economicNorms;
-    private static ConnectedPeople connectedPeople;
-    private static ClientSegments clientSegments;
-    private static CDO cdo;
+
     private static final Logger LOG = LogManager.getLogger(EventHandler.class);
-    private static MainPage mainPage;
-    private static CustomerAccounts customerAccounts;
 
     private RandomWordsAndNumber random = new RandomWordsAndNumber();
     private Gender gender = new Gender();
@@ -60,21 +50,7 @@ public class RegistrationCard_FO {
 
         //eventDriver.get( "http://10.10.10.198:11111/barsroot/" );
 
-        LoginPage loginPage = new LoginPage( eventDriver );
-
-        transitionToReg = new TransitionToRegistration( eventDriver );
-        basicDetails = new BasicDetails( eventDriver );
-        clientDetails = new ClientDetails( eventDriver );
-        addInformation = new AdditionalInformation( eventDriver );
-        addDetails = new AdditionalDetails( eventDriver );
-        taxpayerDetails = new TaxpayerDetails( eventDriver );
-        economicNorms = new EconomicNorms( eventDriver );
-        connectedPeople = new ConnectedPeople(eventDriver);
-        clientSegments = new ClientSegments(eventDriver);
-        cdo = new CDO( eventDriver );
-        mainPage = new MainPage ( eventDriver );
-        customerAccounts = new CustomerAccounts( eventDriver );
-
+        LoginPage loginPage = PageFactory.initElements( eventDriver, LoginPage.class );
 
         System.out.println((char) 27 + "[33mБлок авторизації" + (char)27 + "[0m");
         loginPage.enterInMainPage( "absadm01", "qwerty" );
@@ -83,6 +59,13 @@ public class RegistrationCard_FO {
 
     @Test (priority = 1)//(enabled = false)
     public void createClientCard() throws Exception {
+        MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
+        TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );
+        BasicDetails basicDetails = PageFactory.initElements ( eventDriver, BasicDetails.class );
+        AdditionalDetails addDetails = PageFactory.initElements ( eventDriver, AdditionalDetails.class );
+        AdditionalInformation addInformation = PageFactory.initElements ( eventDriver, AdditionalInformation.class );
+        ClientDetails clientDetails = PageFactory.initElements ( eventDriver, ClientDetails.class );
+
         mainPage.enterFunction( "Реєстрація Клієнтів і Рахунків" + "\n" );
         System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО)" + (char)27 + "[0m");
 
@@ -124,6 +107,10 @@ public class RegistrationCard_FO {
 
     @Test(priority = 2)//(enabled = false)
     public void customerAccountTest() {
+        MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
+        TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );
+        CustomerAccounts customerAccounts = PageFactory.initElements ( eventDriver, CustomerAccounts.class );
+
         mainPage.enterFunction( "Реєстрація Клієнтів і Рахунків" + "\n" );
         System.out.println((char) 27 + "[33mСтворення рахунку клієнта(ФО)" + (char) 27 + "[0m");
         //Find client
@@ -152,6 +139,18 @@ public class RegistrationCard_FO {
 
     @Test (priority = 3)//(enabled = false)
     public void editingClientCard() {
+        MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
+        TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );
+        BasicDetails basicDetails = PageFactory.initElements ( eventDriver, BasicDetails.class );
+        ClientSegments clientSegments = PageFactory.initElements ( eventDriver, ClientSegments.class );
+        AdditionalDetails addDetails = PageFactory.initElements ( eventDriver, AdditionalDetails.class );
+        AdditionalInformation addInformation = PageFactory.initElements ( eventDriver, AdditionalInformation.class );
+        CDO cdo = PageFactory.initElements ( eventDriver, CDO.class );
+        ClientDetails clientDetails = PageFactory.initElements ( eventDriver, ClientDetails.class );
+        ConnectedPeople connectedPeople = PageFactory.initElements ( eventDriver, ConnectedPeople.class );
+        TaxpayerDetails taxpayerDetails = PageFactory.initElements ( eventDriver, TaxpayerDetails.class );
+        EconomicNorms economicNorms = PageFactory.initElements ( eventDriver, EconomicNorms.class );
+
         mainPage.enterFunction( "Реєстрація Клієнтів і Рахунків" + "\n" );
         System.out.println((char) 27 + "[33mРедагування карточки клієнта(ФО)" + (char) 27 + "[0m");
         transitionToReg.openClient( ReadingFromFile.read( "ClientRNK.txt" ) );
@@ -199,6 +198,9 @@ public class RegistrationCard_FO {
 
     @Test(priority = 4)//(enabled = false)
     public void closeClientCard(){
+        MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
+        TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );
+
         mainPage.enterFunction( "Реєстрація Клієнтів і Рахунків" + "\n" );
         System.out.println((char) 27 + "[33mРеєстрація клієнта(ФО)" + (char)27 + "[0m");
         System.out.println((char) 27 + "[33mЗакриття карточки клієнта(ФО)" + (char) 27 + "[0m");

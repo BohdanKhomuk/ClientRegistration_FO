@@ -2,9 +2,10 @@ package com.test.RegistrationClientFO;
 
 import com.test.Methods.Frame;
 import com.test.Methods.Pause;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class AdditionalDetails {
@@ -19,163 +20,212 @@ public class AdditionalDetails {
         this.pause = new Pause();
     }
 
-    private By ctl02Help = By.id( "gvMain_ctl02_imgEdHelp" );
-    private By businessEntities = By.xpath( "//div[@title = '2']" );
-    private By chooseBtn = By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" );
-    private By btnFinMon = By.xpath( "//a[contains(text(),'Фін.мон')]" );
-    private By gridcellMissing = By.xpath( "//td[contains(text(),'Відсутні')]" );
-    private By ctl03Val = By.id( "gvMain_ctl03_edEdVal" );
-    private By ctl04Val = By.id( "gvMain_ctl04_edEdVal" );
-    private By ctl05Val = By.id( "gvMain_ctl05_edEdVal" );
-    private By ctl10Val = By.id( "gvMain_ctl10_edEdVal" );
-    private By ctl11Val = By.id( "gvMain_ctl11_edEdVal" );
-    private By ctl06Help = By.id( "gvMain_ctl06_imgEdHelp" );
-    private By gridcellYes = By.xpath( "//div[@title = 'YES']" );
-    private By ctl08Help = By.id( "gvMain_ctl08_imgEdHelp" );
-    private By gridcellUnsatisfactory = By.xpath( "//tr[@class = 'k-alt']/td" );
-    private By ctl09Help = By.id( "gvMain_ctl09_imgEdHelp" );
-    private By gridcellSatisfactory = By.xpath( "//div[@title = 'Задовільний']" );
-    private By btnOther = By.xpath( "//a[contains(text(),'Інші')]" );
-    private By ctl03Help = By.id( "gvMain_ctl03_imgEdHelp" );
-    private By gridcellLeadership = By.xpath( "//div[@title = '1']" );
-    private By generalText = By.linkText( "Загальні" );
-    private By finMonText = By.linkText( "Фін.мон." );
-    private By bpkText = By.linkText( "БПК" );
-    private By sanctionsText = By.linkText( "Санкції" );
-    private By creditRegisterText = By.linkText( "Для Кредитного реєстру" );
-    private By otherText = By.linkText( "Інші" );
-    private By riskCriteriaText = By.linkText( "Критерії ризику" );
+    @FindBy(id = "gvMain_ctl02_imgEdHelp")
+    private WebElement ctl02Help;
+    @FindBy(xpath = "//div[@title = '2']")
+    @CacheLookup
+    private WebElement businessEntities;
+    @FindBy(xpath = "//button[@class = 'delete-confirm k-button k-primary']")
+
+    private WebElement chooseBtn;
+    @FindBy(xpath = "//a[contains(text(),'Фін.мон')]")
+    @CacheLookup
+    private WebElement btnFinMon;
+    @FindBy(xpath = "//td[contains(text(),'Відсутні')]")
+    @CacheLookup
+    private WebElement gridcellMissing;
+    @FindBy(id = "gvMain_ctl03_edEdVal")
+    @CacheLookup
+    private WebElement ctl03Val;
+    @FindBy(id = "gvMain_ctl04_edEdVal")
+    @CacheLookup
+    private WebElement ctl04Val;
+    @FindBy(id = "gvMain_ctl05_edEdVal")
+    @CacheLookup
+    private WebElement ctl05Val;
+    @FindBy(id = "gvMain_ctl10_edEdVal")
+    @CacheLookup
+    private WebElement ctl10Val;
+    @FindBy(id = "gvMain_ctl11_edEdVal")
+    @CacheLookup
+    private WebElement ctl11Val;
+    @FindBy(id = "gvMain_ctl06_imgEdHelp")
+    @CacheLookup
+    private WebElement ctl06Help;
+    @FindBy(xpath = "//div[@title = 'YES']")
+    @CacheLookup
+    private WebElement gridcellYes;
+    @FindBy(id = "gvMain_ctl08_imgEdHelp")
+    @CacheLookup
+    private WebElement ctl08Help;
+    @FindBy(xpath = "//tr[@class = 'k-alt']/td")
+    @CacheLookup
+    private WebElement gridcellUnsatisfactory;
+    @FindBy(id = "gvMain_ctl09_imgEdHelp")
+    @CacheLookup
+    private WebElement ctl09Help;
+    @FindBy(xpath = "//div[@title = 'Задовільний']")
+    @CacheLookup
+    private WebElement gridcellSatisfactory;
+    @FindBy(xpath = "//a[contains(text(),'Інші')]")
+    @CacheLookup
+    private WebElement btnOther;
+    @FindBy(id = "gvMain_ctl03_imgEdHelp")
+    @CacheLookup
+    private WebElement ctl03Help;
+    @FindBy(xpath = "//div[@title = '1']")
+    @CacheLookup
+    private WebElement gridcellLeadership;
+    @FindBy(linkText = "Загальні")
+    @CacheLookup
+    private WebElement generalText;
+    @FindBy(linkText = "Фін.мон.")
+    @CacheLookup
+    private WebElement finMonText;
+    @FindBy(linkText = "БПК")
+    @CacheLookup
+    private WebElement bpkText;
+    @FindBy(linkText = "Санкції")
+    @CacheLookup
+    private WebElement sanctionsText;
+    @FindBy(linkText = "Для Кредитного реєстру")
+    @CacheLookup
+    private WebElement creditRegisterText;
+    @FindBy(linkText = "Інші")
+    @CacheLookup
+    private WebElement otherText;
+    @FindBy(linkText = "Критерії ризику")
+    @CacheLookup
+    private WebElement riskCriteriaText;
 
 
     private void pressCt102Help(){
-        driver.findElement(ctl02Help).click();
+        ctl02Help.click();
         new AdditionalDetails( driver );
     }
 
     private void pressBusinessEntities(){
-        driver.findElement(businessEntities).click();
+        businessEntities.click();
         new AdditionalDetails( driver );
     }
 
     private void pressChooseBtn(){
-        driver.findElement(chooseBtn).click();
+        chooseBtn.click();
         new AdditionalDetails( driver );
     }
 
     private void pressBtnFinMon(){
-        driver.findElement(btnFinMon).click();
+        btnFinMon.click();
         new AdditionalDetails( driver );
     }
 
     private void pressGridcellMissing(){
-        driver.findElement(gridcellMissing).click();
+        gridcellMissing.click();
         new AdditionalDetails( driver );
     }
 
     private void pressCt106Help(){
-        driver.findElement(ctl06Help).click();
+        ctl06Help.click();
         new AdditionalDetails( driver );
     }
 
     private void pressGridcellYes(){
-        driver.findElement(gridcellYes).click();
+        gridcellYes.click();
         new AdditionalDetails( driver );
     }
 
     private void pressCt108Help(){
-        driver.findElement(ctl08Help).click();
+        ctl08Help.click();
         new AdditionalDetails( driver );
     }
 
     private void pressGridcellUnsatisfactory(){
-        driver.findElement(gridcellUnsatisfactory).click();
+        gridcellUnsatisfactory.click();
         new AdditionalDetails( driver );
     }
 
     private void pressCt109Help(){
-        driver.findElement(ctl09Help).click();
+        ctl09Help.click();
         new AdditionalDetails( driver );
     }
 
     private void pressGridcellSatisfactory(){
-        driver.findElement(gridcellSatisfactory).click();
+        gridcellSatisfactory.click();
         new AdditionalDetails( driver );
     }
 
     private void pressBtnOther(){
-        driver.findElement(btnOther).click();
+        btnOther.click();
         new AdditionalDetails( driver );
     }
 
     private void pressCt103Help(){
-        driver.findElement(ctl03Help).click();
+        ctl03Help.click();
         new AdditionalDetails( driver );
     }
 
     private void pressGridcellLeadership(){
-        driver.findElement(gridcellLeadership).click();
+        gridcellLeadership.click();
         new AdditionalDetails( driver );
     }
 
     private void enterCt103Val(String citizenship){
-        driver.findElement(ctl03Val).sendKeys( citizenship );
+        ctl03Val.sendKeys( citizenship );
     }
 
     private void enterCt104Val(String firstFilldData){
-        WebElement firstData = driver.findElement(ctl04Val);
-        firstData.click();
-        firstData.clear();
-        firstData.sendKeys( firstFilldData );
+        ctl04Val.click();
+        ctl04Val.clear();
+        ctl04Val.sendKeys( firstFilldData );
     }
 
     private void enterCt105Val(String dateOfIdentification){
-        WebElement idetification = driver.findElement(ctl05Val);
-        idetification.click();
-        idetification.clear();
-        idetification.sendKeys( dateOfIdentification );
+        ctl05Val.click();
+        ctl05Val.clear();
+        ctl05Val.sendKeys( dateOfIdentification );
     }
 
     private void enterCt110Val(String position){
-        driver.findElement(ctl10Val).sendKeys( position );
+        ctl10Val.sendKeys( position );
     }
 
     private void enterCt111Val(String sourcesFunds){
-        driver.findElement(ctl11Val).sendKeys( sourcesFunds );
+        ctl11Val.sendKeys( sourcesFunds );
     }
 
     public String getGeneralText(){
         frame.tabFrame( "Tab5" );
-        return  driver.findElement( generalText ).getText();
+        return  generalText.getText();
     }
 
     public String getFinMonText(){
         frame.tabFrame( "Tab5" );
-        return  driver.findElement( finMonText ).getText();
+        return  finMonText.getText();
     }
 
     public String getBPKText(){
         frame.tabFrame( "Tab5" );
-        return  driver.findElement( bpkText ).getText();
+        return  bpkText.getText();
     }
 
     public String getSanctionsText(){
         frame.tabFrame( "Tab5" );
-        return  driver.findElement( sanctionsText ).getText();
+        return  sanctionsText.getText();
     }
 
     public String getCreditRegisterText(){
         frame.tabFrame( "Tab5" );
-        return  driver.findElement( creditRegisterText ).getText();
+        return  creditRegisterText.getText();
     }
 
     public String getOtherText(){
         frame.tabFrame( "Tab5" );
-        return  driver.findElement( otherText ).getText();
+        return  otherText.getText();
     }
 
     public String getRiskCriteriaText(){
         frame.tabFrame( "Tab5" );
-        return  driver.findElement( riskCriteriaText ).getText();
+        return  riskCriteriaText.getText();
     }
 
     public void enterGeneral(){

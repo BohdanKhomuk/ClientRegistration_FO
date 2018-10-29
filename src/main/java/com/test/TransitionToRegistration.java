@@ -4,11 +4,13 @@ import com.test.Methods.Frame;
 import com.test.Methods.Pause;
 import com.test.Methods.ReadingFromFile;
 import com.test.Methods.WritingtoFile;
-import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-
-import javax.swing.*;
 
 
 public class TransitionToRegistration {
@@ -23,118 +25,163 @@ public class TransitionToRegistration {
         this.pause = new Pause();
     }
 
-    private By registerCustBtn = By.id("registerCustBtn");
-    private By registerNew = By.xpath( "//div[@class = 'k-window-content k-content']/div/div/div[2]/button" );
-    private By textBoxRNK = By.xpath( "//div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']" );
-    private By searchButton = By.xpath( "//div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']" );
-    private By closePopupWindow = By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" );
-    private By registrationButton = By.xpath( "//button[@class = 'k-button']" );
-    private By btnTaxpayerDetalis = By.id( "bTab1" );
-    private By btnEconomicNorms = By.id( "bTab2" );
-    private By btnClientDetalis = By.id( "bTab3" );
-    private By btnAdditionalInformation = By.id( "bTab4" );
-    private By btnAdditionalDetails = By.id( "bTab5" );
-    private By btnConnectedPeople = By.id( "bTab6" );
-    private By btnClientSegments = By.id( "bTab7" );
-    private By btnCDO = By.id( "bTab8" );
-    private By btnFilter = By.xpath( "//th[@data-field='Id']/a[1]/span" );
-    private By fieldFilter = By.xpath( "//input[@class='k-formatted-value k-input']" );
-    private By btnFiltrate = By.xpath( "//button[text() = 'фільтрувати']" );
-   // private String searchRow = String.format( "//*[contains(text(),'%s')]", ReadingFromFile.read( "ClientRNK.txt" ));
-    //private By searchRowNum = By.xpath( searchRow );
-    private By openCustAccsBtn = By.id( "openCustAccsBtn" );
-    private By bt_reg = By.id( "bt_reg" );
-    private By btnOK = By.xpath( "//button[@class = 'delete-confirm k-button k-primary']" );
-    private By infoText = By.xpath( "//div[@id='barsUiAlertDialog']/table/tbody/tr/td[2]" );
-    private By clientBtn = By.xpath( "//span[@class = 'ng-binding']" );
-    private By closeClientBtn = By.id( "closeCustBtn" );
-    private By closeRegCart = By.xpath ( "//div[6]//a[2]/span" );
-    private By closeSearchWindow = By.xpath ( "//div[5]/div[1]//a/span" );
-
+    @FindBy(id = "registerCustBtn")
+    @CacheLookup
+    private WebElement registerCustBtn;
+    @FindBy(xpath = "//div[@class = 'k-window-content k-content']/div/div/div[2]/button")
+    @CacheLookup
+    private WebElement registerNew;
+    @FindBy(xpath = "//div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']" )
+    @CacheLookup
+    private WebElement textBoxRNK;
+    @FindBy(xpath = "//div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']")
+    @CacheLookup
+    private WebElement searchButton;
+    @FindBy(xpath = "//button[@class = 'delete-confirm k-button k-primary']")
+    @CacheLookup
+    private WebElement closePopupWindow;
+    @FindBy(xpath = "//button[@class = 'k-button']")
+    @CacheLookup
+    private WebElement registrationButton;
+    @FindBy(id = "bTab1")
+    @CacheLookup
+    private WebElement btnTaxpayerDetalis;
+    @FindBy(id = "bTab2")
+    @CacheLookup
+    private WebElement btnEconomicNorms;
+    @FindBy(id = "bTab3")
+    @CacheLookup
+    private WebElement btnClientDetalis;
+    @FindBy(id = "bTab4")
+    @CacheLookup
+    private WebElement btnAdditionalInformation;
+    @FindBy(id = "bTab5")
+    @CacheLookup
+    private WebElement btnAdditionalDetails;
+    @FindBy(id = "bTab6")
+    @CacheLookup
+    private WebElement btnConnectedPeople;
+    @FindBy(id = "bTab7")
+    @CacheLookup
+    private WebElement btnClientSegments;
+    @FindBy(id = "bTab8")
+    @CacheLookup
+    private WebElement btnCDO;
+    @FindBy(xpath = "//th[@data-field='Id']/a[1]/span")
+    @CacheLookup
+    private WebElement btnFilter;
+    @FindBy(xpath = "//input[@class='k-formatted-value k-input']")
+    @CacheLookup
+    private WebElement fieldFilter;
+    @FindBy(xpath = "//button[text() = 'фільтрувати']")
+    @CacheLookup
+    private WebElement btnFiltrate;
+    @FindBy(id= "openCustAccsBtn")
+    @CacheLookup
+    private WebElement openCustAccsBtn;
+    @FindBy(id = "bt_reg")
+    @CacheLookup
+    private WebElement bt_reg;
+    @FindBy(xpath = "//button[@class = 'delete-confirm k-button k-primary']")
+    private WebElement btnOK;
+    @FindBy(xpath = "//div[@id='barsUiAlertDialog']/table/tbody/tr/td[2]")
+    @CacheLookup
+    private WebElement infoText;
+    @FindBy(xpath = "//span[@class = 'ng-binding']")
+    @CacheLookup
+    private WebElement clientBtn;
+    @FindBy(id = "closeCustBtn")
+    @CacheLookup
+    private WebElement closeClientBtn;
+    @FindBy(xpath = "//div[6]//a[2]/spa")
+    @CacheLookup
+    private WebElement closeRegCart;
+    @FindBy(xpath = "//div[5]/div[1]//a/span")
+    @CacheLookup
+    private WebElement closeSearchWindow;
 
     private void clickRegisterCustBtn(){
-        driver.findElement(registerCustBtn).click();
+        registerCustBtn.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickRegisterNew(){
-        driver.findElement( registerNew ).click();
+        registerNew.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickSearchButton(){
-        driver.findElement(searchButton).click();
+        searchButton.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickClosePopupWindow(){
-        driver.findElement( closePopupWindow ).click();
+        closePopupWindow.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickRegistrationBtn(){
-        driver.findElement(registrationButton).click();
+        registrationButton.click();
         new TransitionToRegistration( driver );
     }
 
     public void clickTaxpayerDetalisBtn(){
         frame.kContentFrame();
-        driver.findElement(btnTaxpayerDetalis).click();
+        btnTaxpayerDetalis.click();
         new TransitionToRegistration( driver );
     }
 
     public void clickEconomicNormsBtn(){
         frame.kContentFrame();
-        driver.findElement(btnEconomicNorms).click();
+        btnEconomicNorms.click();
         new TransitionToRegistration( driver );
     }
 
     public void clickClientDetailBtn(){
         pause.userDelay( 1000 );
         frame.kContentFrame();
-        WebElement element = driver.findElement(btnClientDetalis);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
-        element.click();
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", btnClientDetalis);
+        btnClientDetalis.click();
         new TransitionToRegistration( driver );
     }
 
     public void clickAdditionalInformationBtn(){
         frame.kContentFrame();
-        driver.findElement(btnAdditionalInformation).click();
+        btnAdditionalInformation.click();
         new TransitionToRegistration( driver );
     }
 
     public void clickAdditionalDetailsBtn(){
         frame.kContentFrame();
-        driver.findElement(btnAdditionalDetails).click();
+        btnAdditionalDetails.click();
         new TransitionToRegistration( driver );
     }
 
     public void clickConnectedPeopleBtn(){
         frame.kContentFrame();
-        driver.findElement(btnConnectedPeople).click();
+        btnConnectedPeople.click();
         new TransitionToRegistration( driver );
     }
 
     public void clickClientSegmentsBtn(){
         frame.kContentFrame();
-        driver.findElement(btnClientSegments).click();
+        btnClientSegments.click();
         new TransitionToRegistration( driver );
     }
 
     public void clickCDOBtn(){
         frame.kContentFrame();
-        driver.findElement(btnCDO).click();
+        btnCDO.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickBtnFilter(){
-        driver.findElement(btnFilter).click();
+        btnFilter.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickBtnFiltrate(){
-        driver.findElement(btnFiltrate).click();
+        btnFiltrate.click();
         new TransitionToRegistration( driver );
     }
 
@@ -146,56 +193,41 @@ public class TransitionToRegistration {
     }
 
     private void clickOpenCustAccsBtn(){
-        driver.findElement(openCustAccsBtn).click();
+        openCustAccsBtn.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickBt_reg(){
-        WebElement element = driver.findElement(bt_reg);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
-        element.click();
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", bt_reg);
+        bt_reg.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickBtnOK(){
-        driver.findElement(btnOK).click();
+        btnOK.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickClientBtn(){
-        driver.findElement(clientBtn).click();
+        clientBtn.click();
         new TransitionToRegistration( driver );
     }
 
     private void clickCloseClientBtn(){
-        driver.findElement(closeClientBtn).click();
-        new TransitionToRegistration( driver );
-    }
-
-    public void clickCloseRegCart(){
-        frame.toMainFrame ();
-        pause.userDelay ( 10000 );
-        Actions action = new Actions(driver);
-        action.sendKeys(Keys.ESCAPE).build().perform();
-        //driver.findElement(closeRegCart).click();
-        new TransitionToRegistration( driver );
-    }
-
-    private void clickCloseSearchWindow(){
-        driver.findElement(closeSearchWindow).click();
+        closeClientBtn.click();
         new TransitionToRegistration( driver );
     }
 
     private void enterRNK(String newrnk){
-        driver.findElement(textBoxRNK).sendKeys( newrnk );
+        textBoxRNK.sendKeys( newrnk );
     }
 
     private void enterFieldFilter(String rnk){
-        driver.findElement(fieldFilter).sendKeys( rnk );
+        fieldFilter.sendKeys( rnk );
     }
 
     private String getInfoText(){
-        return  driver.findElement( infoText).getText();
+        return  infoText.getText();
     }
 
 
@@ -262,14 +294,5 @@ public class TransitionToRegistration {
         pause.userDelay( 3000 );
         this.clickOpenCustAccsBtn();
         new TransitionToRegistration( driver );
-    }
-
-    public void closeWindowReg (){
-        this.clickCloseRegCart ();
-        pause.userDelay ( 1000 );
-        Actions action = new Actions(driver);
-        action.sendKeys(Keys.ESCAPE).build().perform();
-        //this.clickCloseSearchWindow ();
-        new TransitionToRegistration ( driver );
     }
 }

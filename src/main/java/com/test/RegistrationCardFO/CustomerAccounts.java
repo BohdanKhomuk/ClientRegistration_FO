@@ -2,10 +2,12 @@ package com.test.RegistrationCardFO;
 
 import com.test.Methods.Frame;
 import com.test.Methods.Pause;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import static com.test.LoginPage.getPolygon;
@@ -22,213 +24,275 @@ public class CustomerAccounts {
         this.pause = new Pause();
     }
 
-    private By btOpen = By.id("btOpen");
-    private By btEdit = By.id("btEdit");
-    private By btClose = By.id("btClose");
-    private By score = By.id("r_1");
-    private By NLSALT_1 = By.id("NLSALT_1");
-    private By scoreDBA = By.id("r_9");
-    private By closureReason5 = By.id("closureReason5");
-    private By alertifyOk = By.id("alertify-ok");
+    @FindBy(id = "btOpen")
+    @CacheLookup
+    private WebElement btOpen;
+    @FindBy(id = "btEdit")
+    @CacheLookup
+    private WebElement btEdit;
+    @FindBy(id = "btClose")
+    @CacheLookup
+    private WebElement btClose;
+    @FindBy(id = "r_1")
+    private WebElement score;
+    @FindBy(id = "NLSALT_1")
+    @CacheLookup
+    private WebElement NLSALT_1;
+    @FindBy(id = "r_9")
+    private WebElement scoreDBA;
+    @FindBy(id = "closureReason5")
+    @CacheLookup
+    private WebElement closureReason5;
+    @FindBy(id = "alertify-ok")
+    @CacheLookup
+    private WebElement alertifyOk;
     //Basic details ----------------------------------//
-    private By tbNbs = By.id("tbNbs");
-    private By bAccountMask = By.id("bAccountMask");
-    private By ddOb22 = By.id("ddOb22");
-    private By td_21 = By.id("td_21");
-    private By tbNlsAlt = By.id("tbNlsAlt");
+    @FindBy(id = "tbNbs")
+    @CacheLookup
+    private WebElement tbNbs;
+    @FindBy(id = "bAccountMask")
+    @CacheLookup
+    private WebElement bAccountMask;
+    @FindBy(id = "ddOb22")
+    @CacheLookup
+    private WebElement ddOb22;
+    @FindBy(id = "td_21")
+    @CacheLookup
+    private WebElement td_21;
+    @FindBy(id = "tbNlsAlt")
+    @CacheLookup
+    private WebElement tbNlsAlt;
     //-----------------------------------------------//
     //Financial details -----------------------------//
-    private By bTab1 = By.id("bTab1");
-    private By ddVidBlkD = By.id("ddVidBlkD");
-    private By ddVidBlkK = By.id("ddVidBlkK");
+    @FindBy(id = "bTab1")
+    @CacheLookup
+    private WebElement bTab1;
+    @FindBy(id = "ddVidBlkD")
+    @CacheLookup
+    private WebElement ddVidBlkD;
+    @FindBy(id = "ddVidBlkK")
+    @CacheLookup
+    private WebElement ddVidBlkK;
     //-----------------------------------------------//
     //Access rights ---------------------------------//
-    private By bTab2 = By.id("bTab2");
-    private By btAdd = By.id("btAdd");
+    @FindBy(id = "bTab2")
+    @CacheLookup
+    private WebElement bTab2;
+    @FindBy(id = "btAdd")
+    @CacheLookup
+    private WebElement btAdd;
     //-----------------------------------------------//
     //Special parameters ----------------------------//
-    private By bTab3 = By.id("bTab3");
-    private By VALUE_5 = By.id("VALUE_5");
-    private By VALUE_4 = By.id("VALUE_4");
-    private By VALUE_3 = By.id("VALUE_3");
-    private By VALUE_2 = By.id("VALUE_2");
-    private By VALUE = By.id("VALUE");
-    private By saveBtn = By.xpath("//input[@type='button' and @value='Зберегти']");
-    private By btnSPECPARAM = By.id("btnSPECPARAM");
-    private By btnSPECPARAM_INT = By.id("btnSPECPARAM_INT");
-    private By btnDPT = By.id("btnDPT");
-    private By btnBPK = By.id("btnBPK");
-    private By btnCVK = By.id("btnCVK");
-    private By btnOTHERS = By.id("btnOTHERS");
+    @FindBy(id = "bTab3")
+    private WebElement bTab3;
+    @FindBy(id = "VALUE_5")
+    @CacheLookup
+    private WebElement VALUE_5;
+    @FindBy(id = "VALUE_4")
+    @CacheLookup
+    private WebElement VALUE_4;
+    @FindBy(id = "VALUE_3")
+    @CacheLookup
+    private WebElement VALUE_3;
+    @FindBy(id = "VALUE_2")
+    @CacheLookup
+    private WebElement VALUE_2;
+    @FindBy(id = "VALUE")
+    @CacheLookup
+    private WebElement VALUE;
+    @FindBy(xpath = "//input[@type='button' and @value='Зберегти']")
+    @CacheLookup
+    private WebElement saveBtn;
+    @FindBy(id = "btnSPECPARAM")
+    @CacheLookup
+    private WebElement btnSPECPARAM;
+    @FindBy(id = "btnSPECPARAM_INT")
+    @CacheLookup
+    private WebElement btnSPECPARAM_INT;
+    @FindBy(id = "btnDPT")
+    @CacheLookup
+    private WebElement btnDPT;
+    @FindBy(id = "btnBPK")
+    @CacheLookup
+    private WebElement btnBPK;
+    @FindBy(id = "btnCVK")
+    @CacheLookup
+    private WebElement btnCVK;
+    @FindBy(id = "btnOTHERS")
+    @CacheLookup
+    private WebElement btnOTHERS;
     //---------------------------------------------//
-    private By btSave = By.id( "btSave" );
-    private By btOk = By.id( "btOk" );
-    private By buttonOK = By.xpath( "//input[@type='button' and @value='Ok']" );
+    @FindBy(id = "btSave")
+    private WebElement btSave;
+    @FindBy(id = "btOk")
+    private WebElement btOk;
+    @FindBy(xpath = "//input[@type='button' and @value='Ok']")
+    private WebElement buttonOK;
 
 
     private void clickBtOpen(){
-        driver.findElement(btOpen).click();
+        btOpen.click();
         new CustomerAccounts( driver );
     }
 
     private void clickBAccountMask(){
-        driver.findElement(bAccountMask).click();
+        bAccountMask.click();
         new CustomerAccounts( driver );
     }
 
     private void clickDdOb22(){
-        driver.findElement(ddOb22).click();
+        ddOb22.click();
         new CustomerAccounts( driver );
     }
 
     private void clickTd_21(){
-        driver.findElement( td_21 ).click();
+        td_21.click();
         new CustomerAccounts( driver );
     }
 
     private void clickDdVidBlkD(){
-        driver.findElement( ddVidBlkD ).click();
+        ddVidBlkD.click();
         new CustomerAccounts( driver );
     }
 
     private void clickDdVidBlkK(){
-        driver.findElement( ddVidBlkK ).click();
+        ddVidBlkK.click();
         new CustomerAccounts( driver );
     }
 
     private void clickSaveBtn(){
-        driver.findElement( saveBtn ).click();
+        saveBtn.click();
         new CustomerAccounts( driver );
     }
 
     private void clickBtSave(){
-        driver.findElement( btSave ).click();
+        btSave.click();
         new CustomerAccounts( driver );
     }
 
     private void clickBtOk(){
-        driver.findElement( btOk ).click();
+        btOk.click();
         new CustomerAccounts( driver );
     }
 
     private void clickButtonOK(){
-        driver.findElement( buttonOK ).click();
+        buttonOK.click();
         new CustomerAccounts( driver );
     }
 
 
     private void clickClosureReason5(){
-        driver.findElement( closureReason5 ).click();
+        closureReason5.click();
         new CustomerAccounts( driver );
     }
 
     private void clickAlertifyOk(){
-        driver.findElement( alertifyOk ).click();
+        alertifyOk.click();
         new CustomerAccounts( driver );
     }
 
     private void clickBtEdit(){
-        driver.findElement( btEdit ).click();
+        btEdit.click();
         new CustomerAccounts( driver );
     }
 
     private void clickBtClose(){
-        driver.findElement( btClose ).click();
+        btClose.click();
         new CustomerAccounts( driver );
     }
 
     private void clickScore(){
-        driver.findElement( score ).click();
+        score.click();
         new CustomerAccounts( driver );
     }
 
     private void clickBTab1(){
-        driver.findElement( bTab1 ).click();
+        bTab1.click();
         new CustomerAccounts( driver );
     }
 
     private void clickBTab2(){
-        driver.findElement( bTab2 ).click();
+        bTab2.click();
         new CustomerAccounts( driver );
     }
 
     private void clickBTab3(){
-        driver.findElement( bTab3 ).click();
+        bTab3.click();
         new CustomerAccounts( driver );
     }
 
     private void clickScoreDBA(){
-        driver.findElement( scoreDBA ).click();
+        scoreDBA.click();
         new CustomerAccounts( driver );
     }
 
     private void clickBtAdd(){
-        driver.findElement( btAdd ).click();
+        btAdd.click();
         new CustomerAccounts( driver );
     }
 
     private void pressValue_5(){
         Actions actname = new Actions(driver);
-        actname.moveToElement(driver.findElement(VALUE_5)).doubleClick().build().perform();
+        actname.moveToElement(VALUE_5).doubleClick().build().perform();
         new CustomerAccounts( driver );
     }
 
     private void pressValue_4(){
         Actions actname = new Actions(driver);
-        actname.moveToElement(driver.findElement(VALUE_4)).doubleClick().build().perform();
+        actname.moveToElement(VALUE_4).doubleClick().build().perform();
         new CustomerAccounts( driver );
     }
 
     private void pressValue_3(){
         Actions actname = new Actions(driver);
-        actname.moveToElement(driver.findElement(VALUE_3)).doubleClick().build().perform();
+        actname.moveToElement(VALUE_3).doubleClick().build().perform();
         new CustomerAccounts( driver );
     }
 
     private void pressValue_2(){
         Actions actname = new Actions(driver);
-        actname.moveToElement(driver.findElement(VALUE_2)).doubleClick().build().perform();
+        actname.moveToElement(VALUE_2).doubleClick().build().perform();
         new CustomerAccounts( driver );
     }
 
     private void enterTbNbs(String nbs){
-        driver.findElement(tbNbs).sendKeys( nbs );
+        tbNbs.sendKeys( nbs );
     }
 
     private void enterValue(String value){
-        driver.findElement(VALUE).sendKeys( value );
+        VALUE.sendKeys( value );
     }
 
     private void entertbNlsAlt(String nlsAlt){
-        driver.findElement(tbNlsAlt).sendKeys( nlsAlt );
+        tbNlsAlt.sendKeys( nlsAlt );
     }
 
     public String getTextBtnSPECPARAM(){
-        return  driver.findElement( btnSPECPARAM ).getText();
+        return  btnSPECPARAM.getText();
     }
 
     public String getTextBtnSPECPARAM_INT(){
-        return  driver.findElement( btnSPECPARAM_INT ).getText();
+        return  btnSPECPARAM_INT.getText();
     }
 
     public String getTextBtnDPT(){
-        return  driver.findElement( btnDPT ).getText();
+        return  btnDPT.getText();
     }
 
     public String getTextBtnBPK(){
-        return  driver.findElement( btnBPK ).getText();
+        return  btnBPK.getText();
     }
 
     public String getTextBtnCVK(){
-        return  driver.findElement( btnCVK ).getText();
+        return  btnCVK.getText();
     }
 
     public String getTextBtnOTHERS(){
-        return  driver.findElement( btnOTHERS ).getText();
+        return  btnOTHERS.getText();
     }
 
     public String getTextNLSALT_1(){
-        return  driver.findElement( NLSALT_1 ).getText();
+        return  NLSALT_1.getText();
     }
 
     public void saveOptions(){

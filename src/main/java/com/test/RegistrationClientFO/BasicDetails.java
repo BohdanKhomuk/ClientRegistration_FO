@@ -4,6 +4,9 @@ import com.test.Methods.Frame;
 import com.test.Methods.Pause;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class BasicDetails {
@@ -18,93 +21,125 @@ public class BasicDetails {
         this.pause = new Pause();
     }
 
-    private By fullDopRekv = By.id( "bt_FullDopRekv" );
-    private By FIO_LN = By.id( "ed_FIO_LN" );
-    private By FIO_FN = By.id( "ed_FIO_FN" );
-    private By FIO_MN = By.id( "ed_FIO_MN" );
-    private By btnOpenWindowAddress = By.id( "btnOpenWindowAddress" );
-    private By legalIndex = By.id( "legalIndex" );
-    private By legalRegion = By.id( "legalRegion" );
-    private By legalArea = By.xpath( "//span[@role = 'presentation']/input[@ng-model = 'legalArea']" );
-    private By settlement = By.xpath( "//span[@class = 'k-input ng-scope']" );
-    private By legalCity = By.xpath( "//ul[@id='legalSettlemetDropDown_listbox']/li[2]" );
-    private By legalSettlement = By.xpath( "//input[@ng-model = 'legalSettlement']" );
-    private By legalStreet = By.xpath( "//span[@role = 'presentation']/input[@ng-model = 'legalStreet']" );
-    private By legalHouse = By.xpath( "//input[@ng-model = 'legalHouse']" );
-    private By btnSaveAddress = By.id( "btnSaveAddress" );
-    private By ed_OKPO = By.id( "ed_OKPO" );
-    private By ed_SAB = By.id( "ed_SAB" );
+    @FindBy(id = "bt_FullDopRekv")
+    @CacheLookup
+    private WebElement fullDopRekv;
+    @FindBy(id = "ed_FIO_LN")
+    @CacheLookup
+    private WebElement FIO_LN;
+    @FindBy(id = "ed_FIO_FN")
+    @CacheLookup
+    private WebElement FIO_FN;
+    @FindBy(id = "ed_FIO_MN")
+    @CacheLookup
+    private WebElement FIO_MN;
+    @FindBy(id = "btnOpenWindowAddress")
+    @CacheLookup
+    private WebElement btnOpenWindowAddress;
+    @FindBy(id = "legalIndex")
+    @CacheLookup
+    private WebElement legalIndex;
+    @FindBy(id = "legalRegion")
+    @CacheLookup
+    private WebElement legalRegion;
+    @FindBy(xpath = "//span[@role = 'presentation']/input[@ng-model = 'legalArea']")
+    @CacheLookup
+    private WebElement legalArea;
+    @FindBy(xpath = "//span[@class = 'k-input ng-scope']")
+    @CacheLookup
+    private WebElement settlement;
+    @FindBy(xpath = "//ul[@id='legalSettlemetDropDown_listbox']/li[2]")
+    @CacheLookup
+    private WebElement legalCity;
+    @FindBy(xpath = "//input[@ng-model = 'legalSettlement']")
+    @CacheLookup
+    private WebElement legalSettlement;
+    @FindBy(xpath = "//span[@role = 'presentation']/input[@ng-model = 'legalStreet']")
+    @CacheLookup
+    private WebElement legalStreet;
+    @FindBy(xpath = "//input[@ng-model = 'legalHouse']")
+    @CacheLookup
+    private WebElement legalHouse;
+    @FindBy(id = "btnSaveAddress")
+    @CacheLookup
+    private WebElement btnSaveAddress;
+    @FindBy(id = "ed_OKPO")
+    @CacheLookup
+    private WebElement ed_OKPO;
+    @FindBy(id = "ed_SAB")
+    @CacheLookup
+    private WebElement ed_SAB;
 
 
     private void pressFullDopRekv() {
-        driver.findElement( fullDopRekv ).click();
+        fullDopRekv.click();
         new BasicDetails( driver );
     }
 
     private void pressBtnOpenWindowAddress() {
-        driver.findElement( btnOpenWindowAddress ).click();
+        btnOpenWindowAddress.click();
         new BasicDetails( driver );
     }
 
     private void pressSettlement() {
-        driver.findElement( settlement ).click();
+        settlement.click();
         new BasicDetails( driver );
     }
 
     private void pressCity() {
-        driver.findElement( legalCity ).click();
+        legalCity.click();
         new BasicDetails( driver );
     }
 
     private void pressBtnSaveAddress() {
-        driver.findElement( btnSaveAddress ).click();
+        btnSaveAddress.click();
         new BasicDetails( driver );
     }
 
     private void enterFIO_LN(String name) {
-        driver.findElement( FIO_LN ).sendKeys( name );
+        FIO_LN.sendKeys( name );
     }
 
     private void enterFIO_FN(String name) {
-        driver.findElement( FIO_FN ).sendKeys( name );
+        FIO_FN.sendKeys( name );
     }
 
     private void enterFIO_MN(String name) {
-        driver.findElement( FIO_MN ).sendKeys( name );
+        FIO_MN.sendKeys( name );
     }
 
     private void enterLegalIndex(String index) {
-        driver.findElement( legalIndex ).sendKeys( index );
+        legalIndex.sendKeys( index );
     }
 
     private void enterLegalRegion(String region) {
-        driver.findElement( legalRegion ).sendKeys( region );
+        legalRegion.sendKeys( region );
     }
 
     private void enterLegalArea(String area) {
-        driver.findElement( legalArea ).sendKeys( area );
+        legalArea.sendKeys( area );
     }
 
     private void enterLegalSettlement(String settlement) {
-        driver.findElement( legalSettlement ).sendKeys( settlement );
+        legalSettlement.sendKeys( settlement );
     }
 
     private void enterLegalStreet(String street) {
-        driver.findElement( legalStreet ).sendKeys( street );
+        legalStreet.sendKeys( street );
     }
 
     private void enterLegalHouse(String house) {
-        driver.findElement( legalHouse ).sendKeys( house );
+        legalHouse.sendKeys( house );
     }
 
     public void enterOKPO(String okpo) {
         frame.tabFrame( "Tab0" );
-        driver.findElement( ed_OKPO ).sendKeys( okpo );
+        ed_OKPO.sendKeys( okpo );
     }
 
     public void enterSAB(String sab) {
         frame.tabFrame( "Tab0" );
-        driver.findElement( ed_SAB ).sendKeys( sab );
+        ed_SAB.sendKeys( sab );
     }
 
 

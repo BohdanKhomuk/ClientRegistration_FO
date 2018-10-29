@@ -3,6 +3,9 @@ package com.test.RegistrationClientFO;
 import com.test.Methods.Frame;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class AdditionalInformation {
@@ -15,87 +18,118 @@ public class AdditionalInformation {
         this.frame = new Frame( (EventFiringWebDriver) driver );
     }
 
-    private By bt_help  = By.id( "bt_help" );
-    private By groupBtn = By.xpath( "//div[@title = '11301']" );
-    private By chooseBtn = By.xpath( "//button[@class = 'delete-confirm k-button k-primary']"  );
-    private By ed_NOTES = By.id( "ed_NOTES" );
-    private By ddl_CRISK = By.id( "ddl_CRISK" );
-    private By dir_CRISK = By.xpath( "//*[@id = 'ddl_CRISK']/option[@value = '3']" );
-    private By ddl_MB = By.id( "ddl_MB" );
-    private By dir_MB = By.xpath( "//*[@id = 'ddl_MB']/option[@value = '3']" );
-    private By ed_ADR_ALT = By.id( "ed_ADR_ALT" );
-    private By ed_LIM = By.id( "ed_LIM" );
-    private By ed_LIM_KASS = By.id( "ed_LIM_KASS" );
-    private By ed_NOM_DOG = By.id( "ed_NOM_DOG" );
-    private By ed_NOMPDV = By.id( "ed_NOMPDV" );
-    private By ed_RNKP = By.id( "ed_RNKP" );
-    private By ed_NOTESEC = By.id( "ed_NOTESEC" );
+    @FindBy(id = "bt_help")
+    @CacheLookup
+    private WebElement bt_help;
+    @FindBy(xpath = "//div[@title = '11301']")
+    @CacheLookup
+    private WebElement groupBtn;
+    @FindBy(xpath = "//button[@class = 'delete-confirm k-button k-primary']")
+    @CacheLookup
+    private WebElement chooseBtn;
+    @FindBy(id = "ed_NOTES")
+    @CacheLookup
+    private WebElement ed_NOTES;
+    @FindBy(id = "ddl_CRISK")
+    @CacheLookup
+    private WebElement ddl_CRISK;
+    @FindBy(xpath = "//*[@id = 'ddl_CRISK']/option[@value = '3']")
+    @CacheLookup
+    private WebElement dir_CRISK;
+    @FindBy(id = "ddl_MB")
+    @CacheLookup
+    private WebElement ddl_MB;
+    @FindBy(xpath = "//*[@id = 'ddl_MB']/option[@value = '3']")
+    @CacheLookup
+    private WebElement dir_MB;
+    @FindBy(id = "ed_ADR_ALT")
+    @CacheLookup
+    private WebElement ed_ADR_ALT;
+    @FindBy(id = "ed_LIM")
+    @CacheLookup
+    private WebElement ed_LIM;
+    @FindBy(id = "ed_LIM_KASS")
+    @CacheLookup
+    private WebElement ed_LIM_KASS;
+    @FindBy(id = "ed_NOM_DOG")
+    @CacheLookup
+    private WebElement ed_NOM_DOG;
+    @FindBy(id = "ed_NOMPDV")
+    @CacheLookup
+    private WebElement ed_NOMPDV;
+    @FindBy(id = "ed_RNKP")
+    @CacheLookup
+    private WebElement ed_RNKP;
+    @FindBy(id = "ed_NOTESEC")
+    @CacheLookup
+    private WebElement ed_NOTESEC;
+
 
     private void pressBt_help(){
-        driver.findElement(bt_help).click();
+        bt_help.click();
         new AdditionalInformation( driver );
     }
 
     private void pressGroupBtn(){
-        driver.findElement(groupBtn).click();
+        groupBtn.click();
         new AdditionalInformation( driver );
     }
 
     private void pressChooseBtn(){
-        driver.findElement(chooseBtn).click();
+        chooseBtn.click();
         new AdditionalInformation( driver );
     }
 
     private void pressCrisk(){
-        driver.findElement(ddl_CRISK).click();
+        ddl_CRISK.click();
         new AdditionalInformation( driver );
     }
 
     private void pressDirCrisk(){
-        driver.findElement(dir_CRISK).click();
+        dir_CRISK.click();
         new AdditionalInformation( driver );
     }
 
     private void pressMB(){
-        driver.findElement(ddl_MB).click();
+        ddl_MB.click();
         new AdditionalInformation( driver );
     }
 
     private void pressDirMB(){
-        driver.findElement(dir_MB).click();
+       dir_MB.click();
         new AdditionalInformation( driver );
     }
 
     private void enterNotes(String notes){
-        driver.findElement(ed_NOTES).sendKeys( notes );
+        ed_NOTES.sendKeys( notes );
     }
 
     private void enterAdrAlt(String adrAlt){
-        driver.findElement(ed_ADR_ALT).sendKeys( adrAlt );
+        ed_ADR_ALT.sendKeys( adrAlt );
     }
 
     private void enterLim(String lim){
-        driver.findElement(ed_LIM).sendKeys( lim );
+        ed_LIM.sendKeys( lim );
     }
 
     private void enterLimKass(String limKass){
-        driver.findElement(ed_LIM_KASS).sendKeys( limKass );
+        ed_LIM_KASS.sendKeys( limKass );
     }
 
     private void enterNumDoc(String numDoc){
-        driver.findElement(ed_NOM_DOG).sendKeys( numDoc );
+        ed_NOM_DOG.sendKeys( numDoc );
     }
 
     private void enterNumPdv(String numPDV){
-        driver.findElement(ed_NOMPDV).sendKeys( numPDV );
+        ed_NOMPDV.sendKeys( numPDV );
     }
 
     private void enterRNKP(String rnkp){
-        driver.findElement(ed_RNKP).sendKeys( rnkp );
+        ed_RNKP.sendKeys( rnkp );
     }
 
     private void enterNotesEc(String notesEc){
-        driver.findElement(ed_NOTESEC).sendKeys( notesEc );
+        ed_NOTESEC.sendKeys( notesEc );
     }
 
     public void fillingISP(){

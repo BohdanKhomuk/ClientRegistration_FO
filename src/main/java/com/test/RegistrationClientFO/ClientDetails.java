@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 
@@ -21,42 +23,77 @@ public class ClientDetails {
         this.frame = new Frame( (EventFiringWebDriver) driver );
     }
 
-    private By ddl_PASSP = By.id( "ddl_PASSP" );
-    private By passpCitizenUA = By.xpath( "//select[@id = 'ddl_PASSP']/option[@value = '1']" );
-    private By ed_ORGAN = By.id( "ed_ORGAN" );
-    private By ed_SER = By.id( "ed_SER" );
-    private By ed_NUMDOC = By.id( "ed_NUMDOC" );
-    private By ed_PDATE = By.id( "ed_PDATE" );
-    private By ed_DATE_PHOTO = By.id( "ed_DATE_PHOTO" );
-    private By ed_BDAY = By.id( "ed_BDAY" );
-    private By ddl_SEX = By.id( "ddl_SEX" );
+    @FindBy(id = "ddl_PASSP")
+    @CacheLookup
+    private WebElement ddl_PASSP;
+    @FindBy(xpath = "//select[@id = 'ddl_PASSP']/option[@value = '1']")
+    @CacheLookup
+    private WebElement passpCitizenUA;
+    @FindBy(id = "ed_ORGAN")
+    @CacheLookup
+    private WebElement ed_ORGAN;
+    @FindBy(id = "ed_SER")
+    @CacheLookup
+    private WebElement ed_SER;
+    @FindBy(id = "ed_NUMDOC")
+    @CacheLookup
+    private WebElement ed_NUMDOC;
+    @FindBy(id = "ed_PDATE")
+    @CacheLookup
+    private WebElement ed_PDATE;
+    @FindBy(id = "ed_DATE_PHOTO")
+    @CacheLookup
+    private WebElement ed_DATE_PHOTO;
+    @FindBy(id = "ed_BDAY")
+    @CacheLookup
+    private WebElement ed_BDAY;
+    @FindBy(id = "ddl_SEX")
+    @CacheLookup
+    private WebElement ddl_SEX;
     private String fileName = String.format( "//select[@id = 'ddl_SEX']/option[@value = '%s']", gender.gender );
-    private By clientSex = By.xpath( fileName );
-    private By ed_BPLACE = By.id( "ed_BPLACE" );
+    private By clientSex = By.xpath ( fileName );
+    @FindBy(id = "ed_BPLACE")
+    @CacheLookup
+    private WebElement ed_BPLACE;
     //Phone
-    private By ed_TELM_CODE = By.id( "ed_TELM_CODE" );
-    private By TELM_Operator = By.xpath( "//tr[@class = 'k-alt']//div[@title = '92']" );
-    private By ed_TELM = By.id( "ed_TELM" );
-    private By ed_TELD_CODE = By.id( "ed_TELD_CODE" );
-    private By TELD_Operator = By.xpath( "//td[@role = 'gridcell']/div[@title = '692']" );
-    private By ed_TELD = By.id( "ed_TELD" );
-    private By ed_TELW = By.id( "ed_TELW" );
+    @FindBy(id = "ed_TELM_CODE")
+    @CacheLookup
+    private WebElement ed_TELM_CODE;
+    @FindBy(xpath = "//tr[@class = 'k-alt']//div[@title = '92']")
+    @CacheLookup
+    private WebElement TELM_Operator;
+    @FindBy(id = "ed_TELM")
+    @CacheLookup
+    private WebElement ed_TELM;
+    @FindBy(id = "ed_TELD_CODE")
+    @CacheLookup
+    private WebElement ed_TELD_CODE;
+    @FindBy(xpath = "//td[@role = 'gridcell']/div[@title = '692']")
+    @CacheLookup
+    private WebElement TELD_Operator;
+    @FindBy(id = "ed_TELD")
+    @CacheLookup
+    private WebElement ed_TELD;
+    @FindBy(id = "ed_TELW")
+    @CacheLookup
+    private WebElement ed_TELW;
     //Text
-    private By headText = By.xpath( "//*[@id = 'tblMain']/tbody/tr[1]/td/label" );
+    @FindBy(xpath = "//*[@id = 'tblMain']/tbody/tr[1]/td/label")
+    private WebElement headText;
 
 
     private void pressDdl_PASSP(){
-        driver.findElement(ddl_PASSP).click();
+        ddl_PASSP.click();
         new ClientDetails( driver );
     }
 
     private void pressPasspCitizenUA(){
-        driver.findElement(passpCitizenUA).click();
+        passpCitizenUA.click();
         new ClientDetails( driver );
     }
 
     private void pressDddSex(){
-        driver.findElement(ddl_SEX).click();
+        ddl_SEX.click();
         new ClientDetails( driver );
     }
 
@@ -66,79 +103,76 @@ public class ClientDetails {
     }
 
     private void pressTelMCode(){
-        driver.findElement(ed_TELM_CODE).click();
+        ed_TELM_CODE.click();
         new ClientDetails( driver );
     }
 
     private void pressTElMOperator(){
         Actions actname = new Actions(driver);
-        actname.moveToElement(driver.findElement(TELM_Operator)).doubleClick().build().perform();
+        actname.moveToElement(TELM_Operator).doubleClick().build().perform();
         new ClientDetails( driver );
     }
 
     private void pressTelDCode(){
-        driver.findElement(ed_TELD_CODE).click();
+        ed_TELD_CODE.click();
         new ClientDetails( driver );
     }
 
     private void pressTElDOperator(){
         Actions actname = new Actions(driver);
-        actname.moveToElement(driver.findElement(TELD_Operator)).doubleClick().build().perform();
+        actname.moveToElement(TELD_Operator).doubleClick().build().perform();
         new ClientDetails( driver );
     }
 
     private void enterOrgan(String organ){
-        driver.findElement(ed_ORGAN).sendKeys( organ );
+        ed_ORGAN.sendKeys( organ );
     }
 
     private void enterSer(String ser){
-        driver.findElement(ed_SER).sendKeys( ser );
+        ed_SER.sendKeys( ser );
     }
 
     private void enterNumdoc(String numdoc){
-        driver.findElement(ed_NUMDOC).sendKeys( numdoc );
+        ed_NUMDOC.sendKeys( numdoc );
     }
 
     private void enterPdate(String pdate){
-        WebElement date = driver.findElement(ed_PDATE);
-        date.click();
-        date.clear();
-        date.sendKeys( pdate );
+        ed_PDATE.click();
+        ed_PDATE.clear();
+        ed_PDATE.sendKeys( pdate );
     }
 
     private void enterDATE_PHOTO(String datePhoto){
-        WebElement elDatePhoto = driver.findElement(ed_DATE_PHOTO);
-        elDatePhoto.click();
-        elDatePhoto.clear();
-        elDatePhoto.sendKeys( datePhoto );
+        ed_DATE_PHOTO.click();
+        ed_DATE_PHOTO.clear();
+        ed_DATE_PHOTO.sendKeys( datePhoto );
     }
 
     private void enterBDay(String bDay){
-        WebElement elBDAY = driver.findElement(ed_BDAY);
-        elBDAY.click();
-        elBDAY.clear();
-        elBDAY.sendKeys( bDay );
+        ed_BDAY.click();
+        ed_BDAY.clear();
+        ed_BDAY.sendKeys( bDay );
     }
 
     private void enterTelM(String telm){
-        driver.findElement(ed_TELM).sendKeys( telm );
+        ed_TELM.sendKeys( telm );
     }
 
     private void enterTelD(String teld){
-        driver.findElement(ed_TELD).sendKeys( teld );
+        ed_TELD.sendKeys( teld );
     }
 
     private void enterBPLACE(String bPlace){
-        driver.findElement(ed_BPLACE).sendKeys( bPlace );
+        ed_BPLACE.sendKeys( bPlace );
     }
 
     private void enterTELW(String telW){
-        driver.findElement(ed_TELW).sendKeys( telW );
+        ed_TELW.sendKeys( telW );
     }
 
     public String getHeadingText(){
         frame.tabFrame( "Tab3" );
-        return  driver.findElement( headText).getText();
+        return headText.getText();
     }
 
     public void correctClientDetail(String bPlace, String telW){
