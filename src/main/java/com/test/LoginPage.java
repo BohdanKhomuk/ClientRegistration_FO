@@ -7,12 +7,15 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage {
 
-    private static int polygon = 22; //22 - Test; 40 - RC; 50 - Master//
-
     public WebDriver driver;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;    }
+
+    public static int getPolygon() {
+        //22 - Test; 40 - RC; 50 - Master//
+        return 50;
+    }
 
     @FindBy(id = "txtUserName")
     @CacheLookup
@@ -26,16 +29,14 @@ public class LoginPage {
     @FindBy(id = "btChangDate")
     @CacheLookup
     private WebElement buttonChangDate;
+    @FindBy(id = "btnBranches")
+    @CacheLookup
+    private WebElement branch;
+    @FindBy(xpath = "(//span[@class = 'k-in'])[2]")
+    @CacheLookup
+    private WebElement branchCA;
 
-    public static int getPolygon() {
-        return polygon;
-    }
-
-    public static void setPolygon(int polygon) {
-        LoginPage.polygon = polygon;
-    }
-
-    private void typeUserName(String name){
+/*    private void typeUserName(String name){
         userName.clear();
         userName.sendKeys( name );
     }
@@ -55,11 +56,36 @@ public class LoginPage {
         new LoginPage( driver );
     }
 
+    private void clickBranch(){
+        branch.click();
+        new LoginPage ( driver );
+    }
+
+    private void clickBranchCA(){
+        branchCA.click();
+        new LoginPage ( driver );
+    }
+
     public void enterInMainPage(String name, String password){
         this.typeUserName( name );
         this.typePassword( password );
         this.clickButtonLogin();
         this.clickButtonChangDate();
+        this.clickBranch ();
+        this.clickBranchCA ();
+        new LoginPage( driver );
+    }*/
+
+    public void enterInMainPage(String name, String password){
+        userName.clear();
+        userName.sendKeys( name );
+        passwordField.clear();
+        passwordField.sendKeys( password );
+        buttonLogin.click();
+        buttonChangDate.click();
+        branch.click();
+        branchCA.click();
+
         new LoginPage( driver );
     }
 }

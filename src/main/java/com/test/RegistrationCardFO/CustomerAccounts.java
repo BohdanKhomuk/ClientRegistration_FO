@@ -1,5 +1,6 @@
 package com.test.RegistrationCardFO;
 
+import com.test.LoginPage;
 import com.test.Methods.Frame;
 import com.test.Methods.Pause;
 import org.openqa.selenium.Keys;
@@ -330,7 +331,7 @@ public class CustomerAccounts {
         }
         // Return to page with accounts
         driver.switchTo().defaultContent();
-        if (getPolygon() == 50 ){
+        if (getPolygon() == 50 || (getPolygon () == 24)){
             driver.navigate().back();
         }
         pause.userDelay( 2000 );

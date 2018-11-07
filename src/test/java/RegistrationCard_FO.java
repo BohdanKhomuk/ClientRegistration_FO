@@ -48,7 +48,7 @@ public class RegistrationCard_FO {
         eventDriver.register( handler );
         eventDriver.get( "http://10.10.17." + getPolygon() + ":8080/barsroot/account/login/" );
 
-        //eventDriver.get( "http://10.10.10.198:11111/barsroot/" );
+       // eventDriver.get( "http://10.10.10.198:11111/barsroot/" );
 
         LoginPage loginPage = PageFactory.initElements( eventDriver, LoginPage.class );
 
@@ -57,7 +57,7 @@ public class RegistrationCard_FO {
         System.out.println((char) 27 + "[33mБлок переходу у функцію створення клієнта(ФО)" + (char)27 + "[0m");
     }
 
-    @Test (priority = 1)//(enabled = false)
+    @Test (priority = 1) //enabled = false)
     public void createClientCard() throws Exception {
         MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
         TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );
@@ -105,7 +105,7 @@ public class RegistrationCard_FO {
         //transitionToReg.closeWindowReg ();
     }
 
-    @Test(priority = 2)//(enabled = false)
+    @Test(priority = 2 )//enabled = false)
     public void customerAccountTest() {
         MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
         TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );

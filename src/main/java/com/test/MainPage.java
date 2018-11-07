@@ -43,7 +43,7 @@ public class MainPage {
         frame.todefCont ();
         pause.userDelay( 2000 );
         this.typeFunctionName( name );
-        pause.userDelay( 3000 );
+        pause.userDelay( 2500 );
         this.clickRegisterFOClientButton();
         new MainPage( driver );
     }

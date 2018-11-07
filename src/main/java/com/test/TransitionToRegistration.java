@@ -237,7 +237,7 @@ public class TransitionToRegistration {
         this.clickRegisterNew();
         this.enterRNK( newrnk );
         this.clickSearchButton();
-        if ((LoginPage.getPolygon() == 50)||(LoginPage.getPolygon() == 22)){
+        if ((LoginPage.getPolygon() == 50)||(LoginPage.getPolygon() == 22)||(LoginPage.getPolygon() == 24) ){
              this.clickClosePopupWindow();
         }
         pause.userDelay( 5000 );
