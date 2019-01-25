@@ -234,6 +234,9 @@ public class TransitionToRegistration {
     public void goingToRegister(String newrnk){
         frame.toMainFrame();
         this.clickRegisterCustBtn();
+        if ((LoginPage.getPolygon() == 50)){
+            pause.userDelay( 1500 );
+        }
         this.clickRegisterNew();
         this.enterRNK( newrnk );
         this.clickSearchButton();

@@ -1,7 +1,11 @@
 package com.test.Methods;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Frame {
     private EventFiringWebDriver eventDriver;
@@ -25,10 +29,34 @@ public class Frame {
         eventDriver.switchTo().frame(eventDriver.findElement(By.id("Tab0")));
     }
 
+    public void toTab0FrameAcc(){
+        todefCont();
+        //toMainFrame();
+        WebElement element = eventDriver.findElement ( By.id("Tab0"));
+        WebDriverWait w = new WebDriverWait(eventDriver, 10000);
+        WebElement pause = w.until ( ExpectedConditions.visibilityOf ( element));
+        Actions builder = new Actions(eventDriver);
+        builder.moveToElement(pause);
+        eventDriver.switchTo().frame(pause);
+        builder.perform();
+    }
+
     public void toTab1Frame(){
         todefCont();
         toMainFrame();
         eventDriver.switchTo().frame(eventDriver.findElement(By.id("Tab1")));
+    }
+
+    public void toTab1FrameAcc(){
+        todefCont();
+        //toMainFrame();
+        WebElement element = eventDriver.findElement ( By.id("Tab1"));
+        WebDriverWait w = new WebDriverWait(eventDriver, 10000);
+        WebElement pause = w.until ( ExpectedConditions.visibilityOf ( element));
+        Actions builder = new Actions(eventDriver);
+        builder.moveToElement(pause);
+        eventDriver.switchTo().frame(pause);
+        builder.perform();
     }
 
     public void toTab2Frame(){
@@ -37,11 +65,36 @@ public class Frame {
         eventDriver.switchTo().frame(eventDriver.findElement(By.id("Tab2")));
     }
 
+    public void toTab2FrameAcc(){
+        todefCont();
+        //toMainFrame();
+        WebElement element = eventDriver.findElement ( By.id("Tab2"));
+        WebDriverWait w = new WebDriverWait(eventDriver, 10000);
+        WebElement pause = w.until ( ExpectedConditions.visibilityOf ( element));
+        Actions builder = new Actions(eventDriver);
+        builder.moveToElement(pause);
+        eventDriver.switchTo().frame(pause);
+        builder.perform();
+    }
+
     public void toTab3Frame(){
         todefCont();
         toMainFrame();
         eventDriver.switchTo().frame(eventDriver.findElement(By.id("Tab3")));
     }
+
+    public void toTab3FrameAcc(){
+        todefCont();
+        //toMainFrame();
+        WebElement element = eventDriver.findElement ( By.id("Tab3"));
+        WebDriverWait w = new WebDriverWait(eventDriver, 10000);
+        WebElement pause = w.until ( ExpectedConditions.visibilityOf ( element));
+        Actions builder = new Actions(eventDriver);
+        builder.moveToElement(pause);
+        eventDriver.switchTo().frame(pause);
+        builder.perform();
+    }
+
 
     public void kContentFrame(){
         todefCont();

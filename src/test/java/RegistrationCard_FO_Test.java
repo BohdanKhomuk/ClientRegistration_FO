@@ -9,7 +9,9 @@ import com.test.RegistrationClientFO.*;
 import com.test.TransitionToRegistration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Assert;
@@ -23,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 import static com.test.LoginPage.getPolygon;
 
 
-public class RegistrationCard_FO {
+public class RegistrationCard_FO_Test {
 
     private static EventFiringWebDriver eventDriver;
 
@@ -34,19 +36,27 @@ public class RegistrationCard_FO {
 
     @BeforeClass
     public static void firstClass() {
-        System.setProperty("java.net.preferIPv4Stack", "true");
-        String browser = new File( RegistrationCard_FO.class.getResource( "/IEDriverServer.exe" ).getFile()).getPath();
-        System.setProperty("webdriver.ie.driver", browser);
-        eventDriver = new EventFiringWebDriver( new InternetExplorerDriver(  ) );
 
-/*        String browser = new File(RegistrationCard_FO.class.getResource("/chromedriver.exe").getFile()).getPath();
+        DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+
+        capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+        //System.setProperty("webdriver.ie.driver",IE_DRIVER_PATH);
+
+
+        System.setProperty("java.net.preferIPv4Stack", "true");
+        String browser = new File( RegistrationCard_FO_Test.class.getResource( "/IEDriverServer.exe" ).getFile()).getPath();
+        System.setProperty("webdriver.ie.driver", browser);
+        //eventDriver = new EventFiringWebDriver ( (WebDriver) capabilities );
+       eventDriver = new EventFiringWebDriver( new InternetExplorerDriver( capabilities ) );
+
+       /*String browser = new File(RegistrationCard_FO_Test.class.getResource("/chromedriver.exe").getFile()).getPath();
         System.setProperty("webdriver.chrome.driver", browser);
-        eventDriver = new EventFiringWebDriver(new ChromeDriver(  ));*/
+        eventDriver = new EventFiringWebDriver(new ChromeDriver (  ));*/
         EventHandler handler = new EventHandler();
         eventDriver.manage().window().maximize();
         eventDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         eventDriver.register( handler );
-        eventDriver.get( "http://10.10.17." + getPolygon() + ":8080/barsroot/account/login/" );
+        eventDriver.get( "http://10.10.17." + getPolygon () + ":8080/barsroot/account/login/" );
 
        // eventDriver.get( "http://10.10.10.198:11111/barsroot/" );
 
@@ -105,8 +115,8 @@ public class RegistrationCard_FO {
         //transitionToReg.closeWindowReg ();
     }
 
-    @Test(priority = 2 )//enabled = false)
-    public void customerAccountTest() {
+    @Test(priority = 2)// enabled = false)
+    public void customerAccountTest(){
         MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
         TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );
         CustomerAccounts customerAccounts = PageFactory.initElements ( eventDriver, CustomerAccounts.class );
@@ -121,23 +131,23 @@ public class RegistrationCard_FO {
 
         System.out.println((char) 27 + "[33mРеєстрація рахунку клієнта(ФО)" + (char) 27 + "[0m");
         customerAccounts.editCustAcc( "213" );
-        Assert.assertEquals("  НБУ   ", customerAccounts.getTextBtnSPECPARAM());
+        //Assert.assertEquals("  НБУ   ", customerAccounts.getTextBtnSPECPARAM());
         Assert.assertEquals("  Ощадбанк   ", customerAccounts.getTextBtnSPECPARAM_INT());
         Assert.assertEquals("  Депозити   ", customerAccounts.getTextBtnDPT());
         Assert.assertEquals("  БПК   ", customerAccounts.getTextBtnBPK());
         Assert.assertEquals(" ЦВК  ", customerAccounts.getTextBtnCVK());
-        Assert.assertEquals("  Інші   ", customerAccounts.getTextBtnOTHERS());
+       // Assert.assertEquals("  Інші   ", customerAccounts.getTextBtnOTHERS());
         customerAccounts.saveOptions();
         System.out.println((char) 27 + "[32m[Passed]----------Тест редагування рахунку клієнта(ФО) завершено успішно!----------[Passed]" + (char) 27 + "[0m");
 
         System.out.println((char) 27 + "[33mВидалення рахунку клієнта(ФО)" + (char) 27 + "[0m");
-        Assert.assertEquals( "213", customerAccounts.getTextNLSALT_1() );
-        customerAccounts.closeCustAcc();
+        //Assert.assertEquals( "213", customerAccounts.getTextNLSALT_1() );
+        customerAccounts.closeCustAcc("2620");
         System.out.println((char) 27 + "[32m[Passed]----------Тест видалення рахунку клієнта(ФО) завершено успішно!----------[Passed]" + (char) 27 + "[0m");
 
     }
 
-    @Test (priority = 3)//(enabled = false)
+    @Test (priority = 3) //enabled = false)
     public void editingClientCard() {
         MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
         TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );
@@ -176,13 +186,11 @@ public class RegistrationCard_FO {
         Assert.assertEquals( "Фін.мон.", addDetails.getFinMonText() );
         Assert.assertEquals( "БПК", addDetails.getBPKText() );
         Assert.assertEquals( "Санкції", addDetails.getSanctionsText() );
-        if (getPolygon() == 22){
-            Assert.assertEquals( "Для Кредитного реєстру", addDetails.getCreditRegisterText() );
-        }
         Assert.assertEquals( "Інші", addDetails.getOtherText() );
         Assert.assertEquals( "Критерії ризику", addDetails.getRiskCriteriaText() );
 
         transitionToReg.clickConnectedPeopleBtn();
+        if (getPolygon () == 40 || getPolygon () == 50)
         Assert.assertEquals( "Пов`язані особи", connectedPeople.getHeadingText() );
 
         transitionToReg.clickClientSegmentsBtn();
@@ -196,7 +204,7 @@ public class RegistrationCard_FO {
     }
 
 
-    @Test(priority = 4)//(enabled = false)
+    @Test(priority = 4) //enabled = false)
     public void closeClientCard(){
         MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
         TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );

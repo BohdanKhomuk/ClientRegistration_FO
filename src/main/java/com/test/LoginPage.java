@@ -13,8 +13,8 @@ public class LoginPage {
         this.driver = driver;    }
 
     public static int getPolygon() {
-        //22 - Test; 40 - RC; 50 - Master//
-        return 50;
+        //24  - Test; 40 - RC; 50 - Master//
+        return 24;
     }
 
     @FindBy(id = "txtUserName")
@@ -83,9 +83,10 @@ public class LoginPage {
         passwordField.sendKeys( password );
         buttonLogin.click();
         buttonChangDate.click();
-        branch.click();
-        branchCA.click();
-
+       if (getPolygon () == 24) {
+            branch.click ( );
+            branchCA.click ( );
+        }
         new LoginPage( driver );
     }
 }

@@ -1,7 +1,9 @@
 package com.test.RegistrationClientFO;
 
+import com.test.LoginPage;
 import com.test.Methods.Frame;
 import com.test.Methods.Gender;
+import com.test.Methods.Pause;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,12 +17,15 @@ public class ClientDetails {
 
     private WebDriver driver;
     private Frame frame;
+    private Pause pause;
+
 
     private Gender gender = new Gender();
 
     public ClientDetails (WebDriver driver) {
         this.driver = driver;
         this.frame = new Frame( (EventFiringWebDriver) driver );
+        this.pause = new Pause ();
     }
 
     @FindBy(id = "ddl_PASSP")
@@ -68,7 +73,7 @@ public class ClientDetails {
     @FindBy(id = "ed_TELD_CODE")
     @CacheLookup
     private WebElement ed_TELD_CODE;
-    @FindBy(xpath = "//td[@role = 'gridcell']/div[@title = '692']")
+    @FindBy(xpath = "//td[@role = 'gridcell']/div[@title]")
     @CacheLookup
     private WebElement TELD_Operator;
     @FindBy(id = "ed_TELD")
