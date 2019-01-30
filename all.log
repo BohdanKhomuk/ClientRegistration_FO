@@ -1,344 +1,47 @@
-2019-01-30 12:02:11.309 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: txtUserName
-2019-01-30 12:02:11.387 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:11.785 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: txtPassword
-2019-01-30 12:02:11.834 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:12.156 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btLogIn
-2019-01-30 12:02:12.219 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:12.250 [main] DEBUG com.test.Methods.EventHandler - Should click input
-2019-01-30 12:02:12.981 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:12.981 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btChangDate
-2019-01-30 12:02:13.072 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:13.134 [main] DEBUG com.test.Methods.EventHandler - Should click input
-2019-01-30 12:02:13.525 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:13.525 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btnBranches
-2019-01-30 12:02:15.750 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:15.812 [main] DEBUG com.test.Methods.EventHandler - Should click a
-2019-01-30 12:02:16.100 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:16.100 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: (//span[@class = 'k-in'])[2]
-2019-01-30 12:02:16.162 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:16.193 [main] DEBUG com.test.Methods.EventHandler - Should click span
-2019-01-30 12:02:16.434 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:18.534 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: findOpersText
-2019-01-30 12:02:19.343 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:22.630 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //div[@id='oper-3039']/div[2]/span
-2019-01-30 12:02:22.777 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:22.812 [main] DEBUG com.test.Methods.EventHandler - Should click span
-2019-01-30 12:02:24.415 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:29.439 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: mainFrame
-2019-01-30 12:02:29.540 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:29.587 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //th[@data-field='Id']/a[1]/span
-2019-01-30 12:02:29.650 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:29.679 [main] DEBUG com.test.Methods.EventHandler - Should click span
-2019-01-30 12:02:30.541 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:30.541 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //input[@class='k-formatted-value k-input']
-2019-01-30 12:02:30.650 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:32.262 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //button[text() = 'фільтрувати']
-2019-01-30 12:02:32.324 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:32.387 [main] DEBUG com.test.Methods.EventHandler - Should click button
-2019-01-30 12:02:32.869 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:35.883 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //span[@class = 'ng-binding']
-2019-01-30 12:02:35.957 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:35.995 [main] DEBUG com.test.Methods.EventHandler - Should click span
-2019-01-30 12:02:36.244 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:39.244 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: openCustAccsBtn
-2019-01-30 12:02:39.294 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:39.325 [main] DEBUG com.test.Methods.EventHandler - Should click a
-2019-01-30 12:02:40.234 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:43.245 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOpen
-2019-01-30 12:02:43.292 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:53.519 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:02:53.674 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:54.188 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:02:54.328 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:54.663 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:02:54.741 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:54.835 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab0
-2019-01-30 12:02:54.919 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:55.192 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: tbNbs
-2019-01-30 12:02:55.235 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:55.410 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: bAccountMask
-2019-01-30 12:02:55.441 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:55.456 [main] DEBUG com.test.Methods.EventHandler - Should click a
-2019-01-30 12:02:55.970 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:55.986 [main] DEBUG com.test.Methods.EventHandler - Should click a
-2019-01-30 12:02:58.139 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:02:58.178 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: ddOb22
-2019-01-30 12:02:58.209 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:02:58.225 [main] DEBUG com.test.Methods.EventHandler - Should click select
-2019-01-30 12:02:58.622 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:03.848 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:03:03.945 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:04.634 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:03:04.955 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:05.514 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_21
-2019-01-30 12:03:05.822 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:07.874 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: bTab3
-2019-01-30 12:03:07.922 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:07.947 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:03:08.268 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:08.283 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab3
-2019-01-30 12:03:08.328 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:08.549 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btnOTHERS
-2019-01-30 12:03:08.584 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:08.600 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:03:08.885 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:08.898 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab3
-2019-01-30 12:03:08.952 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:09.194 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: HREF_1
-2019-01-30 12:03:09.238 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:09.271 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:03:09.677 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:11.275 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: r_1
-2019-01-30 12:03:11.573 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:11.865 [main] DEBUG com.test.Methods.EventHandler - Should click tr
-2019-01-30 12:03:12.334 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:12.622 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab3
-2019-01-30 12:03:12.669 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:12.875 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btnSPECPARAM
-2019-01-30 12:03:12.922 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:12.938 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:03:13.213 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:13.213 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: VALUE_5
-2019-01-30 12:03:13.244 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:13.440 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: VALUE
-2019-01-30 12:03:13.485 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:13.657 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //input[@type='button' and @value='Зберегти']
-2019-01-30 12:03:13.703 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:13.719 [main] DEBUG com.test.Methods.EventHandler - Should click input
-2019-01-30 12:03:13.996 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:13.996 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: VALUE_4
-2019-01-30 12:03:14.027 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:14.403 [main] DEBUG com.test.Methods.EventHandler - Should click input
-2019-01-30 12:03:14.676 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:14.676 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: VALUE_3
-2019-01-30 12:03:14.722 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:15.151 [main] DEBUG com.test.Methods.EventHandler - Should click input
-2019-01-30 12:03:15.423 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:15.423 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: VALUE_2
-2019-01-30 12:03:15.470 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:15.875 [main] DEBUG com.test.Methods.EventHandler - Should click input
-2019-01-30 12:03:16.134 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:16.150 [main] DEBUG com.test.Methods.EventHandler - Should be By.tagName: head
-2019-01-30 12:03:16.197 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:16.197 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:03:16.247 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:16.285 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:03:16.328 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:16.538 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:03:16.581 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:16.582 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:03:16.635 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:16.795 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:03:16.842 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:20.055 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab3
-2019-01-30 12:03:20.120 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:20.963 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:03:21.263 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:21.829 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:03:22.136 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:22.439 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:03:22.742 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:23.117 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:03:23.425 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:23.425 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:03:23.730 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:24.117 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:03:24.413 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:37.776 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:03:37.854 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:38.586 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:03:38.893 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:39.464 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:03:39.752 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:40.070 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:03:40.384 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:40.777 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:03:41.074 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:41.074 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:03:41.369 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:41.767 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:03:42.058 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:46.496 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:03:46.652 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:46.980 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:03:47.038 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:47.086 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: bTab3
-2019-01-30 12:03:47.139 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:47.163 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:03:47.479 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:48.070 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:03:48.213 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:50.290 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: mainFrame
-2019-01-30 12:03:50.360 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:50.407 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btFind
-2019-01-30 12:03:50.438 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:50.465 [main] DEBUG com.test.Methods.EventHandler - Should click input
-2019-01-30 12:03:50.695 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:53.696 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: r_1
-2019-01-30 12:03:53.767 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:53.787 [main] DEBUG com.test.Methods.EventHandler - Should click tr
-2019-01-30 12:03:53.989 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:54.004 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btEdit
-2019-01-30 12:03:54.054 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:54.069 [main] DEBUG com.test.Methods.EventHandler - Should click img
-2019-01-30 12:03:54.305 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:58.938 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab0
-2019-01-30 12:03:59.017 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:59.301 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: tbNlsAlt
-2019-01-30 12:03:59.336 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:59.539 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: bTab1
-2019-01-30 12:03:59.601 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:03:59.630 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:03:59.978 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:03:59.993 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab1
-2019-01-30 12:04:00.056 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:00.333 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: ddVidBlkD
-2019-01-30 12:04:00.370 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:00.386 [main] DEBUG com.test.Methods.EventHandler - Should click select
-2019-01-30 12:04:00.829 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:01.437 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:04:01.749 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:02.324 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:02.641 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:02.968 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:03.265 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:03.691 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:03.996 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:03.996 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:04.281 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:04.680 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:04.988 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:05.970 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab1
-2019-01-30 12:04:06.028 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:06.251 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: ddVidBlkK
-2019-01-30 12:04:06.289 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:06.321 [main] DEBUG com.test.Methods.EventHandler - Should click select
-2019-01-30 12:04:06.728 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:07.326 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:04:07.652 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:08.273 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:08.576 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:08.881 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:09.173 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:09.563 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:09.858 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:09.858 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:10.150 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:10.552 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:10.847 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:11.804 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: bTab2
-2019-01-30 12:04:11.851 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:11.899 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:04:12.179 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:12.195 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab2
-2019-01-30 12:04:12.238 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:12.473 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btAdd
-2019-01-30 12:04:12.520 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:12.536 [main] DEBUG com.test.Methods.EventHandler - Should click img
-2019-01-30 12:04:12.930 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:13.523 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:04:13.851 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:14.419 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:14.737 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:15.051 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:15.351 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:15.744 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:16.029 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:16.029 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:16.340 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:16.736 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: td_29
-2019-01-30 12:04:17.042 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:18.032 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: bTab3
-2019-01-30 12:04:18.079 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:18.110 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:04:18.392 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:18.408 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab3
-2019-01-30 12:04:18.471 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:18.711 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btnSPECPARAM
-2019-01-30 12:04:18.758 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:18.773 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:04:19.052 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:19.052 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btnSPECPARAM_INT
-2019-01-30 12:04:19.127 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:19.189 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btnDPT
-2019-01-30 12:04:19.221 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:19.270 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btnBPK
-2019-01-30 12:04:19.317 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:19.395 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btnCVK
-2019-01-30 12:04:19.426 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:19.504 [main] DEBUG com.test.Methods.EventHandler - Should be By.tagName: head
-2019-01-30 12:04:19.551 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:19.551 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:04:19.601 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:19.651 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:04:19.729 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:19.896 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:04:19.938 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:19.939 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:04:19.986 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:20.127 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btSave
-2019-01-30 12:04:20.174 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:23.387 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: Tab3
-2019-01-30 12:04:23.470 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:24.327 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:04:24.631 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:25.179 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:04:25.485 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:25.851 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:04:26.149 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:26.539 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:04:26.843 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:26.843 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:04:27.141 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:27.540 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btOk
-2019-01-30 12:04:27.846 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:41.451 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:04:41.750 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:42.293 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:04:42.590 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:42.904 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:04:43.228 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:43.623 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:04:43.943 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:43.943 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:04:44.246 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:44.643 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@value='Ok']
-2019-01-30 12:04:44.952 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:49.069 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:04:49.224 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:49.573 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:04:49.667 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:49.768 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: bTab3
-2019-01-30 12:04:49.830 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:49.877 [main] DEBUG com.test.Methods.EventHandler - Should click td
-2019-01-30 12:04:50.195 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:50.808 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //*[@id]
-2019-01-30 12:04:50.948 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:53.021 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: mainFrame
-2019-01-30 12:04:53.115 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:53.162 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: tbFindNls
-2019-01-30 12:04:53.189 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:53.407 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btFind
-2019-01-30 12:04:53.439 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:53.454 [main] DEBUG com.test.Methods.EventHandler - Should click input
-2019-01-30 12:04:53.664 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:54.971 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: r_1
-2019-01-30 12:04:55.029 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:55.064 [main] DEBUG com.test.Methods.EventHandler - Should click tr
-2019-01-30 12:04:55.236 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:57.243 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btClose
-2019-01-30 12:04:57.305 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:57.352 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: closureReason5
-2019-01-30 12:04:57.421 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:57.436 [main] DEBUG com.test.Methods.EventHandler - Should click input
-2019-01-30 12:04:57.624 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:04:57.624 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: alertify-ok
-2019-01-30 12:04:57.686 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:04:57.702 [main] DEBUG com.test.Methods.EventHandler - Should click button
-2019-01-30 12:04:57.962 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
-2019-01-30 12:05:02.727 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: findOpersText
-2019-01-30 12:05:02.835 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:05:05.853 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //div[@id='oper-3039']/div[2]/span
-2019-01-30 12:05:05.981 [main] DEBUG com.test.Methods.EventHandler - Element found
-2019-01-30 12:05:06.012 [main] DEBUG com.test.Methods.EventHandler - Should click span
-2019-01-30 12:05:07.937 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:21:57.365 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: txtUserName
+2019-01-30 12:21:57.803 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:21:58.539 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: txtPassword
+2019-01-30 12:21:58.601 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:21:59.000 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btLogIn
+2019-01-30 12:21:59.055 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:21:59.084 [main] DEBUG com.test.Methods.EventHandler - Should click input
+2019-01-30 12:22:00.052 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:22:00.052 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btChangDate
+2019-01-30 12:22:00.113 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:00.149 [main] DEBUG com.test.Methods.EventHandler - Should click input
+2019-01-30 12:22:03.692 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:22:03.693 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: btnBranches
+2019-01-30 12:22:03.775 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:03.823 [main] DEBUG com.test.Methods.EventHandler - Should click a
+2019-01-30 12:22:04.186 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:22:04.186 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: (//span[@class = 'k-in'])[2]
+2019-01-30 12:22:04.265 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:04.314 [main] DEBUG com.test.Methods.EventHandler - Should click span
+2019-01-30 12:22:05.034 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:22:07.430 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: findOpersText
+2019-01-30 12:22:08.024 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:11.433 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //div[@id='oper-3039']/div[2]/span
+2019-01-30 12:22:11.594 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:11.627 [main] DEBUG com.test.Methods.EventHandler - Should click span
+2019-01-30 12:22:13.799 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:22:13.832 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: mainFrame
+2019-01-30 12:22:14.325 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:14.372 [main] DEBUG com.test.Methods.EventHandler - Should be By.id: registerCustBtn
+2019-01-30 12:22:14.436 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:14.460 [main] DEBUG com.test.Methods.EventHandler - Should click a
+2019-01-30 12:22:14.988 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:22:14.988 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div/div/div[2]/button
+2019-01-30 12:22:15.058 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:15.105 [main] DEBUG com.test.Methods.EventHandler - Should click button
+2019-01-30 12:22:15.706 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:22:15.706 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div//input[@class ='k-textbox ng-pristine ng-invalid ng-invalid-required']
+2019-01-30 12:22:16.247 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:16.502 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //div[@class = 'k-window-content k-content']/div//button[@class = 'btn btn btn-primary']
+2019-01-30 12:22:16.533 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:16.584 [main] DEBUG com.test.Methods.EventHandler - Should click button
+2019-01-30 12:22:16.977 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:22:16.977 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //button[@class = 'delete-confirm k-button k-primary']
+2019-01-30 12:22:17.405 [main] DEBUG com.test.Methods.EventHandler - Element found
+2019-01-30 12:22:17.436 [main] DEBUG com.test.Methods.EventHandler - Should click button
+2019-01-30 12:22:17.735 [main] DEBUG com.test.Methods.EventHandler - Clicked successfull
+2019-01-30 12:22:22.737 [main] DEBUG com.test.Methods.EventHandler - Should be By.xpath: //button[@class = 'k-button']

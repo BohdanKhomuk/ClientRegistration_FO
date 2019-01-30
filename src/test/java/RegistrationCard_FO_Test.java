@@ -71,7 +71,7 @@ public class RegistrationCard_FO_Test {
         System.out.println((char) 27 + "[33mБлок переходу у функцію створення клієнта(ФО)" + (char)27 + "[0m");
     }
     @Step ("dgsdfg")
-    @Test (priority = 2) //enabled = false)
+    @Test (priority = 1) //enabled = false)
     public void createClientCard() throws Exception {
 
 
@@ -121,7 +121,7 @@ public class RegistrationCard_FO_Test {
         //transitionToReg.closeWindowReg ();
     }
 
-    @Test(priority = 1)// enabled = false)
+    @Test(priority = 2)// enabled = false)
     public void customerAccountTest(){
         MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
         TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );
