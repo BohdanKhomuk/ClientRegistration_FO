@@ -7,13 +7,15 @@ import com.test.Methods.ReadingFromFile;
 import com.test.RegistrationCardFO.CustomerAccounts;
 import com.test.RegistrationClientFO.*;
 import com.test.TransitionToRegistration;
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -34,9 +36,11 @@ public class RegistrationCard_FO_Test {
     private RandomWordsAndNumber random = new RandomWordsAndNumber();
     private Gender gender = new Gender();
 
+    static ApplicationContext context;
+
     @BeforeClass
     public static void firstClass() {
-
+        context = new ClassPathXmlApplicationContext("test-aspectj.xml");
         DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 
         capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
@@ -66,9 +70,11 @@ public class RegistrationCard_FO_Test {
         loginPage.enterInMainPage( "absadm01", "qwerty" );
         System.out.println((char) 27 + "[33mБлок переходу у функцію створення клієнта(ФО)" + (char)27 + "[0m");
     }
-
-    @Test (priority = 1) //enabled = false)
+    @Step ("dgsdfg")
+    @Test (priority = 2) //enabled = false)
     public void createClientCard() throws Exception {
+
+
         MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
         TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );
         BasicDetails basicDetails = PageFactory.initElements ( eventDriver, BasicDetails.class );
@@ -115,7 +121,7 @@ public class RegistrationCard_FO_Test {
         //transitionToReg.closeWindowReg ();
     }
 
-    @Test(priority = 2)// enabled = false)
+    @Test(priority = 1)// enabled = false)
     public void customerAccountTest(){
         MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
         TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );

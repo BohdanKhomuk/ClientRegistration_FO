@@ -34,7 +34,7 @@ public class Frame {
         //toMainFrame();
         WebElement element = eventDriver.findElement ( By.id("Tab0"));
         WebDriverWait w = new WebDriverWait(eventDriver, 10000);
-        WebElement pause = w.until ( ExpectedConditions.visibilityOf ( element));
+        WebElement pause = w.until (ExpectedConditions.visibilityOf (element));
         Actions builder = new Actions(eventDriver);
         builder.moveToElement(pause);
         eventDriver.switchTo().frame(pause);
