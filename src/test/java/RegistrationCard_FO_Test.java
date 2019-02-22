@@ -39,7 +39,7 @@ public class RegistrationCard_FO_Test {
     static ApplicationContext context;
 
     @BeforeClass
-    public static void firstClass() {
+    public static void firstClassTest() {
         context = new ClassPathXmlApplicationContext("test-aspectj.xml");
         DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 
@@ -121,7 +121,7 @@ public class RegistrationCard_FO_Test {
         //transitionToReg.closeWindowReg ();
     }
 
-    @Test(priority = 2)// enabled = false)
+    @Test(priority = 2) //enabled = false)
     public void customerAccountTest(){
         MainPage mainPage = PageFactory.initElements( eventDriver, MainPage.class );
         TransitionToRegistration transitionToReg = PageFactory.initElements ( eventDriver, TransitionToRegistration.class );

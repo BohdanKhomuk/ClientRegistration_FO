@@ -373,7 +373,7 @@ public class CustomerAccounts {
         String mainWindows = driver.getWindowHandle();
         System.out.println ( "Win01 " + mainWindows );
         driver.switchTo ().window ( mainWindows ).close ();
-
+        pause.userDelay ( 2500    );
         ArrayList<String> tabs1237 = new ArrayList<> ( driver.getWindowHandles ( ) );
         System.out.println ( "tabs1237" + tabs1237 );
         driver.switchTo ( ).window ( tabs1237.get ( 0 ) );

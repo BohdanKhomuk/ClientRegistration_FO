@@ -240,7 +240,7 @@ public class TransitionToRegistration {
         this.clickRegisterNew();
         this.enterRNK( newrnk );
         this.clickSearchButton();
-        if ((LoginPage.getPolygon() == 50)||(LoginPage.getPolygon() == 22)||(LoginPage.getPolygon() == 24) ){
+        if ((LoginPage.getPolygon() == 50)||(LoginPage.getPolygon() == 44)||(LoginPage.getPolygon() == 24) ){
              this.clickClosePopupWindow();
         }
         pause.userDelay( 5000 );
@@ -261,6 +261,7 @@ public class TransitionToRegistration {
         WritingtoFile.Filewriting( "ClientRNK.txt", t2);
         pause.userDelay( 5000 );
         this.clickBtnOK();
+        pause.userDelay( 5000 );
     }
 
     private void findCard(String rnk){

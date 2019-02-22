@@ -36,45 +36,6 @@ public class LoginPage {
     @CacheLookup
     private WebElement branchCA;
 
-/*    private void typeUserName(String name){
-        userName.clear();
-        userName.sendKeys( name );
-    }
-
-    private void typePassword(String password){
-        passwordField.clear();
-        passwordField.sendKeys( password );
-    }
-
-    private void clickButtonLogin(){
-        buttonLogin.click();
-        new LoginPage( driver );
-    }
-
-    private void clickButtonChangDate(){
-        buttonChangDate.click();
-        new LoginPage( driver );
-    }
-
-    private void clickBranch(){
-        branch.click();
-        new LoginPage ( driver );
-    }
-
-    private void clickBranchCA(){
-        branchCA.click();
-        new LoginPage ( driver );
-    }
-
-    public void enterInMainPage(String name, String password){
-        this.typeUserName( name );
-        this.typePassword( password );
-        this.clickButtonLogin();
-        this.clickButtonChangDate();
-        this.clickBranch ();
-        this.clickBranchCA ();
-        new LoginPage( driver );
-    }*/
 
     public void enterInMainPage(String name, String password){
         userName.clear();
@@ -83,10 +44,8 @@ public class LoginPage {
         passwordField.sendKeys( password );
         buttonLogin.click();
         buttonChangDate.click();
-       if (getPolygon () == 24) {
-            branch.click ( );
-            branchCA.click ( );
-        }
+        branch.click ( );
+        branchCA.click ( );
         new LoginPage( driver );
     }
 }
