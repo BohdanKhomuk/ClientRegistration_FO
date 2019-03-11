@@ -419,7 +419,7 @@ public class CustomerAccounts {
         //Special parameters
         this.clickBTab3();
         frame.toTab3FrameAcc();
-        if (getPolygon () == 24 || getPolygon () == 53){
+        if (getPolygon () == 24 || getPolygon () == 53 ){
             this.clickBtOther ();
             frame.toTab3FrameAcc();
             this.clickSPPI ();

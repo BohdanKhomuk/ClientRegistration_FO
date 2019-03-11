@@ -21,7 +21,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static com.test.LoginPage.getPolygon;
@@ -39,7 +42,7 @@ public class RegistrationCard_FO_Test {
     static ApplicationContext context;
 
     @BeforeClass
-    public static void firstClassTest() {
+    public static void firstClassTest() throws AWTException, InterruptedException {
         context = new ClassPathXmlApplicationContext("test-aspectj.xml");
         DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 

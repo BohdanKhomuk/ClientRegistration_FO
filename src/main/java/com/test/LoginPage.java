@@ -14,7 +14,7 @@ public class LoginPage {
 
     public static int getPolygon() {
         //24  - Test; 40 - RC; 50 - Master//
-        return 50;
+        return 44;
     }
 
     @FindBy(id = "txtUserName")
